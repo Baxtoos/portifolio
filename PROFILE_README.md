@@ -4,27 +4,6 @@
 
 ### `Desenvolvedor Full-Stack (Foco em Frontend) & Engenheiro de Software`
 
-<br />
-
-<a href="https://baxtoos.github.io/portifolio/" target="_blank" title="Clique para abrir o Portfólio Interativo">
-  <img src="https://raw.githubusercontent.com/Baxtoos/portifolio/main/assets/images/portfolio-preview.png" alt="Sérgio Bastos — Portfólio Interativo WebGL" width="100%" />
-</a>
-
-<p align="center">
-  <sub>🌐 <b>Portfólio Interativo Online:</b> Clique no banner acima ou no botão abaixo para explorar o site completo com Three.js WebGL, terminal e projetos em produção!</sub>
-</p>
-
-<p align="center">
-  <a href="https://baxtoos.github.io/portifolio/">
-    <img src="https://img.shields.io/badge/Portfólio_Online-Ver_Ao_Vivo-00F0FF?style=for-the-badge&logoColor=black" alt="Portfólio" />
-  </a>
-  <a href="mailto:giftc444@gmail.com">
-    <img src="https://img.shields.io/badge/E--mail-giftc444%40gmail.com-8B5CF6?style=for-the-badge" alt="Email" />
-  </a>
-  <a href="https://github.com/Baxtoos">
-    <img src="https://img.shields.io/badge/GitHub-@Baxtoos-10B981?style=for-the-badge&logo=github" alt="GitHub" />
-  </a>
-</p>
 
 ```typescript
 const sergioBastos = {
