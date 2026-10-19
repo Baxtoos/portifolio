@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html lang="pt-BR" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sérgio Bastos — Full-Stack Developer & Software Engineer | Portfólio</title>
+  <meta name="description" content="Portfólio de Sérgio Bastos (Baxtoos) — Desenvolvedor Full-Stack e Engenheiro de Software especializado em React, TypeScript, Node.js, Java, Spring Boot, Docker e arquitetura de alta performance." />
+  <meta name="author" content="Sérgio Bastos" />
+  <meta name="keywords" content="Sérgio Bastos, Baxtoos, Full-Stack Developer, Software Engineer, React, Node.js, Java, Spring, TypeScript, Portfólio" />
+
+  <!-- Open Graph / Meta Social -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Sérgio Bastos — Full-Stack Developer & Software Engineer" />
+  <meta property="og:description" content="Projetos de alta performance, arquiteturas escaláveis e ecossistemas web." />
+  <meta property="og:image" content="assets/images/projects/autom-hero.jpg" />
+
+  <!-- Google Fonts: Syne, Plus Jakarta Sans, JetBrains Mono -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Syne:wght@600;700;800;900&display=swap" rel="stylesheet" />
+
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+
+  <!-- Custom Stylesheet -->
+  <link rel="stylesheet" href="assets/css/style.css" />
+
+  <!-- GSAP Animation Library -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+</head>
+<body>
+  <!-- Ambient Floating Orbs & Background Tech Grid -->
+  <div class="bg-ambient">
+    <div class="orb orb-1"></div>
+    <div class="orb orb-2"></div>
+    <div class="orb orb-3"></div>
+  </div>
+  <div class="bg-grid"></div>
+
+  <!-- ==========================================================================
+       NAVIGATION BAR
+       ========================================================================== -->
+  <header class="navbar" id="topNav">
+    <div class="container navbar-container">
+      <a href="#hero" class="brand-logo" id="navLogo">
+        <div class="brand-badge">SB</div>
+        <div class="brand-title">
+          <span class="brand-name">Sérgio Bastos</span>
+          <span class="brand-handle">@Baxtoos</span>
+        </div>
+      </a>
+
+      <nav>
+        <ul class="nav-links" id="navLinks">
+          <li><a href="#hero" class="nav-link active">Início</a></li>
+          <li><a href="#sobre" class="nav-link">Sobre</a></li>
+          <li><a href="#habilidades" class="nav-link">Habilidades</a></li>
+          <li><a href="#projetos" class="nav-link">Projetos</a></li>
+          <li><a href="#contato" class="nav-link">Contato</a></li>
+        </ul>
+      </nav>
+
+      <div class="nav-actions">
+        <button class="theme-toggle-btn" id="themeToggleBtn" aria-label="Alternar tema" title="Alternar tema claro/escuro">
+          <i class="fa-solid fa-sun"></i>
+        </button>
+
+        <a href="https://github.com/Baxtoos" target="_blank" rel="noopener noreferrer" class="nav-btn-github" id="navGithubBtn">
+          <i class="fa-brands fa-github"></i>
+          <span>GitHub</span>
+        </a>
+
+        <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Menu móvel">
+          <i class="fa-solid fa-bars"></i>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- ==========================================================================
+         HERO SECTION
+         ========================================================================== -->
+    <section class="hero-section" id="hero">
+      <div class="container hero-grid">
+        <div class="hero-content">
+          <div class="status-beacon-badge" id="statusBadge">
+            <span class="beacon-dot"></span>
+            <span>Disponível para novos projetos & soluções</span>
+          </div>
+
+          <h1 class="hero-title">
+            Transformando Ideias em <br />
+            <span class="gradient-text">Software de Alta Performance</span>
+            <span class="hero-role">&lt;Full-Stack Developer &amp; Systems Engineer /&gt;</span>
+          </h1>
+
+          <p class="hero-description">
+            Especializado na concepção e desenvolvimento de ecossistemas web ponta a ponta. Da arquitetura de microsserviços e bancos relacionais robustos a interfaces fluidas, modernas e orientadas a conversão.
+          </p>
+
+          <div class="hero-cta-group">
+            <a href="#projetos" class="btn-primary" id="heroCtaProjects">
+              <span>Explorar Projetos</span>
+              <i class="fa-solid fa-arrow-right"></i>
+            </a>
+
+            <a href="#contato" class="btn-secondary" id="heroCtaContact">
+              <i class="fa-solid fa-envelope"></i>
+              <span>Fale Comigo</span>
+            </a>
+
+            <a href="https://github.com/Baxtoos" target="_blank" rel="noopener noreferrer" class="btn-secondary" id="heroCtaGithub">
+              <i class="fa-brands fa-github"></i>
+              <span>GitHub Profile</span>
+            </a>
+          </div>
+
+          <div class="hero-metrics-bar">
+            <div class="metric-item">
+              <span class="metric-number">+12</span>
+              <span class="metric-label">Sistemas &amp; Portais Criados</span>
+            </div>
+            <div class="metric-item">
+              <span class="metric-number">Full-Stack</span>
+              <span class="metric-label">React, Node.js, Java, SQL</span>
+            </div>
+            <div class="metric-item">
+              <span class="metric-number">100%</span>
+              <span class="metric-label">Foco em Performance &amp; Qualidade</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero-visual">
+          <div class="visual-card-wrapper">
+            <!-- Floating Tech Pills -->
+            <div class="floating-chip chip-1">
+              <i class="fa-brands fa-react"></i>
+              <span>React &amp; TypeScript</span>
+            </div>
+            <div class="floating-chip chip-2">
+              <i class="fa-brands fa-node-js"></i>
+              <span>Node &amp; Express API</span>
+            </div>
+
+            <div class="avatar-card">
+              <div class="avatar-img-container">
+                <img src="assets/images/me.jpg" alt="Sérgio Bastos" id="heroProfileImg" />
+                <div class="avatar-overlay-gradient"></div>
+              </div>
+              <div class="avatar-badge-bottom">
+                <div class="avatar-badge-info">
+                  <h4>Sérgio Bastos</h4>
+                  <span>Ciência da Computação &amp; Dev</span>
+                </div>
+                <div class="verified-badge" title="Perfil Verificado">
+                  <i class="fa-solid fa-check"></i>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         INTERACTIVE TERMINAL WIDGET
+         ========================================================================== -->
+    <section class="terminal-section" id="terminal">
+      <div class="container">
+        <div class="terminal-window">
+          <div class="terminal-header">
+            <div class="terminal-controls">
+              <span class="terminal-dot dot-red"></span>
+              <span class="terminal-dot dot-yellow"></span>
+              <span class="terminal-dot dot-green"></span>
+            </div>
+            <div class="terminal-title">baxtoos@developer-station: ~/profile</div>
+            <div style="font-size:0.8rem; color:var(--text-muted); font-family:var(--font-mono);">bash</div>
+          </div>
+          <div class="terminal-body">
+            <div class="terminal-output" id="terminalOutput">
+              <div class="terminal-line dim">// Terminal interativo do desenvolvedor. Experimente digitar comandos abaixo.</div>
+              <div class="terminal-line cyan">> Inicializando baxtoos.sys...</div>
+              <div class="terminal-line">> Perfil: Sérgio Bastos da Silva Filho (@Baxtoos)</div>
+              <div class="terminal-line green">> Status: Pronto para novos desafios em Engenharia de Software & Full-Stack.</div>
+              <div class="terminal-line">> Digite <span class="cyan">help</span> para ver a lista de comandos interativos.</div>
+            </div>
+            <div class="terminal-input-row">
+              <span class="terminal-prompt">baxtoos@dev:~$</span>
+              <input type="text" class="terminal-input" id="terminalInput" placeholder="digite 'help', 'skills', 'projects' ou 'contact'..." autocomplete="off" spellcheck="false" />
+            </div>
+            <div class="terminal-hint">Pressione [Enter] para executar o comando</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         ABOUT ME SECTION
+         ========================================================================== -->
+    <section class="about-section" id="sobre">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">
+            <i class="fa-solid fa-user-astronaut"></i>
+            Trajetória &amp; Perfil
+          </span>
+          <h2 class="section-title">Engenharia de Software com <span class="gradient-text">Rigor &amp; Inovação</span></h2>
+          <p class="section-subtitle">
+            Unindo fundamentos da ciência da computação à agilidade das tecnologias modernas para entregar produtos digitais consistentes.
+          </p>
+        </div>
+
+        <div class="about-grid">
+          <div class="about-text-column">
+            <p>
+              Olá! Sou <strong>Sérgio Bastos</strong>, desenvolvedor Full-Stack apaixonado por criar arquiteturas sustentáveis, APIs eficientes e produtos digitais que geram impacto real.
+            </p>
+            <p>
+              Com formação acadêmica sólida (estudos em Estruturas de Dados, Algoritmos em C/Java, Sistemas Operacionais, Computação Gráfica e Interação Humano-Computador), combino a teoria da computação com a execução ágil do mercado.
+            </p>
+            <p>
+              Como cofundador e desenvolvedor no ecossistema <strong>DIEX</strong>, estruturei soluções para indústrias automotivas, metalúrgicas, comércio especializado e plataformas SaaS, dominando tanto o ciclo de requisitos e design quanto a implementação e implantação em produção.
+            </p>
+
+            <div class="about-highlights">
+              <div class="highlight-box">
+                <i class="fa-solid fa-graduation-cap highlight-icon"></i>
+                <h4>Formação Acadêmica</h4>
+                <p>USP / Computação com ênfase em arquitetura e lógica avançada.</p>
+              </div>
+              <div class="highlight-box">
+                <i class="fa-solid fa-cubes highlight-icon"></i>
+                <h4>Ecossistema DIEX</h4>
+                <p>Estúdio de tecnologia & soluções web para empresas de destaque.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="about-cards-column">
+            <div class="about-pillar-card">
+              <div class="pillar-icon-wrap">
+                <i class="fa-solid fa-code"></i>
+              </div>
+              <div class="pillar-content">
+                <h3>Clean Code &amp; Arquitetura Modular</h3>
+                <p>Código limpo, estruturado, tipado com TypeScript e documentado para fácil manutenção e escalabilidade a longo prazo.</p>
+              </div>
+            </div>
+
+            <div class="about-pillar-card">
+              <div class="pillar-icon-wrap">
+                <i class="fa-solid fa-bolt"></i>
+              </div>
+              <div class="pillar-content">
+                <h3>Performance Extrema &amp; UX Refinada</h3>
+                <p>Renderização ágil, otimização SEO técnica, layouts responsivos e design intuitivo guiado pelos princípios de IHC.</p>
+              </div>
+            </div>
+
+            <div class="about-pillar-card">
+              <div class="pillar-icon-wrap">
+                <i class="fa-solid fa-shield-halved"></i>
+              </div>
+              <div class="pillar-content">
+                <h3>Backend Seguro &amp; Microsserviços</h3>
+                <p>Modelagem relacional de dados com Prisma/JPA, APIs RESTful padronizadas e deploy conteinerizado com Docker Compose.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         SKILLS SECTION
+         ========================================================================== -->
+    <section class="skills-section" id="habilidades">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">
+            <i class="fa-solid fa-layer-group"></i>
+            Stack Tecnológica
+          </span>
+          <h2 class="section-title">Tecnologias &amp; <span class="gradient-text">Especialidades</span></h2>
+          <p class="section-subtitle">
+            Conjunto de ferramentas e práticas aplicadas diariamente no desenvolvimento de soluções robustas.
+          </p>
+        </div>
+
+        <div class="skills-grid" id="skillsGrid">
+          <!-- Populated dynamically by main.js from technicalSkills -->
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         PROJECTS SECTION
+         ========================================================================== -->
+    <section class="projects-section" id="projetos">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">
+            <i class="fa-solid fa-diagram-project"></i>
+            Portfólio de Destaques
+          </span>
+          <h2 class="section-title">Meus Melhores <span class="gradient-text">Projetos</span></h2>
+          <p class="section-subtitle">
+            Sistemas SaaS, aplicações corporativas, microsserviços e plataformas web desenvolvidas com excelência técnica.
+          </p>
+        </div>
+
+        <!-- Filter Categories -->
+        <nav class="filter-nav" aria-label="Filtro de Projetos">
+          <button class="filter-btn active" data-filter="all">Todos os Projetos</button>
+          <button class="filter-btn" data-filter="fullstack">Full-Stack &amp; Sistemas</button>
+          <button class="filter-btn" data-filter="architecture">Engenharia &amp; Java</button>
+          <button class="filter-btn" data-filter="frontend">Frontend &amp; E-commerce</button>
+          <button class="filter-btn" data-filter="landing">Landing Pages &amp; B2B</button>
+        </nav>
+
+        <!-- Projects Cards Grid -->
+        <div class="projects-grid" id="projectsGrid">
+          <!-- Populated dynamically by main.js from portfolioProjects -->
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         CONTACT SECTION
+         ========================================================================== -->
+    <section class="contact-section" id="contato">
+      <div class="container">
+        <div class="contact-card">
+          <span class="section-tag">
+            <i class="fa-solid fa-paper-plane"></i>
+            Vamos Construir Algo Incrível?
+          </span>
+          <h2 class="contact-card-title">Pronto para Conectar &amp; <span class="gradient-text">Colaborar</span></h2>
+          <p class="contact-card-subtitle">
+            Seja para uma nova oportunidade profissional, desenvolvimento de um sistema corporativo ou parceria tecnológica, estou sempre disponível para um café ou uma conversa técnica.
+          </p>
+
+          <div class="email-copy-box">
+            <span class="email-text">giftc444@gmail.com</span>
+            <button class="copy-btn" id="copyEmailBtn" title="Copiar e-mail">
+              <i class="fa-regular fa-copy"></i>
+              <span>Copiar</span>
+            </button>
+          </div>
+
+          <div class="social-links-row">
+            <a href="https://github.com/Baxtoos" target="_blank" rel="noopener noreferrer" class="social-pill-link" id="contactGithubLink">
+              <i class="fa-brands fa-github"></i>
+              <span>github.com/Baxtoos</span>
+            </a>
+
+            <a href="mailto:giftc444@gmail.com" class="social-pill-link" id="contactDirectEmail">
+              <i class="fa-solid fa-envelope"></i>
+              <span>Enviar E-mail Direto</span>
+            </a>
+
+            <a href="https://wa.me/5511999999999" target="_blank" rel="noopener noreferrer" class="social-pill-link" id="contactWhatsapp" title="WhatsApp">
+              <i class="fa-brands fa-whatsapp"></i>
+              <span>WhatsApp</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ==========================================================================
+       PROJECT DETAIL MODAL
+       ========================================================================== -->
+  <div class="modal-backdrop" id="projectModal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+    <div class="modal-container">
+      <div class="modal-header">
+        <div class="modal-header-info">
+          <span class="modal-badge" id="modalBadge">Full-Stack</span>
+          <h3 class="modal-title" id="modalTitle">Título do Projeto</h3>
+        </div>
+        <button class="modal-close-btn" id="modalCloseBtn" aria-label="Fechar modal">
+          <i class="fa-solid fa-xmark"></i>
+        </button>
+      </div>
+
+      <div class="modal-body">
+        <div class="modal-gallery">
+          <img src="" alt="Projeto Detalhe" id="modalGalleryImg" class="modal-gallery-img" />
+        </div>
+
+        <div class="modal-metrics-grid">
+          <div class="modal-metric-card">
+            <div class="modal-metric-val" id="modalMetric1">-</div>
+          </div>
+          <div class="modal-metric-card">
+            <div class="modal-metric-val" id="modalMetric2">-</div>
+          </div>
+          <div class="modal-metric-card">
+            <div class="modal-metric-val" id="modalMetric3">-</div>
+          </div>
+        </div>
+
+        <div>
+          <h4 class="modal-section-title">
+            <i class="fa-solid fa-bullseye" style="color:var(--accent-cyan);"></i>
+            Visão Geral do Projeto
+          </h4>
+          <p class="modal-text" id="modalOverview"></p>
+        </div>
+
+        <div>
+          <h4 class="modal-section-title">
+            <i class="fa-solid fa-triangle-exclamation" style="color:var(--accent-amber);"></i>
+            Desafio
+          </h4>
+          <p class="modal-text" id="modalChallenge"></p>
+        </div>
+
+        <div>
+          <h4 class="modal-section-title">
+            <i class="fa-solid fa-lightbulb" style="color:var(--accent-emerald);"></i>
+            Solução de Engenharia
+          </h4>
+          <p class="modal-text" id="modalSolution"></p>
+        </div>
+
+        <div>
+          <h4 class="modal-section-title">
+            <i class="fa-solid fa-list-check" style="color:var(--accent-purple);"></i>
+            Diferenciais &amp; Funcionalidades Chave
+          </h4>
+          <ul class="modal-features-list" id="modalFeaturesList"></ul>
+        </div>
+
+        <div>
+          <h4 class="modal-section-title">
+            <i class="fa-solid fa-code" style="color:var(--accent-cyan);"></i>
+            Stack Tecnológica Utilizada
+          </h4>
+          <div class="project-tech-tags" id="modalTechTags"></div>
+        </div>
+      </div>
+
+      <div class="modal-footer">
+        <a href="#" target="_blank" rel="noopener noreferrer" class="btn-secondary" id="modalGithubLink">
+          <i class="fa-brands fa-github"></i>
+          <span>Repositório GitHub</span>
+        </a>
+        <a href="#" target="_blank" rel="noopener noreferrer" class="btn-primary" id="modalLiveLink">
+          <span>Ver Demonstração</span>
+          <i class="fa-solid fa-arrow-up-right-from-square"></i>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast Notice -->
+  <div class="toast-notice" id="toastNotice">
+    <i class="fa-solid fa-circle-check" style="color:var(--accent-emerald); font-size:1.2rem;"></i>
+    <span class="toast-msg">Notificação</span>
+  </div>
+
+  <!-- ==========================================================================
+       FOOTER
+       ========================================================================== -->
+  <footer class="footer">
+    <div class="container footer-content">
+      <div class="footer-text">
+        © 2026 <strong>Sérgio Bastos</strong> (@Baxtoos). Desenvolvido com HTML5, Vanilla CSS, JS &amp; GSAP.
+      </div>
+      <a href="#hero" class="back-to-top-btn" id="footerBackToTop">
+        <span>Voltar ao topo</span>
+        <i class="fa-solid fa-arrow-up"></i>
+      </a>
+    </div>
+  </footer>
+
+  <!-- Script Files -->
+  <script src="assets/js/projects-data.js"></script>
+  <script src="assets/js/main.js"></script>
+</body>
+</html>
