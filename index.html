@@ -140,31 +140,88 @@
         </div>
 
         <div class="hero-visual">
-          <div class="visual-card-wrapper" id="heroVisualWrapper">
-            <!-- Floating Tech Pills -->
-            <div class="floating-chip chip-1">
+          <div class="holo-3d-stage" id="holo3DStage">
+            <!-- Corner Cyber Brackets -->
+            <div class="cyber-bracket bracket-tl"></div>
+            <div class="cyber-bracket bracket-tr"></div>
+            <div class="cyber-bracket bracket-bl"></div>
+            <div class="cyber-bracket bracket-br"></div>
+
+            <!-- Floating Tech Status Badges -->
+            <div class="floating-chip chip-1" id="chipThree">
               <i class="fa-solid fa-cube"></i>
-              <span>Three.js &amp; WebGL</span>
+              <span>Three.js WebGL</span>
             </div>
-            <div class="floating-chip chip-2">
+            <div class="floating-chip chip-2" id="chipReact">
               <i class="fa-brands fa-react"></i>
               <span>Frontend 3D &amp; UI</span>
             </div>
+            <div class="floating-chip chip-3" id="chipFps">
+              <i class="fa-solid fa-gauge-high"></i>
+              <span id="liveFpsChip">60 FPS • WebGL 2.0</span>
+            </div>
 
-            <div class="avatar-card frontend-3d-card" id="frontend3DCard">
-              <div class="avatar-img-container">
-                <img src="assets/images/frontend-3d.jpg" alt="Frontend 3D &amp; Interface Engineering" id="hero3DImg" />
-                <div class="avatar-overlay-gradient"></div>
-                <div class="hologram-glow"></div>
+            <!-- Top HUD Bar: Live Telemetry & Status -->
+            <div class="holo-hud-top">
+              <div class="hud-status">
+                <span class="hud-status-dot"></span>
+                <span class="hud-status-text">HOLO-CORE // 3D</span>
               </div>
-              <div class="avatar-badge-bottom">
-                <div class="avatar-badge-info">
-                  <h4>Frontend 3D &amp; Modern UI</h4>
-                  <span>WebGL • Three.js • Componentes Reativos</span>
+              <div class="hud-telemetry">
+                <span class="hud-item"><span class="hud-key">GEOM:</span> <span class="hud-val" id="hudGeomName">ICOSA</span></span>
+                <span class="hud-item"><span class="hud-key">VERTS:</span> <span class="hud-val" id="hudVertCount">2.562</span></span>
+              </div>
+            </div>
+
+            <!-- The Real Interactive 3D WebGL Canvas Container -->
+            <div class="holo-canvas-wrapper" id="holoCanvasWrapper">
+              <canvas id="hero3DCanvas"></canvas>
+              
+              <!-- Interactive Click / Drag Hint Overlay -->
+              <div class="holo-interaction-hint" id="holoInteractionHint">
+                <i class="fa-solid fa-arrows-rotate"></i>
+                <span>Arraste para rotacionar em 3D • Clique para pulsar</span>
+              </div>
+
+              <!-- Ambient Holographic Glow & Scanner Beam -->
+              <div class="holo-scanner-beam"></div>
+              <div class="holo-radial-glow"></div>
+            </div>
+
+            <!-- Bottom Interactive Controls & Switchers -->
+            <div class="holo-hud-bottom">
+              <!-- Geometry Switcher Buttons -->
+              <div class="hud-controls-group">
+                <span class="hud-group-label">Geometria:</span>
+                <div class="hud-btn-toggle" id="geomToggleGroup">
+                  <button type="button" class="hud-btn active" data-geom="icosahedron" title="Icosaedro Quântico">
+                    <i class="fa-solid fa-gem"></i> Icosa
+                  </button>
+                  <button type="button" class="hud-btn" data-geom="torusKnot" title="Torus Knot Reativo">
+                    <i class="fa-solid fa-ring"></i> Torus
+                  </button>
+                  <button type="button" class="hud-btn" data-geom="dodecahedron" title="Dodecaedro Matriz">
+                    <i class="fa-solid fa-shapes"></i> Dodeca
+                  </button>
                 </div>
-                <div class="verified-badge" title="Frontend 3D">
-                  <i class="fa-solid fa-cube"></i>
+              </div>
+
+              <!-- Aura Color Switcher -->
+              <div class="hud-controls-group">
+                <span class="hud-group-label">Esquema:</span>
+                <div class="hud-color-swatches" id="colorSwatchesGroup">
+                  <button type="button" class="swatch-btn active cyan" data-theme="cyan" title="Cyber Cyan"></button>
+                  <button type="button" class="swatch-btn violet" data-theme="violet" title="Holo Violet"></button>
+                  <button type="button" class="swatch-btn emerald" data-theme="emerald" title="Neon Matrix"></button>
                 </div>
+              </div>
+
+              <!-- Wireframe / Solid Mode Toggle -->
+              <div class="hud-controls-group">
+                <button type="button" class="hud-btn mode-btn" id="wireframeToggleBtn" title="Alternar Modo Wireframe / Sólido">
+                  <i class="fa-solid fa-network-wired"></i>
+                  <span id="wireframeModeText">Wireframe</span>
+                </button>
               </div>
             </div>
           </div>
@@ -459,6 +516,8 @@
   </footer>
 
   <!-- Script Files -->
+  <script src="assets/js/vendor/three.min.js"></script>
+  <script src="assets/js/hero-3d.js"></script>
   <script src="assets/js/projects-data.js"></script>
   <script src="assets/js/main.js"></script>
 </body>
