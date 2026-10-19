@@ -25,15 +25,16 @@ O portfólio reúne os principais projetos de desenvolvimento de software, siste
 
 ## Funcionalidades em Destaque
 
+- **Banner Holográfico 3D Interativo (Three.js WebGL 2.0)**: Renderização tridimensional em tempo real no hero com controle de órbita 360 por clique/arraste, alternador de geometrias (Icosaedro, Torus Knot, Dodecaedro), seletor de paletas neon, modo wireframe/sólido e telemetria de GPU ao vivo (FPS real, contagem dinâmica de vértices).
 - **Performance Extrema & Zero Build**: Roda nativamente em qualquer navegador ou servidor estático (GitHub Pages, Vercel, Netlify).
 - **Design System Obsidian**: Efeito Glassmorphism com `backdrop-filter`, orbes dinâmicos de luz no plano de fundo, badges cibernéticos e tipografia de ponta (*Syne*, *Plus Jakarta Sans*, *JetBrains Mono*).
-- **Terminal Interativo Integrado**: Widget de terminal estilo Unix (`baxtoos@dev:~$`) com comandos interativos (`help`, `whoami`, `skills`, `projects`, `contact`, `clear`).
+- **Terminal Interativo Integrado**: Widget de terminal estilo Unix (`baxtoos@dev:~$`) com histórico de comandos (setas Cima/Baixo) e comandos interativos (`help`, `whoami`, `frontend`, `backend`, `skills`, `projects`, `diex`, `contact`, `clear`).
 - **Showcase Filtrável de Projetos**: Filtros dinâmicos em tempo real por categoria (*Full-Stack*, *Engenharia & Java*, *Frontend*, *Landing Pages B2B*).
-- **Modal Imersivo de Especificação Técnica**: Cada projeto conta com ficha completa (Visão Geral, Métricas, Tags da Stack, links de demonstração e código).
-- **Copy E-mail com Toast Feedback**: Copia o endereço `giftc444@gmail.com` com um clique e feedback animado.
+- **Modal Imersivo de Especificação Técnica**: Cada projeto conta com ficha completa acessível (Visão Geral, Métricas, Tags da Stack, links de demonstração e código).
+- **Copy E-mail com Toast Feedback**: Copia o endereço `giftc444@gmail.com` com um clique e feedback animado gerenciado.
 - **Suporte a Temas (Dark / Light)**: Alternância suave com persistência no `localStorage`.
 - **Animações de Clique e Redirecionamento**: Feedback tátil com efeito de ondulação radial neon e barra de progresso suave no topo.
-- **100% Responsivo**: Layout otimizado para celulares, tablets e monitores ultrawide.
+- **100% Responsivo & Acessível**: Layout semântico otimizado para celulares, tablets e monitores ultrawide com suporte a navegação por teclado e SEO estruturado (JSON-LD).
 
 ---
 
@@ -41,7 +42,8 @@ O portfólio reúne os principais projetos de desenvolvimento de software, siste
 
 | Camada | Tecnologias Utilizadas |
 | :--- | :--- |
-| **Frontend** | HTML5 Semântico, CSS3 Moderno (Custom Properties, Flexbox, Grid), JavaScript ES6+ Modular |
+| **Frontend Core** | HTML5 Semântico, CSS3 Moderno (Custom Properties, Flexbox, Grid), JavaScript ES6+ Modular |
+| **3D & WebGL** | [Three.js r128](https://threejs.org/) (geometrias procedurais, iluminação de 3 pontos, partículas e física orbital) |
 | **Estilização** | Design System Proprietário Obsidian/Cyan, Glassmorphism, Micro-interações |
 | **Motion** | [GSAP 3](https://greensock.com/gsap/) (GreenSock Animation Platform) via CDN |
 | **Tipografia & Ícones** | Google Fonts (Syne, Plus Jakarta Sans, JetBrains Mono), FontAwesome 6 |
@@ -52,15 +54,17 @@ O portfólio reúne os principais projetos de desenvolvimento de software, siste
 
 ```bash
 portifolio/
-|-- index.html                  # Estrutura principal semântica da aplicação
+|-- index.html                  # Estrutura principal semântica da aplicação com Schema JSON-LD
 |-- assets/
 |   |-- css/
 |   |   `-- style.css           # Design system completo, temas, responsividade e componentes
 |   |-- js/
+|   |   |-- hero-3d.js          # Motor 3D WebGL Three.js, física orbital e HUD interativo
 |   |   |-- main.js             # Lógica interativa (terminal, modal, filtros, toast, tema, animações)
-|   |   `-- projects-data.js    # Dados curados dos projetos, métricas e competências
+|   |   |-- projects-data.js    # Dados curados dos projetos, métricas e competências
+|   |   `-- vendor/
+|   |       `-- three.min.js    # Three.js r128 local para carregamento instantâneo offline
 |   `-- images/
-|       |-- frontend-3d.jpg     # Visual de arquitetura e tecnologia frontend em 3D
 |       `-- projects/           # Imagens em alta resolução dos projetos e sistemas
 |-- README.md                   # Documentação do repositório
 `-- PROFILE_README.md           # Template especial pronto para o perfil do GitHub (Baxtoos/Baxtoos)

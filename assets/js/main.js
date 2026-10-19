@@ -1,6 +1,8 @@
 /**
- * main.js
- * Interactive logic for Sérgio Bastos (@Baxtoos) Portfolio
+ * ==============================================================================
+ * main.js — Interactive Core for Sérgio Bastos (@Baxtoos) Portfolio
+ * Clean architecture, accessible interactions, throttled events, and terminal logic.
+ * ==============================================================================
  */
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -11,77 +13,85 @@ document.addEventListener('DOMContentLoaded', () => {
   initModal();
   initTerminal();
   initCopyEmail();
-  init3DCardEffect();
   initClickAnimations();
   initRedirectionAnimations();
   initScrollAnimations();
 });
 
-/* ==========================================================================
-   NAVBAR & SCROLL
-   ========================================================================== */
+/* ==============================================================================
+   1. NAVBAR & THROTTLED SCROLL
+   ============================================================================== */
 function initNavbar() {
   const navbar = document.querySelector('.navbar');
   const navLinks = document.querySelectorAll('.nav-link');
   const sections = document.querySelectorAll('section[id]');
+  const mobileBtn = document.querySelector('.mobile-menu-btn');
+  const navLinksContainer = document.querySelector('.nav-links');
+  const backToTopBtn = document.querySelector('.back-to-top-btn');
 
-  window.addEventListener('scroll', () => {
-    if (window.scrollY > 40) {
+  let isTicking = false;
+
+  function onScroll() {
+    const scrollY = window.scrollY;
+
+    // Navbar scrolled glassmorphism state
+    if (scrollY > 40) {
       navbar.classList.add('scrolled');
     } else {
       navbar.classList.remove('scrolled');
     }
 
-    // Active Section Tracking
-    let current = '';
-    const scrollPosition = window.scrollY + 120;
+    // Active Section Spy
+    const scrollPosition = scrollY + 140;
+    let currentId = '';
 
-    sections.forEach(section => {
+    sections.forEach((section) => {
       const sectionTop = section.offsetTop;
       const sectionHeight = section.clientHeight;
       if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
-        current = section.getAttribute('id');
+        currentId = section.getAttribute('id');
       }
     });
 
-    navLinks.forEach(link => {
-      link.classList.remove('active');
-      if (link.getAttribute('href') === `#${current}`) {
-        link.classList.add('active');
-      }
-    });
-  });
+    if (currentId) {
+      navLinks.forEach((link) => {
+        link.classList.remove('active');
+        if (link.getAttribute('href') === `#${currentId}`) {
+          link.classList.add('active');
+        }
+      });
+    }
+
+    isTicking = false;
+  }
+
+  window.addEventListener('scroll', () => {
+    if (!isTicking) {
+      requestAnimationFrame(onScroll);
+      isTicking = true;
+    }
+  }, { passive: true });
 
   // Mobile menu toggle
-  const mobileBtn = document.querySelector('.mobile-menu-btn');
-  const navLinksContainer = document.querySelector('.nav-links');
-
   if (mobileBtn && navLinksContainer) {
     mobileBtn.addEventListener('click', () => {
-      const isVisible = navLinksContainer.style.display === 'flex';
-      navLinksContainer.style.display = isVisible ? 'none' : 'flex';
-      navLinksContainer.style.flexDirection = 'column';
-      navLinksContainer.style.position = 'absolute';
-      navLinksContainer.style.top = '76px';
-      navLinksContainer.style.left = '0';
-      navLinksContainer.style.width = '100%';
-      navLinksContainer.style.background = '#0a0e17';
-      navLinksContainer.style.padding = '24px';
-      navLinksContainer.style.borderBottom = '1px solid rgba(255,255,255,0.1)';
+      const isVisible = navLinksContainer.classList.contains('mobile-open');
+      navLinksContainer.classList.toggle('mobile-open', !isVisible);
+      mobileBtn.setAttribute('aria-expanded', !isVisible);
     });
 
-    // Close mobile menu on click
-    navLinks.forEach(link => {
+    // Close mobile menu when clicking any nav link
+    navLinks.forEach((link) => {
       link.addEventListener('click', () => {
         if (window.innerWidth <= 768) {
-          navLinksContainer.style.display = 'none';
+          navLinksContainer.classList.remove('mobile-open');
+          mobileBtn.setAttribute('aria-expanded', 'false');
         }
       });
     });
   }
 
   // Smooth back to top
-  const backToTopBtn = document.querySelector('.back-to-top-btn');
   if (backToTopBtn) {
     backToTopBtn.addEventListener('click', (e) => {
       e.preventDefault();
@@ -90,9 +100,9 @@ function initNavbar() {
   }
 }
 
-/* ==========================================================================
-   THEME TOGGLE
-   ========================================================================== */
+/* ==============================================================================
+   2. THEME TOGGLE (DARK / LIGHT WITH PERSISTENCE)
+   ============================================================================== */
 function initTheme() {
   const themeBtn = document.querySelector('.theme-toggle-btn');
   const themeIcon = themeBtn ? themeBtn.querySelector('i') : null;
@@ -115,32 +125,34 @@ function initTheme() {
     if (!themeIcon) return;
     if (theme === 'light') {
       themeIcon.className = 'fa-solid fa-moon';
+      themeBtn.setAttribute('aria-label', 'Alternar para tema escuro');
     } else {
       themeIcon.className = 'fa-solid fa-sun';
+      themeBtn.setAttribute('aria-label', 'Alternar para tema claro');
     }
   }
 }
 
-/* ==========================================================================
-   SKILLS RENDERING
-   ========================================================================== */
+/* ==============================================================================
+   3. SKILLS CATEGORY CARDS RENDERING
+   ============================================================================== */
 function initSkills() {
   const container = document.getElementById('skillsGrid');
-  if (!container || !technicalSkills) return;
+  if (!container || typeof technicalSkills === 'undefined') return;
 
   const categories = [
-    { key: 'frontend', title: 'Frontend & UI/UX', icon: 'fa-brands fa-react', desc: 'Interfaces reativas, responsivas e de alta performance' },
+    { key: 'frontend', title: 'Frontend & UI/UX (Foco)', icon: 'fa-brands fa-react', desc: 'Interfaces reativas, WebGL 3D, design systems e performance' },
     { key: 'backend', title: 'Backend & APIs', icon: 'fa-solid fa-server', desc: 'Modelagem relacional, microsserviços e rotas RESTful' },
-    { key: 'devops', title: 'DevOps & Cloud', icon: 'fa-solid fa-cloud', desc: 'Contêineres, CI/CD, proxy reverso e automação' },
-    { key: 'engineering', title: 'Engenharia & Ciência', icon: 'fa-solid fa-sitemap', desc: 'Estruturas de dados, arquitetura em camadas e IHC' }
+    { key: 'devops', title: 'DevOps & Infra', icon: 'fa-solid fa-cloud', desc: 'Contêineres Docker, proxy reverso Nginx e deploy na Vercel' },
+    { key: 'engineering', title: 'Engenharia & Ciência', icon: 'fa-solid fa-sitemap', desc: 'Estruturas de dados, algoritmos em C/Java, MVC e IHC' }
   ];
 
-  container.innerHTML = categories.map(cat => {
+  container.innerHTML = categories.map((cat) => {
     const list = technicalSkills[cat.key] || [];
     return `
       <div class="skill-category-card">
         <div class="skill-card-header">
-          <div class="skill-header-icon">
+          <div class="skill-header-icon" aria-hidden="true">
             <i class="${cat.icon}"></i>
           </div>
           <div>
@@ -149,10 +161,10 @@ function initSkills() {
           </div>
         </div>
         <ul class="skill-items-list">
-          ${list.map(skill => `
+          ${list.map((skill) => `
             <li class="skill-item">
               <div class="skill-item-info">
-                <i class="${skill.icon}" style="color:${skill.color};"></i>
+                <i class="${skill.icon}" style="color:${skill.color};" aria-hidden="true"></i>
                 <span>${skill.name}</span>
               </div>
               <span class="skill-item-badge">${skill.level}</span>
@@ -164,23 +176,25 @@ function initSkills() {
   }).join('');
 }
 
-/* ==========================================================================
-   PROJECTS RENDERING & FILTERING
-   ========================================================================== */
+/* ==============================================================================
+   4. PROJECTS RENDERING & FILTERING
+   ============================================================================== */
+let lastFocusedCard = null;
+
 function initProjects() {
   const grid = document.getElementById('projectsGrid');
   const filterBtns = document.querySelectorAll('.filter-btn');
-  if (!grid || !portfolioProjects) return;
+  if (!grid || typeof portfolioProjects === 'undefined') return;
 
   let currentCategory = 'all';
 
   function renderProjects(category) {
-    const filtered = category === 'all' 
-      ? portfolioProjects 
-      : portfolioProjects.filter(p => p.category === category);
+    const filtered = category === 'all'
+      ? portfolioProjects
+      : portfolioProjects.filter((p) => p.category === category);
 
-    grid.innerHTML = filtered.map(project => `
-      <article class="project-card" data-id="${project.id}">
+    grid.innerHTML = filtered.map((project) => `
+      <article class="project-card" data-id="${project.id}" tabindex="0" role="button" aria-label="Ver detalhes de ${project.title}">
         <div class="project-thumbnail">
           <img src="${project.coverImage}" alt="${project.title}" loading="lazy" />
           <span class="project-badge-top">${project.badge}</span>
@@ -191,18 +205,18 @@ function initProjects() {
           </div>
           <p class="project-desc">${project.shortDescription}</p>
           <div class="project-tech-tags">
-            ${project.techStack.slice(0, 4).map(tech => `<span class="tech-tag">${tech}</span>`).join('')}
+            ${project.techStack.slice(0, 4).map((tech) => `<span class="tech-tag">${tech}</span>`).join('')}
             ${project.techStack.length > 4 ? `<span class="tech-tag">+${project.techStack.length - 4}</span>` : ''}
           </div>
           <div class="project-footer">
             <span class="btn-card-details">
-              Ver Detalhes <i class="fa-solid fa-arrow-right"></i>
+              Ver Detalhes <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
             </span>
             <div class="project-links-icons" onclick="event.stopPropagation()">
-              <a href="${project.githubUrl}" target="_blank" rel="noopener noreferrer" class="project-icon-link" title="Repositório GitHub">
+              <a href="${project.githubUrl}" target="_blank" rel="noopener noreferrer" class="project-icon-link" title="Repositório GitHub" aria-label="Código no GitHub de ${project.title}">
                 <i class="fa-brands fa-github"></i>
               </a>
-              <a href="${project.liveUrl}" target="_blank" rel="noopener noreferrer" class="project-icon-link" title="Live Demo / Link">
+              <a href="${project.liveUrl}" target="_blank" rel="noopener noreferrer" class="project-icon-link" title="Live Demo / Link" aria-label="Abrir demonstração ao vivo de ${project.title}">
                 <i class="fa-solid fa-arrow-up-right-from-square"></i>
               </a>
             </div>
@@ -211,11 +225,20 @@ function initProjects() {
       </article>
     `).join('');
 
-    // Attach click listeners to cards
-    document.querySelectorAll('.project-card').forEach(card => {
-      card.addEventListener('click', () => {
+    // Attach click and keyboard listeners to cards
+    document.querySelectorAll('.project-card').forEach((card) => {
+      const handleOpen = () => {
+        lastFocusedCard = card;
         const id = card.getAttribute('data-id');
         openProjectModal(id);
+      };
+
+      card.addEventListener('click', handleOpen);
+      card.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          handleOpen();
+        }
       });
     });
   }
@@ -224,27 +247,27 @@ function initProjects() {
   renderProjects(currentCategory);
 
   // Filter Buttons
-  filterBtns.forEach(btn => {
+  filterBtns.forEach((btn) => {
     btn.addEventListener('click', () => {
-      filterBtns.forEach(b => b.classList.remove('active'));
+      filterBtns.forEach((b) => b.classList.remove('active'));
       btn.classList.add('active');
       currentCategory = btn.getAttribute('data-filter');
       renderProjects(currentCategory);
 
-      // Animation on cards
+      // Smooth card entrance animation with GSAP
       if (window.gsap) {
-        gsap.fromTo('.project-card', 
-          { opacity: 0, y: 20 }, 
-          { opacity: 1, y: 0, duration: 0.4, stagger: 0.06, ease: 'power2.out' }
+        gsap.fromTo('.project-card',
+          { opacity: 0, y: 18 },
+          { opacity: 1, y: 0, duration: 0.38, stagger: 0.05, ease: 'power2.out' }
         );
       }
     });
   });
 }
 
-/* ==========================================================================
-   PROJECT DETAILS MODAL
-   ========================================================================== */
+/* ==============================================================================
+   5. PROJECT DETAILS MODAL
+   ============================================================================== */
 function initModal() {
   const backdrop = document.getElementById('projectModal');
   const closeBtn = document.getElementById('modalCloseBtn');
@@ -252,7 +275,13 @@ function initModal() {
 
   function closeModal() {
     backdrop.classList.remove('active');
+    backdrop.setAttribute('aria-hidden', 'true');
     document.body.style.overflow = '';
+
+    // Return focus to triggering card
+    if (lastFocusedCard && typeof lastFocusedCard.focus === 'function') {
+      lastFocusedCard.focus();
+    }
   }
 
   if (closeBtn) {
@@ -273,86 +302,123 @@ function initModal() {
 }
 
 function openProjectModal(projectId) {
-  const project = portfolioProjects.find(p => p.id === projectId);
+  if (typeof portfolioProjects === 'undefined') return;
+  const project = portfolioProjects.find((p) => p.id === projectId);
   const backdrop = document.getElementById('projectModal');
   if (!project || !backdrop) return;
 
   document.getElementById('modalTitle').textContent = project.title;
   document.getElementById('modalBadge').textContent = project.categoryLabel || project.badge;
-  
+
   const galleryImg = document.getElementById('modalGalleryImg');
-  galleryImg.src = project.coverImage;
-  galleryImg.alt = project.title;
-
-  document.getElementById('modalMetric1').textContent = project.stats?.metric1 || 'Full-Stack';
-  document.getElementById('modalMetric2').textContent = project.stats?.metric2 || '100% Responsivo';
-  document.getElementById('modalMetric3').textContent = project.stats?.metric3 || 'Clean Code';
-
-  document.getElementById('modalOverview').textContent = project.overview || project.shortDescription;
-
-  // Tech stack tags
-  const modalTechTags = document.getElementById('modalTechTags');
-  if (modalTechTags) {
-    modalTechTags.innerHTML = project.techStack.map(t => `<span class="tech-tag">${t}</span>`).join('');
+  if (galleryImg) {
+    galleryImg.src = project.coverImage;
+    galleryImg.alt = project.title;
   }
 
-  // Footer Links
+  const metric1 = document.getElementById('modalMetric1');
+  const metric2 = document.getElementById('modalMetric2');
+  const metric3 = document.getElementById('modalMetric3');
+  if (metric1) metric1.textContent = project.stats?.metric1 || 'Full-Stack';
+  if (metric2) metric2.textContent = project.stats?.metric2 || '100% Responsivo';
+  if (metric3) metric3.textContent = project.stats?.metric3 || 'Clean Code';
+
+  const modalOverview = document.getElementById('modalOverview');
+  if (modalOverview) {
+    modalOverview.textContent = project.overview || project.shortDescription;
+  }
+
+  const modalTechTags = document.getElementById('modalTechTags');
+  if (modalTechTags) {
+    modalTechTags.innerHTML = project.techStack.map((t) => `<span class="tech-tag">${t}</span>`).join('');
+  }
+
   const githubLink = document.getElementById('modalGithubLink');
   const liveLink = document.getElementById('modalLiveLink');
   if (githubLink) githubLink.href = project.githubUrl;
   if (liveLink) liveLink.href = project.liveUrl;
 
   backdrop.classList.add('active');
+  backdrop.setAttribute('aria-hidden', 'false');
   document.body.style.overflow = 'hidden';
+
+  // Move focus to modal close button for accessibility
+  const closeBtn = document.getElementById('modalCloseBtn');
+  if (closeBtn) closeBtn.focus();
 }
 
-/* ==========================================================================
-   INTERACTIVE TERMINAL WIDGET
-   ========================================================================== */
+/* ==============================================================================
+   6. INTERACTIVE TERMINAL WIDGET (WITH COMMAND HISTORY)
+   ============================================================================== */
 function initTerminal() {
   const input = document.getElementById('terminalInput');
   const output = document.getElementById('terminalOutput');
   if (!input || !output) return;
 
+  // Command History Memory
+  const history = [];
+  let historyIndex = -1;
+
   const commands = {
     help: () => `
-<div class="terminal-line cyan">Comandos disponíveis:</div>
-<div class="terminal-line">  <span class="purple">whoami</span>    - Informações sobre Sérgio Bastos</div>
-<div class="terminal-line">  <span class="purple">skills</span>    - Resumo das tecnologias e competências</div>
-<div class="terminal-line">  <span class="purple">projects</span>  - Principais projetos em destaque</div>
-<div class="terminal-line">  <span class="purple">contact</span>   - Informações para contato e redes</div>
-<div class="terminal-line">  <span class="purple">github</span>    - Link para o perfil do GitHub</div>
-<div class="terminal-line">  <span class="purple">clear</span>     - Limpa o terminal</div>
+<div class="terminal-line cyan">Comandos disponiveis no baxtoos.sys:</div>
+<div class="terminal-line">  <span class="purple">whoami</span>    - Perfil e visao geral do desenvolvedor</div>
+<div class="terminal-line">  <span class="purple">frontend</span>  - Especializacao em Frontend e UI 3D</div>
+<div class="terminal-line">  <span class="purple">backend</span>   - Competencias de backend, bancos e Docker</div>
+<div class="terminal-line">  <span class="purple">skills</span>    - Stack tecnologica completa</div>
+<div class="terminal-line">  <span class="purple">projects</span>  - Principais sistemas em producao</div>
+<div class="terminal-line">  <span class="purple">diex</span>      - Ecossistema de solucoes web corporativas</div>
+<div class="terminal-line">  <span class="purple">contact</span>   - Canais de contato direto</div>
+<div class="terminal-line">  <span class="purple">github</span>    - Abre o perfil do GitHub em nova aba</div>
+<div class="terminal-line">  <span class="purple">clear</span>     - Limpa o historico do terminal</div>
     `,
     whoami: () => `
-<div class="terminal-line cyan">Sérgio Bastos (Baxtoos)</div>
+<div class="terminal-line cyan">Sergio Bastos (Baxtoos)</div>
 <div class="terminal-line">Desenvolvedor Full-Stack com foco especializado em Frontend.</div>
-<div class="terminal-line">Localização: Salto / Indaiatuba - SP, Brasil</div>
-<div class="terminal-line">Formação: Ciência da Computação / Engenharia</div>
-<div class="terminal-line green">Status: Disponível para novos projetos e oportunidades.</div>
+<div class="terminal-line">Localizacao: Salto / Indaiatuba - SP, Brasil</div>
+<div class="terminal-line">Formacao: Ciencia da Computacao / Engenharia de Software</div>
+<div class="terminal-line green">Status: Disponivel para projetos de alto impacto e engenharia de produto.</div>
+    `,
+    frontend: () => `
+<div class="terminal-line cyan">Frontend Engineering & 3D Web:</div>
+<div class="terminal-line">  * Core: React, TypeScript, JavaScript ES6+, Vite, Tailwind CSS, Vanilla CSS</div>
+<div class="terminal-line">  * 3D & WebGL: Three.js, shaders procedural, animacoes GSAP, IHC</div>
+<div class="terminal-line">  * Foco: Arquitetura de componentes reutilizaveis, zero dependencias desnecessarias, performance extrema</div>
+    `,
+    backend: () => `
+<div class="terminal-line cyan">Backend & Infraestrutura:</div>
+<div class="terminal-line">  * Linguagens & Frameworks: Node.js, Express, Java, Spring Boot</div>
+<div class="terminal-line">  * Persistencia: Prisma ORM, JPA / Hibernate, MySQL, PostgreSQL, SQLite</div>
+<div class="terminal-line">  * DevOps: Docker, Docker Compose, Nginx Proxy Reverso, Linux Bash</div>
+    `,
+    diex: () => `
+<div class="terminal-line cyan">Ecossistema DIEX Tech Studio:</div>
+<div class="terminal-line">Estudio de tecnologia cofundado por Sergio Bastos.</div>
+<div class="terminal-line">Solucoes digitais para industrias metalurgicas, estampagem automotiva, comercio textil e SaaS.</div>
+<div class="terminal-line green">Website oficial: <a href="http://127.0.0.1:5173" target="_blank" class="cyan">DIEX Studio</a></div>
     `,
     skills: () => `
-<div class="terminal-line cyan">Stack Tecnológica:</div>
-<div class="terminal-line">  [Frontend] React, TypeScript, JavaScript ES6+, Vite, Tailwind, HTML5/CSS3</div>
-<div class="terminal-line">  [Backend]  Node.js, Express, Java, Spring Boot, Prisma ORM, Hibernate</div>
+<div class="terminal-line cyan">Stack Tecnologica Resumida:</div>
+<div class="terminal-line">  [Frontend] React, TypeScript, Three.js, GSAP, HTML5 / CSS3 Avançado</div>
+<div class="terminal-line">  [Backend]  Node.js, Express, Java, Spring Boot, Prisma ORM, REST APIs</div>
 <div class="terminal-line">  [Database] MySQL, PostgreSQL, SQLite, Supabase</div>
-<div class="terminal-line">  [DevOps]   Docker, Docker Compose, Nginx, Git, Linux, Vercel</div>
+<div class="terminal-line">  [DevOps]   Docker Compose, Nginx, Git, Linux, Vercel</div>
     `,
     projects: () => `
-<div class="terminal-line cyan">Destaques do Portfólio:</div>
-<div class="terminal-line">  * <strong>AppFisio</strong>: SaaS completo para fisioterapeutas (Node, Express, Prisma, SQLite)</div>
-<div class="terminal-line">  * <strong>EventHub</strong>: Gestão corporativa de eventos e ingressos (Java, MVC, JPA)</div>
-<div class="terminal-line">  * <strong>DIEX Studio</strong>: Ecossistema de soluções digitais e portais web</div>
-<div class="terminal-line">  * <strong>CarTon</strong>: Sistema de oficinas mecânicas (Engenharia de Software)</div>
-<div class="terminal-line">  * <strong>Sistema AURA</strong>: Microsserviços Docker + Nginx + MySQL</div>
+<div class="terminal-line cyan">Destaques do Portfólio (Hospedados na Vercel):</div>
+<div class="terminal-line">  * <strong>AppFisio</strong>: SaaS clinico para fisioterapia (Node, Express, Prisma, SQLite)</div>
+<div class="terminal-line">  * <strong>EventHub</strong>: Gestao corporativa de eventos e ingressos (Java, MVC, JPA)</div>
+<div class="terminal-line">  * <strong>MT Sublimacao</strong>: Catalogo dinamico e cotacoes no WhatsApp (React, TS)</div>
+<div class="terminal-line">  * <strong>Smoke Salto</strong>: Catalogo e delivery para adega (React, Vite, Dark Mode)</div>
+<div class="terminal-line">  * <strong>Crucciolli Print3D</strong>: Engenharia e manufatura aditiva 3D</div>
     `,
     contact: () => `
-<div class="terminal-line cyan">Contato:</div>
-<div class="terminal-line">  Email: <a href="mailto:giftc444@gmail.com" class="cyan">giftc444@gmail.com</a></div>
+<div class="terminal-line cyan">Canais de Contato:</div>
+<div class="terminal-line">  E-mail: <a href="mailto:giftc444@gmail.com" class="cyan">giftc444@gmail.com</a></div>
 <div class="terminal-line">  GitHub: <a href="https://github.com/Baxtoos" target="_blank" class="cyan">https://github.com/Baxtoos</a></div>
     `,
     github: () => {
-      window.open('https://github.com/Baxtoos', '_blank');
+      window.open('https://github.com/Baxtoos', '_blank', 'noopener,noreferrer');
       return `<div class="terminal-line green">Abrindo https://github.com/Baxtoos no navegador...</div>`;
     },
     clear: () => {
@@ -362,12 +428,45 @@ function initTerminal() {
   };
 
   input.addEventListener('keydown', (e) => {
+    // Command History Navigation: ArrowUp
+    if (e.key === 'ArrowUp') {
+      e.preventDefault();
+      if (history.length > 0) {
+        if (historyIndex === -1) {
+          historyIndex = history.length - 1;
+        } else if (historyIndex > 0) {
+          historyIndex--;
+        }
+        input.value = history[historyIndex] || '';
+      }
+      return;
+    }
+
+    // Command History Navigation: ArrowDown
+    if (e.key === 'ArrowDown') {
+      e.preventDefault();
+      if (historyIndex !== -1) {
+        if (historyIndex < history.length - 1) {
+          historyIndex++;
+          input.value = history[historyIndex] || '';
+        } else {
+          historyIndex = -1;
+          input.value = '';
+        }
+      }
+      return;
+    }
+
     if (e.key === 'Enter') {
       const cmdRaw = input.value.trim();
       const cmd = cmdRaw.toLowerCase();
       input.value = '';
+      historyIndex = -1;
 
       if (!cmd) return;
+
+      // Store in command history
+      history.push(cmdRaw);
 
       const userLine = document.createElement('div');
       userLine.className = 'terminal-line';
@@ -379,9 +478,9 @@ function initTerminal() {
         return;
       }
 
-      const responseHtml = commands[cmd] 
-        ? commands[cmd]() 
-        : `<div class="terminal-line" style="color:#ef4444;">Comando não reconhecido: "${escapeHtml(cmd)}". Digite <span class="cyan">help</span> para lista.</div>`;
+      const responseHtml = commands[cmd]
+        ? commands[cmd]()
+        : `<div class="terminal-line" style="color:#ef4444;">Comando nao reconhecido: "${escapeHtml(cmd)}". Digite <span class="cyan">help</span> para a lista de comandos.</div>`;
 
       if (responseHtml) {
         const respContainer = document.createElement('div');
@@ -389,9 +488,11 @@ function initTerminal() {
         output.appendChild(respContainer);
       }
 
-      // Auto scroll to bottom
+      // Auto scroll terminal to bottom
       const body = output.closest('.terminal-body');
-      if (body) body.scrollTop = body.scrollHeight;
+      if (body) {
+        body.scrollTop = body.scrollHeight;
+      }
     }
   });
 
@@ -402,88 +503,70 @@ function initTerminal() {
   }
 }
 
-/* ==========================================================================
-   COPY EMAIL
-   ========================================================================== */
+/* ==============================================================================
+   7. COPY EMAIL TO CLIPBOARD WITH MANAGED TOAST
+   ============================================================================== */
 function initCopyEmail() {
   const copyBtn = document.getElementById('copyEmailBtn');
   const toast = document.getElementById('toastNotice');
   const email = 'giftc444@gmail.com';
+  let toastTimer = null;
 
   if (!copyBtn) return;
 
   copyBtn.addEventListener('click', () => {
-    navigator.clipboard.writeText(email).then(() => {
-      showToast('Email copiado para a área de transferência!');
-    }).catch(() => {
-      showToast('Email: ' + email);
-    });
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(email)
+        .then(() => showToast('E-mail copiado para a área de transferência!'))
+        .catch(() => showToast('E-mail: ' + email));
+    } else {
+      showToast('E-mail: ' + email);
+    }
   });
 
   function showToast(msg) {
     if (!toast) return;
     toast.querySelector('.toast-msg').textContent = msg;
     toast.classList.add('show');
-    setTimeout(() => {
+
+    if (toastTimer) clearTimeout(toastTimer);
+    toastTimer = setTimeout(() => {
       toast.classList.remove('show');
     }, 3200);
   }
 }
 
-/* ==========================================================================
-   GSAP & ENTRANCE ANIMATIONS
-   ========================================================================== */
+/* ==============================================================================
+   8. ENTRANCE GSAP ANIMATIONS
+   ============================================================================== */
 function initScrollAnimations() {
   if (typeof gsap === 'undefined') return;
 
-  // Hero timeline animation
+  // Hero section entry animation timeline
   const tl = gsap.timeline({ defaults: { ease: 'power3.out', duration: 0.8 } });
-  tl.from('.status-beacon-badge', { opacity: 0, y: -20, delay: 0.2 })
-    .from('.hero-title', { opacity: 0, y: 30 }, '-=0.5')
+  tl.from('.status-beacon-badge', { opacity: 0, y: -20, delay: 0.15 })
+    .from('.hero-title', { opacity: 0, y: 25 }, '-=0.5')
     .from('.hero-description', { opacity: 0, y: 20 }, '-=0.5')
     .from('.hero-cta-group', { opacity: 0, y: 20 }, '-=0.5')
     .from('.hero-metrics-bar', { opacity: 0, y: 20 }, '-=0.5')
-    .from('.avatar-card', { opacity: 0, scale: 0.95 }, '-=0.8')
-    .from('.floating-chip', { opacity: 0, scale: 0.8, stagger: 0.2 }, '-=0.4');
+    .from('.holo-3d-stage', { opacity: 0, scale: 0.94, duration: 0.9 }, '-=0.7')
+    .from('.floating-chip', { opacity: 0, scale: 0.8, stagger: 0.15 }, '-=0.4');
 }
 
-/* ==========================================================================
-   3D CARD PARALLAX EFFECT
-   ========================================================================== */
-function init3DCardEffect() {
-  const wrapper = document.getElementById('heroVisualWrapper');
-  const card = document.getElementById('frontend3DCard');
-  if (!wrapper || !card) return;
-
-  wrapper.addEventListener('mousemove', (e) => {
-    const rect = wrapper.getBoundingClientRect();
-    const x = e.clientX - rect.left;
-    const y = e.clientY - rect.top;
-    const centerX = rect.width / 2;
-    const centerY = rect.height / 2;
-
-    const rotateX = ((y - centerY) / centerY) * -10;
-    const rotateY = ((x - centerX) / centerX) * 12;
-
-    card.style.transform = `perspective(1000px) rotateX(${rotateX.toFixed(2)}deg) rotateY(${rotateY.toFixed(2)}deg) scale3d(1.02, 1.02, 1.02)`;
-  });
-
-  wrapper.addEventListener('mouseleave', () => {
-    card.style.transform = 'perspective(1000px) rotateX(0deg) rotateY(0deg) scale3d(1, 1, 1)';
-  });
-}
-
-/* ==========================================================================
-   CLICK ANIMATION (RIPPLE & TACTILE FEEDBACK)
-   ========================================================================== */
+/* ==============================================================================
+   9. TACTILE CLICK ANIMATIONS (RADIAL NEON RIPPLE)
+   ============================================================================== */
 function initClickAnimations() {
   const container = document.getElementById('clickRippleContainer');
   if (!container) return;
 
   document.addEventListener('pointerdown', (e) => {
+    // Avoid creating ripple over 3D canvas so WebGL interaction stays pristine
+    if (e.target && e.target.id === 'hero3DCanvas') return;
+
     const ripple = document.createElement('div');
     ripple.className = 'click-ripple';
-    
+
     const size = 110;
     ripple.style.width = `${size}px`;
     ripple.style.height = `${size}px`;
@@ -495,12 +578,12 @@ function initClickAnimations() {
     setTimeout(() => {
       ripple.remove();
     }, 550);
-  });
+  }, { passive: true });
 }
 
-/* ==========================================================================
-   REDIRECTION & TRANSITION ANIMATIONS
-   ========================================================================== */
+/* ==============================================================================
+   10. REDIRECTION & ROUTE PROGRESS BAR ANIMATIONS
+   ============================================================================== */
 function initRedirectionAnimations() {
   const progressBar = document.getElementById('routeProgressBar');
   const curtain = document.getElementById('redirectionCurtain');
@@ -579,4 +662,3 @@ function initRedirectionAnimations() {
     });
   });
 }
-

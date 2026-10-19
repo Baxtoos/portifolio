@@ -535,11 +535,21 @@
   let frameCount = 0;
   let fpsTimer = 0;
 
-  // Animation Loop
+  // Animation Loop & Performance Guard
   let clock = new THREE.Clock();
+  let isTabVisible = true;
+
+  document.addEventListener('visibilitychange', () => {
+    isTabVisible = !document.hidden;
+    if (isTabVisible) {
+      clock.getDelta(); // Clear accumulated delta
+    }
+  });
 
   function animate() {
     requestAnimationFrame(animate);
+
+    if (!isTabVisible) return;
 
     const delta = clock.getDelta();
     const elapsedTime = clock.getElapsedTime();
