@@ -70,16 +70,20 @@ portifolio/
 
 ## Projetos em Destaque
 
-1. **DIEX Tech Studio & Ecossistema Digital**: Ecossistema de soluções web de alta conversão, portais corporativos e sistemas comerciais.
-2. **AppFisio (SaaS Full-Stack)**: Gestão clínica para fisioterapeutas com prescrição de exercícios e prontuário digital (*Node.js, Express, Prisma ORM, SQLite/PostgreSQL*).
-3. **EventHub (Arquitetura Java)**: Sistema corporativo de gerenciamento de eventos, lotes de ingressos e controle de acesso (*Java, Spring Boot, JPA/Hibernate, MVC*).
-4. **CarTon (carToon)**: Gestão operacional de oficinas mecânicas com ciclo de vida completo de engenharia de software e modelagem UML.
-5. **Sistema AURA**: Plataforma conteinerizada em microsserviços com Docker Compose, Nginx Proxy Reverso e MySQL.
-6. **Crucciolli Print3D**: Portal de manufatura aditiva, impressão 3D e prototipagem rápida industrial.
-7. **MT Sublimação & Brindes**: Catálogo virtual interativo com cotação automatizada e despacho para WhatsApp.
-8. **Smoke Salto Adega & Delivery**: E-commerce e vitrine digital com busca em tempo real.
-9. **Talismã Consultoria Imobiliária**: Portal de luxo para condomínios fechados e alto padrão em Indaiatuba.
-10. **MR Galvanoplastia**: Landing page técnica para indústria de revestimentos galvânicos e normas automotivas.
+1. **AppFisio (SaaS Full-Stack)**: [appfisio.vercel.app](https://appfisio.vercel.app) — Gestão clínica para fisioterapeutas com prescrição de exercícios e prontuário digital (*Node.js, Express, Prisma ORM, SQLite/PostgreSQL*).
+2. **MT Sublimação & Brindes**: [mtsublimacao.vercel.app](https://mtsublimacao.vercel.app) — Catálogo virtual interativo com cotação automatizada e despacho para WhatsApp (*React, TypeScript, Tailwind*).
+3. **Crucciolli Print3D**: [crucolli-lp.vercel.app](https://crucolli-lp.vercel.app) — Portal de manufatura aditiva, impressão 3D e prototipagem rápida industrial (*React, Three.js Specs, Vite*).
+4. **Smoke Salto Adega & Delivery**: [smoke-salto.vercel.app](https://smoke-salto.vercel.app) — E-commerce e vitrine digital com busca em tempo real (*React, Vite, Dark UI*).
+5. **DIEX Detailing Delivery**: [automotive-detailing-two.vercel.app](https://automotive-detailing-two.vercel.app) — Estética automotiva premium delivery e agendamento online.
+6. **MR Galvanoplastia**: [lp-mrgalvanoplastia.vercel.app](https://lp-mrgalvanoplastia.vercel.app) — Landing page técnica para indústria de revestimentos galvânicos e normas automotivas.
+7. **GELOU Fábrica de Gelo**: [lp-gelou.vercel.app](https://lp-gelou.vercel.app) — Plataforma digital para fábrica e distribuição comercial de gelo purificado.
+8. **Talismã Consultoria Imobiliária**: [generical-site-imobiliaria-sergio-bastos-projects-01da1aa3.vercel.app](https://generical-site-imobiliaria-sergio-bastos-projects-01da1aa3.vercel.app) — Portal imobiliário de alto padrão em Indaiatuba.
+9. **STL Lima 3D**: [stl-lima-lp.vercel.app](https://stl-lima-lp.vercel.app) — Manufatura aditiva e modelagem de peças mecânicas sob medida.
+10. **Industrial Automation**: [industrial-autom.vercel.app](https://industrial-autom.vercel.app) — Soluções industriais, automação fabril e painéis elétricos.
+11. **TaskFlow (Gerenciador React)**: [gerenciador-de-tarefas-react-black.vercel.app](https://gerenciador-de-tarefas-react-black.vercel.app) — Aplicação reativa de tarefas com React e Lucide Icons.
+12. **EventHub (Arquitetura Java)**: [github.com/Baxtoos/event-hub](https://github.com/Baxtoos/event-hub) — Gestão de eventos, lotes de ingressos e controle de acesso (*Java, Spring Boot, JPA/Hibernate, MVC*).
+13. **CarTon**: [github.com/Baxtoos/CarTon](https://github.com/Baxtoos/CarTon) — Gestão operacional de oficinas mecânicas com ciclo de vida completo de engenharia de software e modelagem UML.
+14. **Sistema AURA**: [github.com/Baxtoos/sistema-aura](https://github.com/Baxtoos/sistema-aura) — Plataforma conteinerizada em microsserviços com Docker Compose, Nginx e MySQL.
 
 ---
 
