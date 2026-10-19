@@ -1,4 +1,4 @@
-# Sérgio Bastos - Portfólio Profissional Full-Stack
+# Sérgio Bastos - Portfólio Profissional Full-Stack (Foco em Frontend)
 
 <div align="center">
 
@@ -6,8 +6,8 @@
 ![Badge Licença](https://img.shields.io/badge/Licença-MIT-8B5CF6?style=for-the-badge)
 ![Badge Stack](https://img.shields.io/badge/Stack-HTML5%20%7C%20CSS3%20%7C%20JS%20%7C%20GSAP-10B981?style=for-the-badge)
 
-**Engenheiro de Software & Desenvolvedor Full-Stack**  
-*Criando arquiteturas escaláveis, ecossistemas digitais e experiências web de alta conversão.*
+**Desenvolvedor Full-Stack (Foco em Frontend) & Engenheiro de Software**  
+*Especialista em interfaces modernas de alta performance e experiências web ricas com sustentação de ponta a ponta.*
 
 [Live Demo (GitHub Pages)](https://baxtoos.github.io/portifolio/) | [Perfil GitHub](https://github.com/Baxtoos) | [Contato](#contato)
 

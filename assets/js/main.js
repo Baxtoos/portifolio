@@ -326,7 +326,7 @@ function initTerminal() {
     `,
     whoami: () => `
 <div class="terminal-line cyan">Sérgio Bastos (Baxtoos)</div>
-<div class="terminal-line">Desenvolvedor Full-Stack e Engenheiro de Software.</div>
+<div class="terminal-line">Desenvolvedor Full-Stack com foco especializado em Frontend.</div>
 <div class="terminal-line">Localização: Salto / Indaiatuba - SP, Brasil</div>
 <div class="terminal-line">Formação: Ciência da Computação / Engenharia</div>
 <div class="terminal-line green">Status: Disponível para novos projetos e oportunidades.</div>

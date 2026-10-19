@@ -390,8 +390,8 @@ const profileData = {
   name: 'Sérgio Bastos',
   fullName: 'Sérgio Bastos da Silva Filho',
   handle: '@Baxtoos',
-  title: 'Full-Stack Software Developer & Systems Engineer',
-  tagline: 'Criando soluções digitais robustas, ecossistemas web escaláveis e interfaces de alta performance.',
+  title: 'Full-Stack Developer (Foco em Frontend)',
+  tagline: 'Desenvolvedor Full-Stack com foco especializado em Frontend, interfaces interativas e alta performance.',
   location: 'Salto / Indaiatuba - SP, Brasil',
   email: 'giftc444@gmail.com',
   github: 'https://github.com/Baxtoos',
@@ -402,14 +402,15 @@ const profileData = {
     clientsServed: '10+',
     satisfaction: '100%'
   },
-  bio: `Desenvolvedor Full-Stack e entusiasta de Engenharia de Software com formação sólida em Ciência da Computação (estruturas de dados, sistemas operacionais, computação gráfica e IHC).
-Atuando no desenvolvimento de sistemas web ponta a ponta — desde a concepção de arquitetura e modelagem de banco de dados (Node.js, Express, Java/Spring, Prisma ORM, MySQL) até interfaces modernas e interativas (React, TypeScript, CSS avançado).
+  bio: `Desenvolvedor Full-Stack com foco especializado em Frontend e formação sólida em Ciência da Computação (estruturas de dados, sistemas operacionais, computação gráfica e IHC).
+Atuo com visão completa de ponta a ponta — integrando backends eficientes (Node.js, Express, Java/Spring, Prisma ORM, SQL) a interfaces modernas, reativas e imersivas (React, TypeScript, CSS avançado, Three.js).
 Cofundador e desenvolvedor do ecossistema DIEX, com dezenas de aplicações ativas em produção na Vercel.`,
   terminalBio: [
     '> initializing baxtoos.sys...',
     '> load profile --user "Sérgio Bastos"',
+    '> role: "Full-Stack Developer (Foco em Frontend)"',
     '> status: available for high-impact opportunities & projects',
-    '> core_stack: [ "TypeScript", "React", "Node.js", "Java", "Docker", "Prisma", "Vercel" ]',
+    '> core_stack: [ "Frontend (React, TypeScript, 3D)", "Backend (Node.js, Java, Prisma)", "Docker", "Vercel" ]',
     '> location: "São Paulo, Brazil"',
     '> ready.'
   ]

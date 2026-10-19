@@ -2,7 +2,7 @@
 
 # Sérgio Bastos
 
-### `Full-Stack Developer & Software Engineering Enthusiast`
+### `Full-Stack Developer (Foco em Frontend) & Software Engineering Enthusiast`
 
 <p align="center">
   <a href="https://baxtoos.github.io/portifolio/">
@@ -19,9 +19,11 @@
 ```typescript
 const sergioBastos = {
   name: "Sérgio Bastos da Silva Filho",
-  role: "Full-Stack Software Developer",
+  role: "Full-Stack Developer (Foco em Frontend)",
   location: "Salto / Indaiatuba - SP, Brasil",
   ecosystem: "DIEX Tech Studio",
+  specialization: "Frontend Engineering, React, TypeScript & Interactive UI",
+  backendSkills: ["Node.js", "Java", "Spring Boot", "Prisma", "Docker"],
   passions: ["Clean Architecture", "High Performance Web", "SaaS Systems", "UI/UX Craft"],
   availableForWork: true
 };
@@ -33,9 +35,11 @@ const sergioBastos = {
 
 ### Sobre Mim
 
+- Desenvolvedor **Full-Stack com foco especializado em Frontend**, unindo a visão de arquitetura de ponta a ponta à paixão por criar interfaces ricas, intuitivas e de alta performance.
 - Graduando com base sólida em **Ciência da Computação** (Estruturas de Dados, Sistemas Operacionais, IHC, Computação Gráfica e Engenharia de Software).
-- Desenvolvedor Full-Stack focado em **soluções de ponta a ponta**: da modelagem e persistência de dados (Node.js, Express, Java/Spring, Prisma ORM, MySQL) a interfaces web fluidas e reativas (React, TypeScript, CSS moderno).
-- Cofundador e desenvolvedor no ecossistema **DIEX**, estruturando portais corporativos, catálogos digitais dinâmicos e sistemas de gestão comercial.
+- No **Frontend (foco principal)**: especialista em React, TypeScript, componentes reativos, design systems, CSS moderno, animações e integração 3D/WebGL.
+- No **Backend & Engenharia**: experiência comprovada em APIs RESTful com Node.js, Express, Java/Spring Boot, persistência relacional com Prisma ORM / MySQL e conteinerização com Docker.
+- Cofundador e desenvolvedor no ecossistema **DIEX**, estruturando portais corporativos, catálogos digitais dinâmicos e sistemas de gestão comercial ativos em produção.
 - Foco em **Clean Code**, arquitetura modular, tipagem estrita e entregas orientadas a resultados de negócio.
 
 ---
