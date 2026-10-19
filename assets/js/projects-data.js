@@ -252,7 +252,7 @@ const portfolioProjects = [
     ],
     techStack: ['React', 'TypeScript', 'Node.js', 'Vite', 'Supabase', 'Tailwind / Vanilla CSS', 'SEO Avançado'],
     githubUrl: 'https://github.com/Baxtoos',
-    liveUrl: '/* MUDAR DEPOIS */',
+    liveUrl: 'https://diex-site.vercel.app',
     featured: true,
     stats: {
       metric1: '+12 Soluções Entregues',

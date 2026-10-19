@@ -167,7 +167,7 @@ function initSkills() {
                 <i class="${skill.icon}" style="color:${skill.color};" aria-hidden="true"></i>
                 <span>${skill.name}</span>
               </div>
-              <span class="skill-item-badge">${skill.level}</span>
+              ${skill.level ? `<span class="skill-item-badge">${skill.level}</span>` : ''}
             </li>
           `).join('')}
         </ul>
@@ -216,9 +216,11 @@ function initProjects() {
               <a href="${project.githubUrl}" target="_blank" rel="noopener noreferrer" class="project-icon-link" title="Repositório GitHub" aria-label="Código no GitHub de ${project.title}">
                 <i class="fa-brands fa-github"></i>
               </a>
-              <a href="${project.liveUrl}" target="_blank" rel="noopener noreferrer" class="project-icon-link" title="Live Demo / Link" aria-label="Abrir demonstração ao vivo de ${project.title}">
-                <i class="fa-solid fa-arrow-up-right-from-square"></i>
-              </a>
+              ${project.liveUrl && project.liveUrl.startsWith('http') && !project.liveUrl.includes('/*')
+                ? `<a href="${project.liveUrl}" target="_blank" rel="noopener noreferrer" class="project-icon-link" title="Live Demo / Link" aria-label="Abrir demonstração ao vivo de ${project.title}">
+                    <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                  </a>`
+                : ''}
             </div>
           </div>
         </div>
@@ -335,8 +337,22 @@ function openProjectModal(projectId) {
 
   const githubLink = document.getElementById('modalGithubLink');
   const liveLink = document.getElementById('modalLiveLink');
-  if (githubLink) githubLink.href = project.githubUrl;
-  if (liveLink) liveLink.href = project.liveUrl;
+  if (githubLink) {
+    if (project.githubUrl && project.githubUrl.startsWith('http')) {
+      githubLink.href = project.githubUrl;
+      githubLink.style.display = 'inline-flex';
+    } else {
+      githubLink.style.display = 'none';
+    }
+  }
+  if (liveLink) {
+    if (project.liveUrl && project.liveUrl.startsWith('http') && !project.liveUrl.includes('/*')) {
+      liveLink.href = project.liveUrl;
+      liveLink.style.display = 'inline-flex';
+    } else {
+      liveLink.style.display = 'none';
+    }
+  }
 
   backdrop.classList.add('active');
   backdrop.setAttribute('aria-hidden', 'false');
