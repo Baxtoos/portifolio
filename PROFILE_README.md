@@ -1,15 +1,15 @@
 <div align="center">
 
-# 👨‍💻 Olá, mundo! Eu sou o Sérgio Bastos
+# Sérgio Bastos
 
 ### `Full-Stack Developer & Software Engineering Enthusiast`
 
 <p align="center">
   <a href="https://baxtoos.github.io/portifolio/">
-    <img src="https://img.shields.io/badge/🌐_Portfólio_Online-Ver_Ao_Vivo-00F0FF?style=for-the-badge&logoColor=black" alt="Portfólio" />
+    <img src="https://img.shields.io/badge/Portfólio_Online-Ver_Ao_Vivo-00F0FF?style=for-the-badge&logoColor=black" alt="Portfólio" />
   </a>
   <a href="mailto:giftc444@gmail.com">
-    <img src="https://img.shields.io/badge/✉️_E--mail-giftc444%40gmail.com-8B5CF6?style=for-the-badge" alt="Email" />
+    <img src="https://img.shields.io/badge/E--mail-giftc444%40gmail.com-8B5CF6?style=for-the-badge" alt="Email" />
   </a>
   <a href="https://github.com/Baxtoos">
     <img src="https://img.shields.io/badge/GitHub-@Baxtoos-10B981?style=for-the-badge&logo=github" alt="GitHub" />
@@ -31,16 +31,16 @@ const sergioBastos = {
 
 ---
 
-### 🚀 Sobre Mim
+### Sobre Mim
 
-- 🎓 Graduando com base sólida em **Ciência da Computação** (Estruturas de Dados, Sistemas Operacionais, IHC, Computação Gráfica e Engenharia de Software).
-- 🛠️ Desenvolvedor Full-Stack focado em **soluções de ponta a ponta**: da modelagem e persistência de dados (Node.js, Express, Java/Spring, Prisma ORM, MySQL) a interfaces web fluidas e reativas (React, TypeScript, CSS moderno).
-- 💡 Cofundador e desenvolvedor no ecossistema **DIEX**, estruturando portais corporativos, catálogos digitais dinâmicos e sistemas de gestão comercial.
-- 🎯 Foco em **Clean Code**, arquitetura modular, tipagem estrita e entregas orientadas a resultados de negócio.
+- Graduando com base sólida em **Ciência da Computação** (Estruturas de Dados, Sistemas Operacionais, IHC, Computação Gráfica e Engenharia de Software).
+- Desenvolvedor Full-Stack focado em **soluções de ponta a ponta**: da modelagem e persistência de dados (Node.js, Express, Java/Spring, Prisma ORM, MySQL) a interfaces web fluidas e reativas (React, TypeScript, CSS moderno).
+- Cofundador e desenvolvedor no ecossistema **DIEX**, estruturando portais corporativos, catálogos digitais dinâmicos e sistemas de gestão comercial.
+- Foco em **Clean Code**, arquitetura modular, tipagem estrita e entregas orientadas a resultados de negócio.
 
 ---
 
-### 💻 Stack Tecnológica & Ferramentas
+### Stack Tecnológica & Ferramentas
 
 <div align="center">
 
@@ -74,18 +74,18 @@ const sergioBastos = {
 
 ---
 
-### 🏆 Principais Repositórios & Projetos
+### Principais Repositórios & Projetos
 
 <table>
   <tr>
     <td width="50%">
-      <h3 align="center">🏥 <a href="https://github.com/Baxtoos/appFisio-">AppFisio</a></h3>
+      <h3 align="center"><a href="https://github.com/Baxtoos/appFisio-">AppFisio</a></h3>
       <p align="center"><strong>Plataforma SaaS para Fisioterapeutas</strong></p>
       <p>Sistema completo de prontuário eletrônico de pacientes, catálogo de exercícios e cronogramas de tratamento e reabilitação motora.</p>
       <p><strong>Stack:</strong> <code>Node.js</code> • <code>Express</code> • <code>Prisma ORM</code> • <code>SQLite/PostgreSQL</code></p>
     </td>
     <td width="50%">
-      <h3 align="center">🎟️ <a href="https://github.com/Baxtoos/event-hub">EventHub</a></h3>
+      <h3 align="center"><a href="https://github.com/Baxtoos/event-hub">EventHub</a></h3>
       <p align="center"><strong>Gestão Corporativa de Eventos &amp; Ingressos</strong></p>
       <p>Sistema corporativo com controle de acesso, lotes de ingressos e persistência relacional com rigor de Engenharia de Software.</p>
       <p><strong>Stack:</strong> <code>Java</code> • <code>Spring Boot</code> • <code>JPA / Hibernate</code> • <code>MVC</code></p>
@@ -93,13 +93,13 @@ const sergioBastos = {
   </tr>
   <tr>
     <td width="50%">
-      <h3 align="center">🚗 <a href="https://github.com/Baxtoos/CarTon">CarTon</a></h3>
+      <h3 align="center"><a href="https://github.com/Baxtoos/CarTon">CarTon</a></h3>
       <p align="center"><strong>Gestão Operacional de Oficinas Mecânicas</strong></p>
       <p>Software corporativo com ciclo de vida completo de engenharia: levantamento de requisitos, diagramas UML, ordens de serviço e estoque de peças.</p>
       <p><strong>Stack:</strong> <code>Java / Web</code> • <code>Modelagem UML</code> • <code>Engenharia de Software</code></p>
     </td>
     <td width="50%">
-      <h3 align="center">⚡ <a href="https://github.com/Baxtoos/sistema-aura">Sistema AURA</a></h3>
+      <h3 align="center"><a href="https://github.com/Baxtoos/sistema-aura">Sistema AURA</a></h3>
       <p align="center"><strong>Microsserviços Conteinerizados</strong></p>
       <p>Arquitetura em contêineres Docker com orquestração via Docker Compose, proxy reverso Nginx, API e banco de dados MySQL.</p>
       <p><strong>Stack:</strong> <code>Docker</code> • <code>Docker Compose</code> • <code>Nginx</code> • <code>MySQL</code></p>
@@ -107,13 +107,13 @@ const sergioBastos = {
   </tr>
   <tr>
     <td width="50%">
-      <h3 align="center">🌐 <a href="https://github.com/Baxtoos/portifolio">Portfólio Web</a></h3>
+      <h3 align="center"><a href="https://github.com/Baxtoos/portifolio">Portfólio Web</a></h3>
       <p align="center"><strong>Showcase Pessoal Interativo</strong></p>
       <p>Portfólio com terminal interativo, filtros dinâmicos, modais detalhados, tema escuro/claro e animações suaves.</p>
       <p><strong>Stack:</strong> <code>HTML5</code> • <code>CSS3 Moderno</code> • <code>JavaScript</code> • <code>GSAP</code></p>
     </td>
     <td width="50%">
-      <h3 align="center">🛍️ <a href="https://github.com/Baxtoos/mtsublimacao">MT Sublimação</a></h3>
+      <h3 align="center"><a href="https://github.com/Baxtoos/mtsublimacao">MT Sublimação</a></h3>
       <p align="center"><strong>Catálogo Digital &amp; Cotação Inteligente</strong></p>
       <p>Aplicação web para confecção e brindes corporativos com vitrine dinâmica e integração de pedidos estruturados via WhatsApp.</p>
       <p><strong>Stack:</strong> <code>React</code> • <code>TypeScript</code> • <code>Tailwind CSS</code></p>
@@ -123,7 +123,7 @@ const sergioBastos = {
 
 ---
 
-### 📊 Estatísticas do GitHub
+### Estatísticas do GitHub
 
 <div align="center">
 
@@ -135,11 +135,11 @@ const sergioBastos = {
 
 ---
 
-### 📬 Vamos Conversar?
+### Contato
 
-- 📧 **E-mail**: [giftc444@gmail.com](mailto:giftc444@gmail.com)
-- 🌐 **Portfólio**: [baxtoos.github.io/portifolio](https://baxtoos.github.io/portifolio/)
-- 📍 **Localização**: Salto / Indaiatuba - SP, Brasil
+- **E-mail**: [giftc444@gmail.com](mailto:giftc444@gmail.com)
+- **Portfólio**: [baxtoos.github.io/portifolio](https://baxtoos.github.io/portifolio/)
+- **Localização**: Salto / Indaiatuba - SP, Brasil
 
 <div align="center">
   <sub>Construído com dedicação e paixão por código limpo • Sérgio Bastos</sub>

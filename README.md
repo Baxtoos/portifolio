@@ -1,4 +1,4 @@
-# 🌌 Sérgio Bastos — Portfólio Profissional Full-Stack
+# Sérgio Bastos — Portfólio Profissional Full-Stack
 
 <div align="center">
 
@@ -9,13 +9,13 @@
 **Engenheiro de Software & Desenvolvedor Full-Stack**  
 *Criando arquiteturas escaláveis, ecossistemas digitais e experiências web de alta conversão.*
 
-[🌐 Live Demo (GitHub Pages)](https://baxtoos.github.io/portifolio/) • [💼 Perfil GitHub](https://github.com/Baxtoos) • [📬 Contato](#-contato)
+[Live Demo (GitHub Pages)](https://baxtoos.github.io/portifolio/) • [Perfil GitHub](https://github.com/Baxtoos) • [Contato](#contato)
 
 </div>
 
 ---
 
-## 🚀 Sobre o Projeto
+## Sobre o Projeto
 
 Este repositório contém a versão completa do portfólio web de **Sérgio Bastos** ([@Baxtoos](https://github.com/Baxtoos)), projetado com estética contemporânea **Obsidian & Cyber-Cyan**, zero dependências de build pesadas (100% Vanilla HTML5, CSS3 moderno com CSS Variables, Vanilla JS estruturado e animações GSAP), garantindo **carregamento instantâneo no GitHub Pages**.
 
@@ -23,20 +23,21 @@ O portfólio reúne os principais projetos de desenvolvimento de software, siste
 
 ---
 
-## ✨ Funcionalidades em Destaque
+## Funcionalidades em Destaque
 
-- ⚡ **Performance Extrema & Zero Build**: Roda nativamente em qualquer navegador ou servidor estático (GitHub Pages, Vercel, Netlify).
-- 🎨 **Design System Obsidian**: Efeito Glassmorphism com `backdrop-filter`, orbes dinâmicos de luz no plano de fundo, badges cibernéticos e tipografia de ponta (*Syne*, *Plus Jakarta Sans*, *JetBrains Mono*).
-- 💻 **Terminal Interativo Integrado**: Widget de terminal estilo Unix (`baxtoos@dev:~$`) com comandos interativos (`help`, `whoami`, `skills`, `projects`, `contact`, `clear`).
-- 📂 **Showcase Filtrável de Projetos**: Filtros dinâmicos em tempo real por categoria (*Full-Stack*, *Engenharia & Java*, *Frontend*, *Landing Pages B2B*).
-- 🔍 **Modal Imersivo de Especificação Técnica**: Cada projeto conta com ficha completa (Desafio, Solução de Engenharia, Métricas/Resultados, Tags da Stack, links de demonstração e código).
-- 📋 **Copy E-mail com Toast Feedback**: Copia o endereço `giftc444@gmail.com` com um clique e feedback animado.
-- 🌓 **Suporte a Temas (Dark / Light)**: Alternância suave com persistência no `localStorage`.
-- 📱 **100% Responsivo**: Layout otimizado para celulares, tablets e monitores ultrawide.
+- **Performance Extrema & Zero Build**: Roda nativamente em qualquer navegador ou servidor estático (GitHub Pages, Vercel, Netlify).
+- **Design System Obsidian**: Efeito Glassmorphism com `backdrop-filter`, orbes dinâmicos de luz no plano de fundo, badges cibernéticos e tipografia de ponta (*Syne*, *Plus Jakarta Sans*, *JetBrains Mono*).
+- **Terminal Interativo Integrado**: Widget de terminal estilo Unix (`baxtoos@dev:~$`) com comandos interativos (`help`, `whoami`, `skills`, `projects`, `contact`, `clear`).
+- **Showcase Filtrável de Projetos**: Filtros dinâmicos em tempo real por categoria (*Full-Stack*, *Engenharia & Java*, *Frontend*, *Landing Pages B2B*).
+- **Modal Imersivo de Especificação Técnica**: Cada projeto conta com ficha completa (Desafio, Solução de Engenharia, Métricas/Resultados, Tags da Stack, links de demonstração e código).
+- **Copy E-mail com Toast Feedback**: Copia o endereço `giftc444@gmail.com` com um clique e feedback animado.
+- **Suporte a Temas (Dark / Light)**: Alternância suave com persistência no `localStorage`.
+- **Animações de Clique e Redirecionamento**: Feedback tátil com efeito de ondulação radial neon e barra de progresso suave no topo.
+- **100% Responsivo**: Layout otimizado para celulares, tablets e monitores ultrawide.
 
 ---
 
-## 🛠️ Tecnologias & Fundamentos
+## Tecnologias & Fundamentos
 
 | Camada | Tecnologias Utilizadas |
 | :--- | :--- |
@@ -47,7 +48,7 @@ O portfólio reúne os principais projetos de desenvolvimento de software, siste
 
 ---
 
-## 📂 Estrutura do Repositório
+## Estrutura do Repositório
 
 ```bash
 portifolio/
@@ -56,7 +57,7 @@ portifolio/
 │   ├── css/
 │   │   └── style.css           # Design system completo, temas, responsividade e componentes
 │   ├── js/
-│   │   ├── main.js             # Lógica interativa (terminal, modal, filtros, toast, tema)
+│   │   ├── main.js             # Lógica interativa (terminal, modal, filtros, toast, tema, animações)
 │   │   └── projects-data.js    # Dados curados dos projetos, métricas e competências
 │   └── images/
 │       ├── frontend-3d.jpg     # Visual de arquitetura e tecnologia frontend em 3D
@@ -67,7 +68,7 @@ portifolio/
 
 ---
 
-## 🏆 Projetos em Destaque
+## Projetos em Destaque
 
 1. **DIEX Tech Studio & Ecossistema Digital**: Ecossistema de soluções web de alta conversão, portais corporativos e sistemas comerciais.
 2. **AppFisio (SaaS Full-Stack)**: Gestão clínica para fisioterapeutas com prescrição de exercícios e prontuário digital (*Node.js, Express, Prisma ORM, SQLite/PostgreSQL*).
@@ -82,7 +83,7 @@ portifolio/
 
 ---
 
-## ⚡ Como Publicar no GitHub Pages em 1 Minuto
+## Como Publicar no GitHub Pages em 1 Minuto
 
 1. Faça o commit e push deste repositório para o seu GitHub:
    ```bash
@@ -95,11 +96,11 @@ portifolio/
 4. Em **Build and deployment > Source**, selecione **Deploy from a branch**.
 5. Em **Branch**, selecione `main` e a pasta `/ (root)`. Clique em **Save**.
 6. Em cerca de 30 segundos, seu portfólio estará online no endereço:  
-   👉 **`https://baxtoos.github.io/portifolio/`**
+   **`https://baxtoos.github.io/portifolio/`**
 
 ---
 
-## 💻 Como Rodar Localmente
+## Como Rodar Localmente
 
 Você pode abrir diretamente o arquivo `index.html` em qualquer navegador, ou rodar um servidor local leve:
 
@@ -116,7 +117,7 @@ npx serve .
 
 ---
 
-## 📬 Contato
+## Contato
 
 - **Desenvolvedor**: Sérgio Bastos da Silva Filho
 - **GitHub**: [@Baxtoos](https://github.com/Baxtoos)
