@@ -289,16 +289,6 @@ function openProjectModal(projectId) {
   document.getElementById('modalMetric3').textContent = project.stats?.metric3 || 'Clean Code';
 
   document.getElementById('modalOverview').textContent = project.overview || project.shortDescription;
-  document.getElementById('modalChallenge').textContent = project.challenge || 'Desenvolvimento e estruturação de arquitetura moderna de software.';
-  document.getElementById('modalSolution').textContent = project.solution || 'Implementação modular com boas práticas e alta performance.';
-
-  // Key features
-  const featuresList = document.getElementById('modalFeaturesList');
-  if (featuresList && project.keyFeatures) {
-    featuresList.innerHTML = project.keyFeatures.map(feat => `
-      <li><i class="fa-solid fa-circle-check"></i> <span>${feat}</span></li>
-    `).join('');
-  }
 
   // Tech stack tags
   const modalTechTags = document.getElementById('modalTechTags');
