@@ -2,7 +2,7 @@
 
 # Sérgio Bastos
 
-### `Full-Stack Developer (Foco em Frontend) & Software Engineering Enthusiast`
+### `Desenvolvedor Full-Stack (Foco em Frontend) & Engenheiro de Software`
 
 <p align="center">
   <a href="https://baxtoos.github.io/portifolio/">
@@ -21,9 +21,8 @@ const sergioBastos = {
   name: "Sérgio Bastos da Silva Filho",
   role: "Full-Stack Developer (Foco em Frontend)",
   location: "Salto / Indaiatuba - SP, Brasil",
-  ecosystem: "DIEX Tech Studio",
   specialization: "Frontend Engineering, React, TypeScript & Interactive UI",
-  backendSkills: ["Node.js", "Java", "Spring Boot", "Prisma", "Docker"],
+  backendSkills: ["Node.js", "Java", "Spring Boot", "Python", "C++", "Prisma", "Docker"],
   passions: ["Clean Architecture", "High Performance Web", "SaaS Systems", "UI/UX Craft"],
   availableForWork: true
 };
@@ -35,9 +34,9 @@ const sergioBastos = {
 
 ### Sobre Mim
 
-- Desenvolvedor **Full-Stack com foco especializado em Frontend**, unindo a visão de arquitetura de ponta a ponta à paixão por criar interfaces ricas, intuitivas e de alta performance.
-- Graduando com base sólida em **Ciência da Computação** (Estruturas de Dados, Sistemas Operacionais, IHC, Computação Gráfica e Engenharia de Software).
-- No **Frontend (foco principal)**: especialista em React, TypeScript, componentes reativos, design systems, CSS moderno, animações e integração 3D/WebGL.
+- Desenvolvedor **Full-Stack com foco especializado em Frontend**.
+- Graduando com base sólida em **Ciência da Computação**.
+- No **Frontend (foco principal)**: React, TypeScript, componentes reativos, design systems, CSS moderno, animações e integração 3D/WebGL.
 - No **Backend & Engenharia**: experiência comprovada em APIs RESTful com Node.js, Express, Java/Spring Boot, persistência relacional com Prisma ORM / MySQL e conteinerização com Docker.
 - Cofundador e desenvolvedor no ecossistema **DIEX**, estruturando portais corporativos, catálogos digitais dinâmicos e sistemas de gestão comercial ativos em produção.
 - Foco em **Clean Code**, arquitetura modular, tipagem estrita e entregas orientadas a resultados de negócio.
@@ -62,6 +61,8 @@ const sergioBastos = {
 ![Express](https://img.shields.io/badge/Express.js-404D59?style=for-the-badge)
 ![Java](https://img.shields.io/badge/Java-ED8B00?style=for-the-badge&logo=openjdk&logoColor=white)
 ![Spring](https://img.shields.io/badge/Spring_Boot-6DB33F?style=for-the-badge&logo=spring&logoColor=white)
+![Python](https://img.shields.io/badge/Python-3776AB?logo=python&logoColor=white&style=for-the-badge)
+![C++](https://img.shields.io/badge/C%2B%2B-00599C?logo=c%2B%2B&logoColor=white&style=for-the-badge)
 ![Prisma](https://img.shields.io/badge/Prisma_ORM-2D3748?style=for-the-badge&logo=prisma&logoColor=white)
 ![MySQL](https://img.shields.io/badge/MySQL-00000F?style=for-the-badge&logo=mysql&logoColor=white)
 ![PostgreSQL](https://img.shields.io/badge/PostgreSQL-316192?style=for-the-badge&logo=postgresql&logoColor=white)

@@ -266,9 +266,9 @@ const portfolioProjects = [
     categoryLabel: 'Full-Stack & Ecossistema',
     badge: 'Destaque Corporativo',
     shortDescription: 'Ecossistema digital de soluções web de alta conversão, portais corporativos, catálogos dinâmicos e sistemas comerciais.',
-    coverImage: 'assets/images/projects/autom-hero.jpg',
+    coverImage: 'assets/images/projects/diex-ecosystem.png',
     gallery: [
-      'assets/images/projects/autom-hero.jpg',
+      'assets/images/projects/diex-ecosystem.png',
       'assets/images/projects/diex-auto-1.jpg',
       'assets/images/projects/diex-auto-2.jpg'
     ],
