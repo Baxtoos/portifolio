@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
+  <defs>
+    <linearGradient id="bxGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#00F0FF" />
+      <stop offset="100%" stop-color="#8B5CF6" />
+    </linearGradient>
+  </defs>
+  <!-- Background squircle -->
+  <rect x="2" y="2" width="60" height="60" rx="16" fill="url(#bxGrad)" />
+  <!-- Left bracket < -->
+  <path d="M 22 21 L 13 32 L 22 43" fill="none" stroke="#07090E" stroke-width="5.2" stroke-linecap="round" stroke-linejoin="round" />
+  <!-- Right bracket > -->
+  <path d="M 42 21 L 51 32 L 42 43" fill="none" stroke="#07090E" stroke-width="5.2" stroke-linecap="round" stroke-linejoin="round" />
+  <!-- Slash / -->
+  <path d="M 35 19 L 29 45" fill="none" stroke="#07090E" stroke-width="4.6" stroke-linecap="round" />
+</svg>

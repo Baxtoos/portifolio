@@ -6,10 +6,16 @@
 ![Badge Licença](https://img.shields.io/badge/Licença-MIT-8B5CF6?style=for-the-badge)
 ![Badge Stack](https://img.shields.io/badge/Stack-HTML5%20%7C%20CSS3%20%7C%20JS%20%7C%20GSAP-10B981?style=for-the-badge)
 
+<br />
+
+<a href="https://baxtoos.github.io/portifolio/" target="_blank">
+  <img src="assets/images/portfolio-preview.png" alt="Sérgio Bastos - Portfólio WebGL 3D" width="100%" />
+</a>
+
 **Desenvolvedor Full-Stack (Foco em Frontend) & Engenheiro de Software**  
 *Especialista em interfaces modernas de alta performance e experiências web ricas com sustentação de ponta a ponta.*
 
-[Live Demo (GitHub Pages)](https://baxtoos.github.io/portifolio/) | [Perfil GitHub](https://github.com/Baxtoos) | [Contato](#contato)
+[🚀 Acessar Demonstração Ao Vivo (GitHub Pages)](https://baxtoos.github.io/portifolio/) | [Perfil GitHub](https://github.com/Baxtoos) | [Contato](#contato)
 
 </div>
 

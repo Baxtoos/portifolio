@@ -238,28 +238,6 @@ const portfolioProjects = [
     overview: 'Plataforma industrial em produção na Vercel para apresentação de serviços de automação fabril e engenharia de painéis elétricos industriais.'
   },
   {
-    id: 'gerenciador-tarefas',
-    title: 'TaskFlow — Gerenciador de Tarefas React',
-    category: 'frontend',
-    categoryLabel: 'Frontend & React',
-    badge: 'Vercel Produção',
-    shortDescription: 'Aplicação web reativa para gerenciamento ágil de tarefas e produtividade com estados dinâmicos e biblioteca de ícones Lucide.',
-    coverImage: 'assets/images/projects/appfisio-preview.jpg',
-    gallery: [
-      'assets/images/projects/appfisio-preview.jpg'
-    ],
-    techStack: ['React', 'TypeScript', 'Lucide React', 'Vite', 'Vercel'],
-    githubUrl: 'https://github.com/Baxtoos/gerenciador-de-tarefas-react',
-    liveUrl: 'https://gerenciador-de-tarefas-react-black.vercel.app',
-    featured: false,
-    stats: {
-      metric1: 'React 18',
-      metric2: 'Lucide Icons',
-      metric3: 'Produtividade'
-    },
-    overview: 'Aplicação web em produção na Vercel desenvolvida com React e Vite, focada em organização pessoal de tarefas, priorização e controle de fluxo diário.'
-  },
-  {
     id: 'diex-ecosystem',
     title: 'DIEX Tech Studio & Ecossistema Digital',
     category: 'fullstack',
@@ -274,7 +252,7 @@ const portfolioProjects = [
     ],
     techStack: ['React', 'TypeScript', 'Node.js', 'Vite', 'Supabase', 'Tailwind / Vanilla CSS', 'SEO Avançado'],
     githubUrl: 'https://github.com/Baxtoos',
-    liveUrl: 'https://sua-marca-3d-portfolio.vercel.app',
+    liveUrl: '/* MUDAR DEPOIS */',
     featured: true,
     stats: {
       metric1: '+12 Soluções Entregues',
@@ -326,62 +304,40 @@ const portfolioProjects = [
       metric3: 'Gestão de Frotas'
     },
     overview: 'Software corporativo estruturado em pipeline rigoroso de engenharia de software com repositório organizado em requisitos, análise e design UML, implementação e testes.'
-  },
-  {
-    id: 'sistema-aura',
-    title: 'AURA — Plataforma em Microsserviços',
-    category: 'fullstack',
-    categoryLabel: 'Backend & DevOps',
-    badge: 'Docker & Microsserviços',
-    shortDescription: 'Ambiente conteinerizado com orquestração Docker Compose, reverse proxy Nginx, banco de dados MySQL e API RESTful.',
-    coverImage: 'assets/images/projects/aura-preview.jpg',
-    gallery: [
-      'assets/images/projects/aura-preview.jpg'
-    ],
-    techStack: ['Docker', 'Docker Compose', 'Nginx', 'MySQL', 'Node.js / API', 'Linux Containers'],
-    githubUrl: 'https://github.com/Baxtoos/sistema-aura',
-    liveUrl: 'https://github.com/Baxtoos/sistema-aura',
-    featured: false,
-    stats: {
-      metric1: '3 Serviços Isolados',
-      metric2: 'Nginx Proxy Reverso',
-      metric3: 'Volumes Persistentes'
-    },
-    overview: 'Infraestrutura automatizada em contêineres Docker com rede isolada, roteamento de portas através de proxy reverso Nginx e persistência de dados em volumes do MySQL.'
   }
 ];
 
 // Technical competencies and skills
 const technicalSkills = {
   frontend: [
-    { name: 'React / Next.js', level: 'Avançado', icon: 'fa-brands fa-react', color: '#61DAFB' },
-    { name: 'TypeScript', level: 'Avançado', icon: 'fa-solid fa-code', color: '#3178C6' },
-    { name: 'JavaScript (ES6+)', level: 'Especialista', icon: 'fa-brands fa-js', color: '#F7DF1E' },
-    { name: 'HTML5 & CSS3 Moderno', level: 'Especialista', icon: 'fa-brands fa-html5', color: '#E34F26' },
-    { name: 'Tailwind CSS & Vanilla CSS', level: 'Avançado', icon: 'fa-brands fa-css3-alt', color: '#38BDF8' },
-    { name: 'Design Systems & UI/UX', level: 'Avançado', icon: 'fa-solid fa-palette', color: '#EC4899' },
-    { name: 'Three.js & Gráficos 3D', level: 'Intermediário', icon: 'fa-solid fa-cube', color: '#00F0FF' }
+    { name: 'React / Next.js', icon: 'fa-brands fa-react', color: '#61DAFB' },
+    { name: 'TypeScript', icon: 'fa-solid fa-code', color: '#3178C6' },
+    { name: 'JavaScript (ES6+)', icon: 'fa-brands fa-js', color: '#F7DF1E' },
+    { name: 'HTML5 & CSS3 Moderno', icon: 'fa-brands fa-html5', color: '#E34F26' },
+    { name: 'Tailwind CSS & Vanilla CSS', icon: 'fa-brands fa-css3-alt', color: '#38BDF8' },
+    { name: 'Design Systems & UI/UX', icon: 'fa-solid fa-palette', color: '#EC4899' },
+    { name: 'Three.js & Gráficos 3D', icon: 'fa-solid fa-cube', color: '#00F0FF' }
   ],
   backend: [
-    { name: 'Node.js & Express', level: 'Avançado', icon: 'fa-brands fa-node-js', color: '#339933' },
-    { name: 'Java & Spring Boot', level: 'Avançado', icon: 'fa-brands fa-java', color: '#EA2D2E' },
-    { name: 'Prisma ORM & Hibernate', level: 'Avançado', icon: 'fa-solid fa-database', color: '#5A67D8' },
-    { name: 'RESTful APIs & GraphQL', level: 'Avançado', icon: 'fa-solid fa-network-wired', color: '#00F0FF' },
-    { name: 'MySQL, PostgreSQL & SQLite', level: 'Avançado', icon: 'fa-solid fa-server', color: '#4479A1' },
-    { name: 'Supabase & BaaS', level: 'Intermediário', icon: 'fa-solid fa-bolt', color: '#3ECF8E' }
+    { name: 'Node.js & Express', icon: 'fa-brands fa-node-js', color: '#339933' },
+    { name: 'Java & Spring Boot', icon: 'fa-brands fa-java', color: '#EA2D2E' },
+    { name: 'Prisma ORM & Hibernate', icon: 'fa-solid fa-database', color: '#5A67D8' },
+    { name: 'RESTful APIs & GraphQL', icon: 'fa-solid fa-network-wired', color: '#00F0FF' },
+    { name: 'MySQL, PostgreSQL & SQLite', icon: 'fa-solid fa-server', color: '#4479A1' },
+    { name: 'Supabase & BaaS', icon: 'fa-solid fa-bolt', color: '#3ECF8E' }
   ],
   devops: [
-    { name: 'Vercel & Cloud Deploy', level: 'Especialista', icon: 'fa-solid fa-cloud-arrow-up', color: '#00F0FF' },
-    { name: 'Docker & Docker Compose', level: 'Avançado', icon: 'fa-brands fa-docker', color: '#2496ED' },
-    { name: 'Git & GitHub Workflow', level: 'Especialista', icon: 'fa-brands fa-github', color: '#FFFFFF' },
-    { name: 'Nginx Proxy Reverso', level: 'Intermediário', icon: 'fa-solid fa-microchip', color: '#009639' },
-    { name: 'Linux & Terminal Bash', level: 'Avançado', icon: 'fa-brands fa-linux', color: '#FCC624' }
+    { name: 'Vercel & Cloud Deploy', icon: 'fa-solid fa-cloud-arrow-up', color: '#00F0FF' },
+    { name: 'Docker & Docker Compose', icon: 'fa-brands fa-docker', color: '#2496ED' },
+    { name: 'Git & GitHub Workflow', icon: 'fa-brands fa-github', color: '#FFFFFF' },
+    { name: 'Nginx Proxy Reverso', icon: 'fa-solid fa-microchip', color: '#009639' },
+    { name: 'Linux & Terminal Bash', icon: 'fa-brands fa-linux', color: '#FCC624' }
   ],
   engineering: [
-    { name: 'Estruturas de Dados & Algoritmos', level: 'Sólido (C/Java)', icon: 'fa-solid fa-sitemap', color: '#A78BFA' },
-    { name: 'Arquitetura MVC & Camadas', level: 'Avançado', icon: 'fa-solid fa-layer-group', color: '#6EE7B7' },
-    { name: 'IHC (Interação Humano-Computador)', level: 'Avançado', icon: 'fa-solid fa-users', color: '#F472B6' },
-    { name: 'Análise, Requisitos & UML', level: 'Avançado', icon: 'fa-solid fa-diagram-project', color: '#FBBF24' }
+    { name: 'Estruturas de Dados & Algoritmos', icon: 'fa-solid fa-sitemap', color: '#A78BFA' },
+    { name: 'Arquitetura MVC & Camadas', icon: 'fa-solid fa-layer-group', color: '#6EE7B7' },
+    { name: 'IHC (Interação Humano-Computador)', icon: 'fa-solid fa-users', color: '#F472B6' },
+    { name: 'Análise, Requisitos & UML', icon: 'fa-solid fa-diagram-project', color: '#FBBF24' }
   ]
 };
 
