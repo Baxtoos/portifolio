@@ -1,4 +1,4 @@
-# Sérgio Bastos — Portfólio Profissional Full-Stack
+# Sérgio Bastos - Portfólio Profissional Full-Stack
 
 <div align="center">
 
@@ -9,7 +9,7 @@
 **Engenheiro de Software & Desenvolvedor Full-Stack**  
 *Criando arquiteturas escaláveis, ecossistemas digitais e experiências web de alta conversão.*
 
-[Live Demo (GitHub Pages)](https://baxtoos.github.io/portifolio/) • [Perfil GitHub](https://github.com/Baxtoos) • [Contato](#contato)
+[Live Demo (GitHub Pages)](https://baxtoos.github.io/portifolio/) | [Perfil GitHub](https://github.com/Baxtoos) | [Contato](#contato)
 
 </div>
 
@@ -29,7 +29,7 @@ O portfólio reúne os principais projetos de desenvolvimento de software, siste
 - **Design System Obsidian**: Efeito Glassmorphism com `backdrop-filter`, orbes dinâmicos de luz no plano de fundo, badges cibernéticos e tipografia de ponta (*Syne*, *Plus Jakarta Sans*, *JetBrains Mono*).
 - **Terminal Interativo Integrado**: Widget de terminal estilo Unix (`baxtoos@dev:~$`) com comandos interativos (`help`, `whoami`, `skills`, `projects`, `contact`, `clear`).
 - **Showcase Filtrável de Projetos**: Filtros dinâmicos em tempo real por categoria (*Full-Stack*, *Engenharia & Java*, *Frontend*, *Landing Pages B2B*).
-- **Modal Imersivo de Especificação Técnica**: Cada projeto conta com ficha completa (Desafio, Solução de Engenharia, Métricas/Resultados, Tags da Stack, links de demonstração e código).
+- **Modal Imersivo de Especificação Técnica**: Cada projeto conta com ficha completa (Visão Geral, Métricas, Tags da Stack, links de demonstração e código).
 - **Copy E-mail com Toast Feedback**: Copia o endereço `giftc444@gmail.com` com um clique e feedback animado.
 - **Suporte a Temas (Dark / Light)**: Alternância suave com persistência no `localStorage`.
 - **Animações de Clique e Redirecionamento**: Feedback tátil com efeito de ondulação radial neon e barra de progresso suave no topo.
@@ -52,38 +52,38 @@ O portfólio reúne os principais projetos de desenvolvimento de software, siste
 
 ```bash
 portifolio/
-├── index.html                  # Estrutura principal semântica da aplicação
-├── assets/
-│   ├── css/
-│   │   └── style.css           # Design system completo, temas, responsividade e componentes
-│   ├── js/
-│   │   ├── main.js             # Lógica interativa (terminal, modal, filtros, toast, tema, animações)
-│   │   └── projects-data.js    # Dados curados dos projetos, métricas e competências
-│   └── images/
-│       ├── frontend-3d.jpg     # Visual de arquitetura e tecnologia frontend em 3D
-│       └── projects/           # Imagens em alta resolução dos projetos e sistemas
-├── README.md                   # Documentação do repositório
-└── PROFILE_README.md           # Template especial pronto para o perfil do GitHub (Baxtoos/Baxtoos)
+|-- index.html                  # Estrutura principal semântica da aplicação
+|-- assets/
+|   |-- css/
+|   |   `-- style.css           # Design system completo, temas, responsividade e componentes
+|   |-- js/
+|   |   |-- main.js             # Lógica interativa (terminal, modal, filtros, toast, tema, animações)
+|   |   `-- projects-data.js    # Dados curados dos projetos, métricas e competências
+|   `-- images/
+|       |-- frontend-3d.jpg     # Visual de arquitetura e tecnologia frontend em 3D
+|       `-- projects/           # Imagens em alta resolução dos projetos e sistemas
+|-- README.md                   # Documentação do repositório
+`-- PROFILE_README.md           # Template especial pronto para o perfil do GitHub (Baxtoos/Baxtoos)
 ```
 
 ---
 
 ## Projetos em Destaque
 
-1. **AppFisio (SaaS Full-Stack)**: [appfisio.vercel.app](https://appfisio.vercel.app) — Gestão clínica para fisioterapeutas com prescrição de exercícios e prontuário digital (*Node.js, Express, Prisma ORM, SQLite/PostgreSQL*).
-2. **MT Sublimação & Brindes**: [mtsublimacao.vercel.app](https://mtsublimacao.vercel.app) — Catálogo virtual interativo com cotação automatizada e despacho para WhatsApp (*React, TypeScript, Tailwind*).
-3. **Crucciolli Print3D**: [crucolli-lp.vercel.app](https://crucolli-lp.vercel.app) — Portal de manufatura aditiva, impressão 3D e prototipagem rápida industrial (*React, Three.js Specs, Vite*).
-4. **Smoke Salto Adega & Delivery**: [smoke-salto.vercel.app](https://smoke-salto.vercel.app) — E-commerce e vitrine digital com busca em tempo real (*React, Vite, Dark UI*).
-5. **DIEX Detailing Delivery**: [automotive-detailing-two.vercel.app](https://automotive-detailing-two.vercel.app) — Estética automotiva premium delivery e agendamento online.
-6. **MR Galvanoplastia**: [lp-mrgalvanoplastia.vercel.app](https://lp-mrgalvanoplastia.vercel.app) — Landing page técnica para indústria de revestimentos galvânicos e normas automotivas.
-7. **GELOU Fábrica de Gelo**: [lp-gelou.vercel.app](https://lp-gelou.vercel.app) — Plataforma digital para fábrica e distribuição comercial de gelo purificado.
-8. **Talismã Consultoria Imobiliária**: [generical-site-imobiliaria-sergio-bastos-projects-01da1aa3.vercel.app](https://generical-site-imobiliaria-sergio-bastos-projects-01da1aa3.vercel.app) — Portal imobiliário de alto padrão em Indaiatuba.
-9. **STL Lima 3D**: [stl-lima-lp.vercel.app](https://stl-lima-lp.vercel.app) — Manufatura aditiva e modelagem de peças mecânicas sob medida.
-10. **Industrial Automation**: [industrial-autom.vercel.app](https://industrial-autom.vercel.app) — Soluções industriais, automação fabril e painéis elétricos.
-11. **TaskFlow (Gerenciador React)**: [gerenciador-de-tarefas-react-black.vercel.app](https://gerenciador-de-tarefas-react-black.vercel.app) — Aplicação reativa de tarefas com React e Lucide Icons.
-12. **EventHub (Arquitetura Java)**: [github.com/Baxtoos/event-hub](https://github.com/Baxtoos/event-hub) — Gestão de eventos, lotes de ingressos e controle de acesso (*Java, Spring Boot, JPA/Hibernate, MVC*).
-13. **CarTon**: [github.com/Baxtoos/CarTon](https://github.com/Baxtoos/CarTon) — Gestão operacional de oficinas mecânicas com ciclo de vida completo de engenharia de software e modelagem UML.
-14. **Sistema AURA**: [github.com/Baxtoos/sistema-aura](https://github.com/Baxtoos/sistema-aura) — Plataforma conteinerizada em microsserviços com Docker Compose, Nginx e MySQL.
+1. **AppFisio (SaaS Full-Stack)**: [appfisio.vercel.app](https://appfisio.vercel.app) - Gestão clínica para fisioterapeutas com prescrição de exercícios e prontuário digital (*Node.js, Express, Prisma ORM, SQLite/PostgreSQL*).
+2. **MT Sublimação & Brindes**: [mtsublimacao.vercel.app](https://mtsublimacao.vercel.app) - Catálogo virtual interativo com cotação automatizada e despacho para WhatsApp (*React, TypeScript, Tailwind*).
+3. **Crucciolli Print3D**: [crucolli-lp.vercel.app](https://crucolli-lp.vercel.app) - Portal de manufatura aditiva, impressão 3D e prototipagem rápida industrial (*React, Three.js Specs, Vite*).
+4. **Smoke Salto Adega & Delivery**: [smoke-salto.vercel.app](https://smoke-salto.vercel.app) - E-commerce e vitrine digital com busca em tempo real (*React, Vite, Dark UI*).
+5. **DIEX Detailing Delivery**: [automotive-detailing-two.vercel.app](https://automotive-detailing-two.vercel.app) - Estética automotiva premium delivery e agendamento online.
+6. **MR Galvanoplastia**: [lp-mrgalvanoplastia.vercel.app](https://lp-mrgalvanoplastia.vercel.app) - Landing page técnica para indústria de revestimentos galvânicos e normas automotivas.
+7. **GELOU Fábrica de Gelo**: [lp-gelou.vercel.app](https://lp-gelou.vercel.app) - Plataforma digital para fábrica e distribuição comercial de gelo purificado.
+8. **Talismã Consultoria Imobiliária**: [generical-site-imobiliaria-sergio-bastos-projects-01da1aa3.vercel.app](https://generical-site-imobiliaria-sergio-bastos-projects-01da1aa3.vercel.app) - Portal imobiliário de alto padrão em Indaiatuba.
+9. **STL Lima 3D**: [stl-lima-lp.vercel.app](https://stl-lima-lp.vercel.app) - Manufatura aditiva e modelagem de peças mecânicas sob medida.
+10. **Industrial Automation**: [industrial-autom.vercel.app](https://industrial-autom.vercel.app) - Soluções industriais, automação fabril e painéis elétricos.
+11. **TaskFlow (Gerenciador React)**: [gerenciador-de-tarefas-react-black.vercel.app](https://gerenciador-de-tarefas-react-black.vercel.app) - Aplicação reativa de tarefas com React e Lucide Icons.
+12. **EventHub (Arquitetura Java)**: [github.com/Baxtoos/event-hub](https://github.com/Baxtoos/event-hub) - Gestão de eventos, lotes de ingressos e controle de acesso (*Java, Spring Boot, JPA/Hibernate, MVC*).
+13. **CarTon**: [github.com/Baxtoos/CarTon](https://github.com/Baxtoos/CarTon) - Gestão operacional de oficinas mecânicas com ciclo de vida completo de engenharia de software e modelagem UML.
+14. **Sistema AURA**: [github.com/Baxtoos/sistema-aura](https://github.com/Baxtoos/sistema-aura) - Plataforma conteinerizada em microsserviços com Docker Compose, Nginx e MySQL.
 
 ---
 
@@ -131,5 +131,5 @@ npx serve .
 ---
 
 <div align="center">
-  <sub>Desenvolvido com dedicação e excelência técnica por Sérgio Bastos © 2026</sub>
+  <sub>Desenvolvido por Sérgio Bastos - 2026</sub>
 </div>

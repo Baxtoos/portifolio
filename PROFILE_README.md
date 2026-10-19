@@ -79,34 +79,34 @@ const sergioBastos = {
 <table>
   <tr>
     <td width="50%">
-      <h3 align="center"><a href="https://github.com/Baxtoos/appFisio-">AppFisio</a> • <a href="https://appfisio.vercel.app">Live</a></h3>
+      <h3 align="center"><a href="https://github.com/Baxtoos/appFisio-">AppFisio</a> | <a href="https://appfisio.vercel.app">Live</a></h3>
       <p align="center"><strong>Plataforma SaaS para Fisioterapeutas</strong></p>
       <p>Sistema completo de prontuário eletrônico de pacientes, catálogo de exercícios e cronogramas de tratamento e reabilitação motora.</p>
       <p><strong>Deploy Vercel:</strong> <a href="https://appfisio.vercel.app">appfisio.vercel.app</a></p>
-      <p><strong>Stack:</strong> <code>Node.js</code> • <code>Express</code> • <code>Prisma ORM</code> • <code>SQLite/PostgreSQL</code></p>
+      <p><strong>Stack:</strong> <code>Node.js</code> / <code>Express</code> / <code>Prisma ORM</code> / <code>SQLite/PostgreSQL</code></p>
     </td>
     <td width="50%">
-      <h3 align="center"><a href="https://github.com/Baxtoos/mtsublimacao">MT Sublimação</a> • <a href="https://mtsublimacao.vercel.app">Live</a></h3>
+      <h3 align="center"><a href="https://github.com/Baxtoos/mtsublimacao">MT Sublimação</a> | <a href="https://mtsublimacao.vercel.app">Live</a></h3>
       <p align="center"><strong>Catálogo Digital &amp; Cotação Inteligente</strong></p>
       <p>Aplicação web para confecção e brindes corporativos com vitrine dinâmica e integração de pedidos estruturados via WhatsApp.</p>
       <p><strong>Deploy Vercel:</strong> <a href="https://mtsublimacao.vercel.app">mtsublimacao.vercel.app</a></p>
-      <p><strong>Stack:</strong> <code>React</code> • <code>TypeScript</code> • <code>Tailwind CSS</code></p>
+      <p><strong>Stack:</strong> <code>React</code> / <code>TypeScript</code> / <code>Tailwind CSS</code></p>
     </td>
   </tr>
   <tr>
     <td width="50%">
-      <h3 align="center"><a href="https://crucolli-lp.vercel.app">Crucciolli Print3D</a> • <a href="https://crucolli-lp.vercel.app">Live</a></h3>
+      <h3 align="center"><a href="https://crucolli-lp.vercel.app">Crucciolli Print3D</a> | <a href="https://crucolli-lp.vercel.app">Live</a></h3>
       <p align="center"><strong>Manufatura Aditiva &amp; Impressão 3D</strong></p>
       <p>Portal corporativo e técnico de impressão 3D sob medida, peças de engenharia e prototipagem rápida industrial.</p>
       <p><strong>Deploy Vercel:</strong> <a href="https://crucolli-lp.vercel.app">crucolli-lp.vercel.app</a></p>
-      <p><strong>Stack:</strong> <code>React</code> • <code>TypeScript</code> • <code>Three.js Specs</code> • <code>Vite</code></p>
+      <p><strong>Stack:</strong> <code>React</code> / <code>TypeScript</code> / <code>Three.js Specs</code> / <code>Vite</code></p>
     </td>
     <td width="50%">
-      <h3 align="center"><a href="https://smoke-salto.vercel.app">Smoke Salto</a> • <a href="https://smoke-salto.vercel.app">Live</a></h3>
+      <h3 align="center"><a href="https://smoke-salto.vercel.app">Smoke Salto</a> | <a href="https://smoke-salto.vercel.app">Live</a></h3>
       <p align="center"><strong>Adega &amp; Tabacaria Delivery</strong></p>
       <p>Vitrine digital em Dark Mode para conveniência com busca instantânea por marcas e categorias.</p>
       <p><strong>Deploy Vercel:</strong> <a href="https://smoke-salto.vercel.app">smoke-salto.vercel.app</a></p>
-      <p><strong>Stack:</strong> <code>React</code> • <code>Vite</code> • <code>Instant Search</code> • <code>Mobile First</code></p>
+      <p><strong>Stack:</strong> <code>React</code> / <code>Vite</code> / <code>Instant Search</code> / <code>Mobile First</code></p>
     </td>
   </tr>
   <tr>
@@ -114,13 +114,13 @@ const sergioBastos = {
       <h3 align="center"><a href="https://github.com/Baxtoos/event-hub">EventHub</a></h3>
       <p align="center"><strong>Gestão Corporativa de Eventos &amp; Ingressos</strong></p>
       <p>Sistema corporativo com controle de acesso, lotes de ingressos e persistência relacional com rigor de Engenharia de Software.</p>
-      <p><strong>Stack:</strong> <code>Java</code> • <code>Spring Boot</code> • <code>JPA / Hibernate</code> • <code>MVC</code></p>
+      <p><strong>Stack:</strong> <code>Java</code> / <code>Spring Boot</code> / <code>JPA / Hibernate</code> / <code>MVC</code></p>
     </td>
     <td width="50%">
       <h3 align="center"><a href="https://github.com/Baxtoos/CarTon">CarTon</a></h3>
       <p align="center"><strong>Gestão Operacional de Oficinas Mecânicas</strong></p>
       <p>Software corporativo com ciclo de vida completo de engenharia: levantamento de requisitos, diagramas UML e controle de peças.</p>
-      <p><strong>Stack:</strong> <code>Java / Web</code> • <code>Modelagem UML</code> • <code>Engenharia de Software</code></p>
+      <p><strong>Stack:</strong> <code>Java / Web</code> / <code>Modelagem UML</code> / <code>Engenharia de Software</code></p>
     </td>
   </tr>
 </table>
@@ -146,5 +146,5 @@ const sergioBastos = {
 - **Localização**: Salto / Indaiatuba - SP, Brasil
 
 <div align="center">
-  <sub>Construído com dedicação e paixão por código limpo • Sérgio Bastos</sub>
+  <sub>Construído por Sérgio Bastos - 2026</sub>
 </div>
