@@ -12,6 +12,8 @@ document.addEventListener('DOMContentLoaded', () => {
   initTerminal();
   initCopyEmail();
   init3DCardEffect();
+  initClickAnimations();
+  initRedirectionAnimations();
   initScrollAnimations();
 });
 
@@ -480,3 +482,111 @@ function init3DCardEffect() {
     card.style.transform = 'perspective(1000px) rotateX(0deg) rotateY(0deg) scale3d(1, 1, 1)';
   });
 }
+
+/* ==========================================================================
+   CLICK ANIMATION (RIPPLE & TACTILE FEEDBACK)
+   ========================================================================== */
+function initClickAnimations() {
+  const container = document.getElementById('clickRippleContainer');
+  if (!container) return;
+
+  document.addEventListener('pointerdown', (e) => {
+    const ripple = document.createElement('div');
+    ripple.className = 'click-ripple';
+    
+    const size = 110;
+    ripple.style.width = `${size}px`;
+    ripple.style.height = `${size}px`;
+    ripple.style.left = `${e.clientX}px`;
+    ripple.style.top = `${e.clientY}px`;
+
+    container.appendChild(ripple);
+
+    setTimeout(() => {
+      ripple.remove();
+    }, 550);
+  });
+}
+
+/* ==========================================================================
+   REDIRECTION & TRANSITION ANIMATIONS
+   ========================================================================== */
+function initRedirectionAnimations() {
+  const progressBar = document.getElementById('routeProgressBar');
+  const curtain = document.getElementById('redirectionCurtain');
+  const navbarHeight = 76;
+
+  function triggerProgressBar(onComplete) {
+    if (!progressBar) {
+      if (onComplete) onComplete();
+      return;
+    }
+
+    progressBar.style.transition = 'none';
+    progressBar.style.width = '0%';
+    progressBar.style.opacity = '1';
+
+    requestAnimationFrame(() => {
+      progressBar.style.transition = 'width 0.32s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.3s ease';
+      progressBar.style.width = '75%';
+
+      setTimeout(() => {
+        progressBar.style.width = '100%';
+        if (onComplete) onComplete();
+
+        setTimeout(() => {
+          progressBar.style.opacity = '0';
+          setTimeout(() => {
+            progressBar.style.width = '0%';
+          }, 300);
+        }, 180);
+      }, 160);
+    });
+  }
+
+  // Smooth scroll and feedback for internal anchor links
+  document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+    anchor.addEventListener('click', (e) => {
+      const href = anchor.getAttribute('href');
+      if (!href || href === '#') return;
+
+      const target = document.querySelector(href);
+      if (!target) return;
+
+      e.preventDefault();
+
+      triggerProgressBar(() => {
+        const targetTop = target.getBoundingClientRect().top + window.scrollY - navbarHeight;
+        window.scrollTo({
+          top: Math.max(0, targetTop),
+          behavior: 'smooth'
+        });
+
+        target.classList.remove('section-arrived');
+        void target.offsetWidth;
+        target.classList.add('section-arrived');
+      });
+    });
+  });
+
+  // External link redirection feedback
+  document.querySelectorAll('a[href^="http"]').forEach((link) => {
+    link.addEventListener('click', (e) => {
+      const isBlank = link.getAttribute('target') === '_blank';
+
+      if (isBlank) {
+        triggerProgressBar();
+      } else {
+        e.preventDefault();
+        const dest = link.getAttribute('href');
+        if (curtain) curtain.classList.add('active');
+        triggerProgressBar(() => {
+          setTimeout(() => {
+            window.location.href = dest;
+          }, 200);
+        });
+      }
+    });
+  });
+}
+
