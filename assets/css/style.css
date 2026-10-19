@@ -287,11 +287,15 @@ section {
   width: 38px;
   height: 38px;
   background: linear-gradient(135deg, var(--accent-cyan), var(--accent-purple));
-  color: #000;
+  color: #07090e;
   border-radius: 10px;
-  font-weight: 900;
-  font-family: var(--font-mono);
-  box-shadow: 0 4px 15px rgba(0, 240, 255, 0.3);
+  font-size: 1.15rem;
+  box-shadow: 0 4px 15px rgba(0, 240, 255, 0.35);
+  transition: transform var(--transition-fast);
+}
+
+.brand-logo:hover .brand-badge {
+  transform: scale(1.08) rotate(4deg);
 }
 
 .brand-title {
@@ -567,6 +571,7 @@ section {
   position: relative;
   width: 100%;
   max-width: 440px;
+  perspective: 1000px;
 }
 
 .avatar-card {
@@ -578,6 +583,13 @@ section {
   box-shadow: var(--shadow-card);
   backdrop-filter: blur(25px);
   padding: 12px;
+  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s ease, border-color 0.3s ease;
+  transform-style: preserve-3d;
+}
+
+.avatar-card.frontend-3d-card:hover {
+  border-color: rgba(0, 240, 255, 0.45);
+  box-shadow: 0 30px 60px -15px rgba(0, 0, 0, 0.8), 0 0 40px rgba(0, 240, 255, 0.3), 0 0 20px rgba(139, 92, 246, 0.2);
 }
 
 .avatar-img-container {
@@ -591,19 +603,27 @@ section {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: center top;
-  filter: contrast(1.05) saturate(1.1);
+  object-position: center center;
+  filter: contrast(1.08) saturate(1.15);
   transition: transform var(--transition-slow);
 }
 
 .avatar-card:hover .avatar-img-container img {
-  transform: scale(1.03);
+  transform: scale(1.05);
 }
 
 .avatar-overlay-gradient {
   position: absolute;
   inset: 0;
-  background: linear-gradient(to top, rgba(7, 9, 14, 0.9) 0%, rgba(7, 9, 14, 0.2) 40%, transparent 80%);
+  background: linear-gradient(to top, rgba(7, 9, 14, 0.92) 0%, rgba(7, 9, 14, 0.15) 50%, transparent 80%);
+}
+
+.hologram-glow {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 50% 30%, rgba(0, 240, 255, 0.15), transparent 70%);
+  pointer-events: none;
+  mix-blend-mode: screen;
 }
 
 .avatar-badge-bottom {

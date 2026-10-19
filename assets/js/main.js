@@ -11,6 +11,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initModal();
   initTerminal();
   initCopyEmail();
+  init3DCardEffect();
   initScrollAnimations();
 });
 
@@ -452,4 +453,30 @@ function initScrollAnimations() {
     .from('.hero-metrics-bar', { opacity: 0, y: 20 }, '-=0.5')
     .from('.avatar-card', { opacity: 0, scale: 0.95 }, '-=0.8')
     .from('.floating-chip', { opacity: 0, scale: 0.8, stagger: 0.2 }, '-=0.4');
+}
+
+/* ==========================================================================
+   3D CARD PARALLAX EFFECT
+   ========================================================================== */
+function init3DCardEffect() {
+  const wrapper = document.getElementById('heroVisualWrapper');
+  const card = document.getElementById('frontend3DCard');
+  if (!wrapper || !card) return;
+
+  wrapper.addEventListener('mousemove', (e) => {
+    const rect = wrapper.getBoundingClientRect();
+    const x = e.clientX - rect.left;
+    const y = e.clientY - rect.top;
+    const centerX = rect.width / 2;
+    const centerY = rect.height / 2;
+
+    const rotateX = ((y - centerY) / centerY) * -10;
+    const rotateY = ((x - centerX) / centerX) * 12;
+
+    card.style.transform = `perspective(1000px) rotateX(${rotateX.toFixed(2)}deg) rotateY(${rotateY.toFixed(2)}deg) scale3d(1.02, 1.02, 1.02)`;
+  });
+
+  wrapper.addEventListener('mouseleave', () => {
+    card.style.transform = 'perspective(1000px) rotateX(0deg) rotateY(0deg) scale3d(1, 1, 1)';
+  });
 }

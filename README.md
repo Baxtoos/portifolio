@@ -59,7 +59,7 @@ portifolio/
 │   │   ├── main.js             # Lógica interativa (terminal, modal, filtros, toast, tema)
 │   │   └── projects-data.js    # Dados curados dos projetos, métricas e competências
 │   └── images/
-│       ├── me.jpg              # Foto de perfil de Sérgio Bastos
+│       ├── frontend-3d.jpg     # Visual de arquitetura e tecnologia frontend em 3D
 │       └── projects/           # Imagens em alta resolução dos projetos e sistemas
 ├── README.md                   # Documentação do repositório
 └── PROFILE_README.md           # Template especial pronto para o perfil do GitHub (Baxtoos/Baxtoos)
