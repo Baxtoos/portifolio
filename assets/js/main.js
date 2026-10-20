@@ -411,7 +411,7 @@ function initTerminal() {
 <div class="terminal-line cyan">Ecossistema DIEX Tech Studio:</div>
 <div class="terminal-line">Estudio de tecnologia cofundado por Sergio Bastos.</div>
 <div class="terminal-line">Solucoes digitais para industrias metalurgicas, estampagem automotiva, comercio textil e SaaS.</div>
-<div class="terminal-line green">Website oficial: <a href="http://127.0.0.1:5173" target="_blank" class="cyan">DIEX Studio</a></div>
+<div class="terminal-line green">Website oficial: <a href="https://diex-site.vercel.app" target="_blank" class="cyan">DIEX Studio</a></div>
     `,
     skills: () => `
 <div class="terminal-line cyan">Stack Tecnologica Resumida:</div>
