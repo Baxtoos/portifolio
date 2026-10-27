@@ -15,7 +15,7 @@
 **Desenvolvedor Full-Stack (Foco em Frontend) & Engenheiro de Software**  
 *Especialista em interfaces modernas de alta performance e experiências web ricas com sustentação de ponta a ponta.*
 
-[🚀 Acessar Demonstração Ao Vivo (GitHub Pages)](https://baxtoos.github.io/portifolio/) | [Perfil GitHub](https://github.com/Baxtoos) | [Contato](#contato)
+[Acesso](https://baxtoos.github.io/portifolio/) | [Perfil GitHub](https://github.com/Baxtoos) | [Contato](#contato)
 
 </div>
 
