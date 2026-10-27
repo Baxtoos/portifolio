@@ -72,23 +72,63 @@ function initNavbar() {
     }
   }, { passive: true });
 
-  // Mobile menu toggle
+  // Mobile menu toggle & drawer logic
   if (mobileBtn && navLinksContainer) {
-    mobileBtn.addEventListener('click', () => {
+    const mobileIcon = mobileBtn.querySelector('i');
+
+    function closeMobileMenu() {
+      navLinksContainer.classList.remove('mobile-open');
+      mobileBtn.setAttribute('aria-expanded', 'false');
+      if (mobileIcon) {
+        mobileIcon.classList.remove('fa-xmark');
+        mobileIcon.classList.add('fa-bars');
+      }
+    }
+
+    function openMobileMenu() {
+      navLinksContainer.classList.add('mobile-open');
+      mobileBtn.setAttribute('aria-expanded', 'true');
+      if (mobileIcon) {
+        mobileIcon.classList.remove('fa-bars');
+        mobileIcon.classList.add('fa-xmark');
+      }
+    }
+
+    mobileBtn.addEventListener('click', (e) => {
+      e.stopPropagation();
       const isVisible = navLinksContainer.classList.contains('mobile-open');
-      navLinksContainer.classList.toggle('mobile-open', !isVisible);
-      mobileBtn.setAttribute('aria-expanded', !isVisible);
+      if (isVisible) {
+        closeMobileMenu();
+      } else {
+        openMobileMenu();
+      }
     });
 
-    // Close mobile menu when clicking any nav link
-    navLinks.forEach((link) => {
+    // Close mobile menu when clicking any link inside the drawer
+    const drawerLinks = navLinksContainer.querySelectorAll('a');
+    drawerLinks.forEach((link) => {
       link.addEventListener('click', () => {
         if (window.innerWidth <= 768) {
-          navLinksContainer.classList.remove('mobile-open');
-          mobileBtn.setAttribute('aria-expanded', 'false');
+          closeMobileMenu();
         }
       });
     });
+
+    // Close mobile menu when clicking outside
+    document.addEventListener('click', (e) => {
+      if (window.innerWidth <= 768 && navLinksContainer.classList.contains('mobile-open')) {
+        if (!navLinksContainer.contains(e.target) && !mobileBtn.contains(e.target)) {
+          closeMobileMenu();
+        }
+      }
+    });
+
+    // Close on window resize to desktop
+    window.addEventListener('resize', () => {
+      if (window.innerWidth > 768 && navLinksContainer.classList.contains('mobile-open')) {
+        closeMobileMenu();
+      }
+    }, { passive: true });
   }
 
   // Smooth back to top
@@ -186,6 +226,25 @@ function initProjects() {
   const filterBtns = document.querySelectorAll('.filter-btn');
   if (!grid || typeof portfolioProjects === 'undefined') return;
 
+  // Calculate and populate dynamic counts for DIEX filter chips
+  const countAll = portfolioProjects.length;
+  const countFullstack = portfolioProjects.filter((p) => p.category === 'fullstack').length;
+  const countFrontend = portfolioProjects.filter((p) => p.category === 'frontend').length;
+  const countArchitecture = portfolioProjects.filter((p) => p.category === 'architecture').length;
+  const countLanding = portfolioProjects.filter((p) => p.category === 'landing').length;
+
+  const elCountAll = document.getElementById('count-all');
+  const elCountFullstack = document.getElementById('count-fullstack');
+  const elCountFrontend = document.getElementById('count-frontend');
+  const elCountArchitecture = document.getElementById('count-architecture');
+  const elCountLanding = document.getElementById('count-landing');
+
+  if (elCountAll) elCountAll.textContent = countAll;
+  if (elCountFullstack) elCountFullstack.textContent = countFullstack;
+  if (elCountFrontend) elCountFrontend.textContent = countFrontend;
+  if (elCountArchitecture) elCountArchitecture.textContent = countArchitecture;
+  if (elCountLanding) elCountLanding.textContent = countLanding;
+
   let currentCategory = 'all';
 
   function renderProjects(category) {
@@ -197,7 +256,6 @@ function initProjects() {
       <article class="project-card" data-id="${project.id}" tabindex="0" role="button" aria-label="Ver detalhes de ${project.title}">
         <div class="project-thumbnail">
           <img src="${project.coverImage}" alt="${project.title}" loading="lazy" />
-          <span class="project-badge-top">${project.badge}</span>
         </div>
         <div class="project-body">
           <div class="project-header-row">
@@ -210,7 +268,8 @@ function initProjects() {
           </div>
           <div class="project-footer">
             <span class="btn-card-details">
-              Ver Detalhes <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+              <span>Ver Detalhes</span>
+              <span class="icon-circle"><i class="fa-solid fa-arrow-right"></i></span>
             </span>
             <div class="project-links-icons" onclick="event.stopPropagation()">
               <a href="${project.githubUrl}" target="_blank" rel="noopener noreferrer" class="project-icon-link" title="Repositório GitHub" aria-label="Código no GitHub de ${project.title}">
@@ -474,42 +533,58 @@ function initTerminal() {
     }
 
     if (e.key === 'Enter') {
-      const cmdRaw = input.value.trim();
-      const cmd = cmdRaw.toLowerCase();
+      const cmdRaw = input.value;
       input.value = '';
       historyIndex = -1;
-
-      if (!cmd) return;
-
-      // Store in command history
-      history.push(cmdRaw);
-
-      const userLine = document.createElement('div');
-      userLine.className = 'terminal-line';
-      userLine.innerHTML = `<span class="terminal-prompt">baxtoos@dev:~$</span> ${escapeHtml(cmdRaw)}`;
-      output.appendChild(userLine);
-
-      if (cmd === 'clear') {
-        commands.clear();
-        return;
-      }
-
-      const responseHtml = commands[cmd]
-        ? commands[cmd]()
-        : `<div class="terminal-line" style="color:#ef4444;">Comando nao reconhecido: "${escapeHtml(cmd)}". Digite <span class="cyan">help</span> para a lista de comandos.</div>`;
-
-      if (responseHtml) {
-        const respContainer = document.createElement('div');
-        respContainer.innerHTML = responseHtml;
-        output.appendChild(respContainer);
-      }
-
-      // Auto scroll terminal to bottom
-      const body = output.closest('.terminal-body');
-      if (body) {
-        body.scrollTop = body.scrollHeight;
-      }
+      executeCommand(cmdRaw);
     }
+  });
+
+  function executeCommand(cmdRaw) {
+    const trimmed = cmdRaw.trim();
+    const cmd = trimmed.toLowerCase();
+    if (!cmd) return;
+
+    // Store in command history
+    history.push(trimmed);
+
+    const userLine = document.createElement('div');
+    userLine.className = 'terminal-line';
+    userLine.innerHTML = `<span class="terminal-prompt">baxtoos@dev:~$</span> ${escapeHtml(trimmed)}`;
+    output.appendChild(userLine);
+
+    if (cmd === 'clear') {
+      commands.clear();
+      return;
+    }
+
+    const responseHtml = commands[cmd]
+      ? commands[cmd]()
+      : `<div class="terminal-line" style="color:#ef4444;">Comando nao reconhecido: "${escapeHtml(cmd)}". Digite <span class="cyan">help</span> para a lista de comandos.</div>`;
+
+    if (responseHtml) {
+      const respContainer = document.createElement('div');
+      respContainer.innerHTML = responseHtml;
+      output.appendChild(respContainer);
+    }
+
+    // Auto scroll terminal to bottom
+    const body = output.closest('.terminal-body');
+    if (body) {
+      body.scrollTop = body.scrollHeight;
+    }
+  }
+
+  // Quick Action Chips Listener
+  const quickChips = document.querySelectorAll('.terminal-chip');
+  quickChips.forEach((chip) => {
+    chip.addEventListener('click', () => {
+      const targetCmd = chip.getAttribute('data-cmd');
+      if (targetCmd) {
+        input.value = '';
+        executeCommand(targetCmd);
+      }
+    });
   });
 
   function escapeHtml(text) {
@@ -524,21 +599,10 @@ function initTerminal() {
    ============================================================================== */
 function initCopyEmail() {
   const copyBtn = document.getElementById('copyEmailBtn');
+  const directEmailLink = document.getElementById('contactDirectEmail');
   const toast = document.getElementById('toastNotice');
   const email = 'giftc444@gmail.com';
   let toastTimer = null;
-
-  if (!copyBtn) return;
-
-  copyBtn.addEventListener('click', () => {
-    if (navigator.clipboard && navigator.clipboard.writeText) {
-      navigator.clipboard.writeText(email)
-        .then(() => showToast('E-mail copiado para a área de transferência!'))
-        .catch(() => showToast('E-mail: ' + email));
-    } else {
-      showToast('E-mail: ' + email);
-    }
-  });
 
   function showToast(msg) {
     if (!toast) return;
@@ -548,7 +612,32 @@ function initCopyEmail() {
     if (toastTimer) clearTimeout(toastTimer);
     toastTimer = setTimeout(() => {
       toast.classList.remove('show');
-    }, 3200);
+    }, 3500);
+  }
+
+  if (copyBtn) {
+    copyBtn.addEventListener('click', () => {
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(email)
+          .then(() => showToast('E-mail (giftc444@gmail.com) copiado para a área de transferência!'))
+          .catch(() => showToast('E-mail: ' + email));
+      } else {
+        showToast('E-mail: ' + email);
+      }
+    });
+  }
+
+  if (directEmailLink) {
+    directEmailLink.addEventListener('click', (e) => {
+      // Proactively copy email to clipboard as safety net for systems without desktop client
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(email).catch(() => {});
+      }
+      showToast('Abrindo aplicativo de e-mail... (giftc444@gmail.com copiado!)');
+
+      const mailtoUrl = 'mailto:giftc444@gmail.com?subject=Contato%20via%20Portf%C3%B3lio%20-%20S%C3%A9rgio%20Bastos';
+      window.location.href = mailtoUrl;
+    });
   }
 }
 
@@ -560,8 +649,7 @@ function initScrollAnimations() {
 
   // Hero section entry animation timeline
   const tl = gsap.timeline({ defaults: { ease: 'power3.out', duration: 0.8 } });
-  tl.from('.status-beacon-badge', { opacity: 0, y: -20, delay: 0.15 })
-    .from('.hero-title', { opacity: 0, y: 25 }, '-=0.5')
+  tl.from('.hero-title', { opacity: 0, y: 25, delay: 0.15 })
     .from('.hero-description', { opacity: 0, y: 20 }, '-=0.5')
     .from('.hero-cta-group', { opacity: 0, y: 20 }, '-=0.5')
     .from('.hero-metrics-bar', { opacity: 0, y: 20 }, '-=0.5')

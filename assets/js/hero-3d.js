@@ -34,7 +34,7 @@
 
   // Scene, Camera, Renderer
   const scene = new THREE.Scene();
-  scene.fog = new THREE.FogExp2(0x07090e, 0.04);
+  scene.fog = new THREE.FogExp2(0x050507, 0.04);
 
   const camera = new THREE.PerspectiveCamera(45, width / height, 0.1, 100);
   camera.position.set(0, 0, 7.2);
@@ -52,7 +52,7 @@
     renderer.toneMappingExposure = 1.15;
   }
 
-  // Color Palettes
+  // Color Palettes (Original Cyber Cyan & Holo Violet)
   const themes = {
     cyan: {
       name: 'Cyber Cyan',
@@ -535,21 +535,34 @@
   let frameCount = 0;
   let fpsTimer = 0;
 
-  // Animation Loop & Performance Guard
+  // Animation Loop & Performance Guard (Tab Visibility + Viewport Intersection)
   let clock = new THREE.Clock();
   let isTabVisible = true;
+  let isElementInViewport = true;
 
   document.addEventListener('visibilitychange', () => {
     isTabVisible = !document.hidden;
-    if (isTabVisible) {
+    if (isTabVisible && isElementInViewport) {
       clock.getDelta(); // Clear accumulated delta
     }
   });
 
+  if ('IntersectionObserver' in window) {
+    const heroObserver = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        isElementInViewport = entry.isIntersecting;
+        if (isElementInViewport) {
+          clock.getDelta(); // Clear accumulated delta when scrolling back into view
+        }
+      });
+    }, { threshold: 0.05 });
+    heroObserver.observe(container);
+  }
+
   function animate() {
     requestAnimationFrame(animate);
 
-    if (!isTabVisible) return;
+    if (!isTabVisible || !isElementInViewport) return;
 
     const delta = clock.getDelta();
     const elapsedTime = clock.getElapsedTime();
@@ -624,6 +637,4 @@
 
   // Kickstart animation loop
   animate();
-
-  console.log('[Hero3D] Interactive 3D WebGL Holographic Stage initialized successfully.');
 })();
