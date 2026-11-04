@@ -2,9 +2,9 @@
 
 <div align="center">
 
-![Badge Status](https://img.shields.io/badge/Status-Produção-E85D2A?style=for-the-badge&logo=vercel&logoColor=black)
-![Badge Licença](https://img.shields.io/badge/Licença-MIT-1A1714?style=for-the-badge)
-![Badge Stack](https://img.shields.io/badge/Stack-HTML5%20%7C%20CSS3%20%7C%20JS%20%7C%20Three.js%20%7C%20GSAP-F4F0EA?style=for-the-badge&labelColor=0C0B0A)
+![Badge Status](https://img.shields.io/badge/Status-Produção-2FBF8A?style=for-the-badge&logo=vercel&logoColor=black)
+![Badge Licença](https://img.shields.io/badge/Licença-MIT-17201C?style=for-the-badge)
+![Badge Stack](https://img.shields.io/badge/Stack-HTML5%20%7C%20CSS3%20%7C%20JS%20%7C%20CLI%20%7C%20GSAP-EEF2EE?style=for-the-badge&labelColor=0B100E)
 
 <br />
 
@@ -21,16 +21,15 @@
 
 ---
 
-## Direção de Design: Monografia Editorial de Engenharia
+## Direção de Design: Monografia Editorial de Engenharia (Moss Ink & CLI Edition)
 
-O portfólio foi desenhado sob a disciplina **Impeccable First** (`PRODUCT.md` e `DESIGN.md`), priorizando clareza estrutural, tipografia autoral e prova imediata de sistemas reais em produção:
+O portfólio foi desenhado sob a disciplina **Impeccable First** (`PRODUCT.md` e `DESIGN.md`), priorizando clareza estrutural, tipografia autoral, inspeção interativa via linha de comando e prova imediata de sistemas reais em produção:
 
-- **Paleta Editorial Dual-Theme**: Tinta carbono quente (`#0C0B0A`) no tema escuro padrão e papel técnico arquival (`#F6F3EC`) no tema claro, acompanhados de um único acento vermilion-cobre (`#E85D2A` / `#C84312`) com contraste validado WCAG AA/AAA.
-- **Tipografia com Ponto de Vista**: *Bricolage Grotesque* para títulos e display, *Manrope* para leitura contínua (medida de 65–68ch) e *JetBrains Mono* reservada estritamente para código, métricas tabulares e identificadores de stack.
+- **Inspeção via Linha de Comando no Hero (`baxtoos@dev:~$`)**: O terminal interativo ocupa o centro visual do Hero, com atalho global de teclado (`/`), autocompletar via `Tab`, chips de execução rápida em 1 clique e comandos capazes de abrir fichas técnicas de projetos (`open diex`, `open appfisio`, `open mtsublimacao`, `projects`, `skills`, `whoami`, `contact`).
+- **Paleta Editorial "Verde Musgo & Tinta" (Dual-Theme)**: Tinta musgo profunda (`#0B100E`) no tema escuro padrão e papel sálvia arquival (`#F3F5F0`) no tema claro, acompanhados de um único acento verde esmeralda/floresta (`#2FBF8A` / `#14724F`) sem neon e sem gradientes, com contraste validado WCAG AA/AAA.
+- **Tipografia com Ponto de Vista**: *Bricolage Grotesque* para títulos e display, *Manrope* para leitura contínua (medida de 65–68ch) e *JetBrains Mono* para o terminal CLI, métricas tabulares e identificadores de stack.
 - **Hierarquia Guiada por Provas**: Três estudos de caso principais (*DIEX Tech Studio*, *AppFisio* e *MT Sublimação*) abrem a página logo após o Hero com análise estruturada (*Problema → Engenharia → Impacto*), seguidos pelo arquivo filtrável completo de 13 projetos.
-- **Escultura 3D Autoral (Three.js WebGL 2.0)**: Geometria poliédrica interativa integrada automaticamente ao tema ativo (escuro/claro), com pausa inteligente fora da viewport e respeito integral a `prefers-reduced-motion`.
-- **Matriz de Capacidades & Terminal CLI**: Ledger arquitetural de competências por camada e terminal interativo compacto (`baxtoos@dev:~$`) posicionado antes da seção de contato.
-- **Performance Zero-Build & SVGs Nativos**: Execução direta em qualquer servidor estático sem dependências de bibliotecas externas de ícones.
+- **Performance Zero-Build & Zero-WebGL Bloat**: Execução instantânea sem pacotes 3D pesados (~600 KB de JS poupados) e com SVGs vetoriais nativos inline (`1.75px` stroke).
 
 ---
 
@@ -39,7 +38,7 @@ O portfólio foi desenhado sob a disciplina **Impeccable First** (`PRODUCT.md` e
 | Camada | Tecnologias Utilizadas |
 | :--- | :--- |
 | **Core** | HTML5 Semântico, CSS3 Custom Properties, JavaScript (ES6+) |
-| **3D & WebGL** | [Three.js r128](https://threejs.org/) (Geometria procedural adaptativa ao tema) |
+| **Inspeção Interativa** | Terminal CLI customizado (`baxtoos@dev:~`) com histórico, `Tab` autocomplete e atalho `/` |
 | **Motion** | [GSAP 3.12 + ScrollTrigger](https://gsap.com/) com `gsap.matchMedia()` |
 | **Tipografia & Ícones** | *Bricolage Grotesque*, *Manrope*, *JetBrains Mono* + SVGs vetoriais inline (`1.75px` stroke) |
 | **Governança de Design** | `PRODUCT.md`, `DESIGN.md` e `.impeccable/surfaces/index-html.md` |
@@ -55,13 +54,10 @@ portifolio/
 |-- DESIGN.md                   # Sistema de design, tokens de cor, escala tipográfica e regras
 |-- assets/
 |   |-- css/
-|   |   `-- style.css           # Design system completo (Dark Ink & Archival Paper)
+|   |   `-- style.css           # Design system completo (Verde Musgo & Papel Sálvia)
 |   |-- js/
-|   |   |-- hero-3d.js          # Escultura geométrica Three.js reativa ao tema
-|   |   |-- main.js             # Estudos de caso, filtros, modal, terminal CLI e GSAP
-|   |   |-- projects-data.js    # Base de dados dos 13 projetos e matriz de capacidades
-|   |   `-- vendor/
-|   |       `-- three.min.js    # Three.js r128 local
+|   |   |-- main.js             # Terminal CLI no Hero, estudos de caso, filtros, modal e GSAP
+|   |   `-- projects-data.js    # Base de dados dos 13 projetos e matriz de capacidades
 |   `-- images/
 |       `-- projects/           # Previews verificados dos sistemas em produção
 `-- README.md                   # Documentação do repositório

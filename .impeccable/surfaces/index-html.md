@@ -5,6 +5,13 @@ primary_target: "index.html"
 related_targets: []
 ---
 
+---
+version: 1
+slug: "index-html"
+primary_target: "index.html"
+related_targets: []
+---
+
 # index.html Surface Brief
 
 ## Scope & Mode
@@ -12,14 +19,14 @@ Single-page portfolio showcase (`index.html`) operating in **Persuade** mode for
 
 ## Direction contract
 
-THESIS: An architectural engineering monograph where real production systems (DIEX, AppFisio, MT Sublimação) and structural clarity replace generic cyber-neon clichés, HUD brackets, and decorative cards.
+THESIS: An architectural engineering monograph where an interactive CLI Terminal (`baxtoos@dev:~$`) in the Hero and real production case studies (DIEX, AppFisio, MT Sublimação) replace decorative WebGL clutter and generic cyber-neon clichés.
 
-OWN-WORLD: Warm carbon ink (`#0C0B0A`) and archival drafting paper (`#F6F3EC`) paired with a single signal vermilion-copper accent (`#E85D2A` dark / `#C84312` light), exposed hairline ledger dividers (`1px solid`), `Bricolage Grotesque` display typography, `Manrope` body text, and `JetBrains Mono` strictly for code, metrics, and technical tokens.
+OWN-WORLD: Deep moss-ink (`#0B100E`) and archival sage paper (`#F3F5F0`) paired with a single non-neon emerald/forest green accent (`#2FBF8A` dark / `#14724F` light), exposed hairline ledger dividers (`1px solid`), `Bricolage Grotesque` display typography, `Manrope` body text, and `JetBrains Mono` for the CLI terminal, metrics, and technical tokens.
 
-STORY: The visitor immediately understands Sérgio Bastos builds both high-craft frontend interfaces and resilient full-stack systems, verifies proof across 3 flagship case studies and 13 live deployments, inspects the stack ledger, and initiates contact in one click.
+STORY: The visitor immediately understands Sérgio Bastos builds both high-craft frontend interfaces and resilient full-stack systems, explores the portfolio interactively via the Hero CLI terminal or visual case studies, inspects the stack ledger, and initiates contact in one click.
 
-FIRST VIEWPORT: Asymmetric 12-column editorial spread. Columns 1–7 hold the display name, concrete positioning statement, narrative lead, primary/secondary actions, and a bottom hairline credential ledger (IFSP, DIEX Cofounder, 13 production systems). Columns 8–12 frame a minimalist, theme-aware Three.js geometric sculpture with subtle orbit drag and zero HUD clutter.
+FIRST VIEWPORT: Asymmetric 12-column editorial spread. Columns 1–6 hold the display name, concrete positioning statement, narrative lead, primary/secondary actions, and a bottom hairline credential ledger (IFSP, DIEX Cofounder, 13 production systems). Columns 7–12 frame the live Interactive CLI Terminal (`baxtoos@dev:~`) with clickable command chips, `/` keyboard shortcut, and `Tab` autocomplete.
 
-FORM: Architectural Engineering Monograph (user-confirmed direction). seed: none (unavailable)
+FORM: Architectural Engineering Monograph — Moss Ink & Terminal Edition (user-confirmed direction). seed: none (unavailable)
 
 FINISH: unreviewed and undocumented is unfinished; this build ends with the finish review, the verdict, DESIGN.md, and every shipping raster carrying its provenance

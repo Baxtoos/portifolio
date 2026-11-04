@@ -4,10 +4,10 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Sérgio Bastos — Full-Stack Developer &amp; Frontend Engineer | Portfólio</title>
-  <meta name="description" content="Portfólio de engenharia de software de Sérgio Bastos (@Baxtoos) — Desenvolvedor Full-Stack com foco em Frontend (React, TypeScript, WebGL 3D, Node.js, Java/Spring Boot) e cofundador da DIEX Tech Studio." />
+  <meta name="description" content="Portfólio de engenharia de software de Sérgio Bastos (@Baxtoos) — Desenvolvedor Full-Stack com foco em Frontend (React, TypeScript, Node.js, Java/Spring Boot) e cofundador da DIEX Tech Studio." />
   <meta name="author" content="Sérgio Bastos" />
-  <meta name="keywords" content="Sérgio Bastos, Baxtoos, Full-Stack Developer, Frontend Engineer, React, TypeScript, Three.js, WebGL, Node.js, Java, Spring Boot, DIEX, Portfólio" />
-  <meta name="theme-color" content="#0C0B0A" id="themeColorMeta" />
+  <meta name="keywords" content="Sérgio Bastos, Baxtoos, Full-Stack Developer, Frontend Engineer, React, TypeScript, Node.js, Java, Spring Boot, DIEX, Portfólio" />
+  <meta name="theme-color" content="#0B100E" id="themeColorMeta" />
 
   <!-- Favicon -->
   <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg" />
@@ -19,14 +19,14 @@
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://baxtoos.github.io/portifolio/" />
   <meta property="og:title" content="Sérgio Bastos — Full-Stack Developer &amp; Frontend Engineer" />
-  <meta property="og:description" content="Interfaces de alta precisão, aplicações React/TypeScript, WebGL 3D e sistemas Full-Stack em produção." />
+  <meta property="og:description" content="Interfaces de alta precisão, aplicações React/TypeScript, inspeção interativa via CLI e sistemas Full-Stack em produção." />
   <meta property="og:image" content="https://baxtoos.github.io/portifolio/assets/images/portfolio-preview.png" />
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Sérgio Bastos — Full-Stack Developer &amp; Frontend Engineer" />
-  <meta name="twitter:description" content="Interfaces de alta precisão, aplicações React/TypeScript, WebGL 3D e sistemas Full-Stack em produção." />
+  <meta name="twitter:description" content="Interfaces de alta precisão, aplicações React/TypeScript, inspeção interativa via CLI e sistemas Full-Stack em produção." />
   <meta name="twitter:image" content="https://baxtoos.github.io/portifolio/assets/images/portfolio-preview.png" />
 
-  <!-- Google Fonts: Bricolage Grotesque (Display), Manrope (Body), JetBrains Mono (Code/Metrics) -->
+  <!-- Google Fonts: Bricolage Grotesque (Display), Manrope (Body), JetBrains Mono (Code/CLI) -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700;12..96,800&family=JetBrains+Mono:wght@400;500;600&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet" />
@@ -54,12 +54,11 @@
       "@type": "CollegeOrUniversity",
       "name": "Instituto Federal de São Paulo (IFSP)"
     },
-    "description": "Desenvolvedor Full-Stack com foco especializado em Frontend, React, TypeScript, 3D WebGL e arquitetura de software escalável.",
+    "description": "Desenvolvedor Full-Stack com foco especializado em Frontend, React, TypeScript e arquitetura de software escalável.",
     "knowsAbout": [
       "Frontend Development",
       "React",
       "TypeScript",
-      "Three.js",
       "Full-Stack Web Development",
       "Node.js",
       "Java",
@@ -85,10 +84,10 @@
 
       <nav aria-label="Navegação principal">
         <ul class="nav-links" id="navLinks">
-          <li><a href="#projetos" class="nav-link active">Projetos</a></li>
+          <li><a href="#terminal" class="nav-link active" data-focus-terminal="true">Terminal CLI</a></li>
+          <li><a href="#projetos" class="nav-link">Projetos</a></li>
           <li><a href="#sobre" class="nav-link">Trajetória</a></li>
           <li><a href="#habilidades" class="nav-link">Stack</a></li>
-          <li><a href="#terminal" class="nav-link">CLI</a></li>
           <li><a href="#contato" class="nav-link">Contato</a></li>
           <li class="mobile-nav-cta">
             <a href="#contato" class="btn btn-primary mobile-menu-cta-btn">
@@ -140,7 +139,7 @@
 
   <main id="conteudo-principal">
     <!-- ==========================================================================
-         HERO SECTION (EDITORIAL SPREAD + AUTHORIAL 3D SCULPTURE)
+         HERO SECTION (EDITORIAL SPREAD + INTERACTIVE CLI TERMINAL CENTERPIECE)
          ========================================================================== -->
     <section class="hero-section" id="hero">
       <div class="container">
@@ -152,7 +151,7 @@
             </h1>
 
             <p class="hero-description">
-              Desenvolvedor Full-Stack com foco especializado em Frontend e Bacharel em Ciência da Computação pelo IFSP. Arquitetura de aplicações reativas em React, TypeScript e WebGL 3D integradas a serviços sólidos em Node.js, Java (Spring Boot) e bancos relacionais.
+              Desenvolvedor Full-Stack com foco especializado em Frontend e Bacharel em Ciência da Computação pelo IFSP. Arquitetura de aplicações reativas em React e TypeScript integradas a serviços sólidos em Node.js, Java (Spring Boot) e bancos relacionais.
             </p>
 
             <div class="hero-cta-group">
@@ -161,6 +160,11 @@
                 <svg class="icon-svg" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M6 13l6 6 6-6"/></svg>
               </a>
 
+              <button type="button" class="btn btn-secondary" id="heroFocusTerminalBtn">
+                <span>Inspecionar via CLI</span>
+                <kbd class="btn-kbd" aria-hidden="true">/</kbd>
+              </button>
+
               <a href="https://github.com/Baxtoos" target="_blank" rel="noopener noreferrer" class="btn btn-secondary" id="heroCtaGithub">
                 <span>GitHub (@Baxtoos)</span>
                 <svg class="icon-svg" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8"/></svg>
@@ -168,24 +172,60 @@
             </div>
           </div>
 
-          <div class="hero-visual">
-            <div class="sculpture-stage" id="holo3DStage">
-              <div class="sculpture-canvas-wrap" id="holoCanvasWrapper">
-                <canvas id="hero3DCanvas" aria-label="Escultura geométrica 3D interativa em WebGL"></canvas>
+          <!-- Interactive CLI Terminal Centerpiece ("Inspeção via Linha de Comando") -->
+          <div class="hero-visual" id="terminal">
+            <div class="terminal-hero-stage">
+              <div class="terminal-stage-bar">
+                <span class="terminal-stage-title">Inspeção via Linha de Comando</span>
+                <span class="terminal-stage-shortcut">Pressione <kbd>/</kbd> para focar • <kbd>Tab</kbd> autocompleta</span>
               </div>
-              <div class="sculpture-caption-bar">
-                <span class="sculpture-caption-text" id="holoInteractionHint">WebGL 2.0 // Arraste para orbitar • Clique para alternar malha</span>
-                <div class="sculpture-controls" id="geomToggleGroup" role="group" aria-label="Selecionar geometria 3D">
-                  <button type="button" class="sculpture-btn active" data-geom="icosahedron" title="Geometria Icosaedro">Icosaedro</button>
-                  <button type="button" class="sculpture-btn" data-geom="torusKnot" title="Geometria Torus Knot">Torus</button>
-                  <button type="button" class="sculpture-btn" data-geom="dodecahedron" title="Geometria Dodecaedro">Dodecaedro</button>
+
+              <div class="terminal-window" role="region" aria-label="Terminal interativo baxtoos@dev">
+                <div class="terminal-header">
+                  <div class="terminal-dots" aria-hidden="true">
+                    <span class="terminal-dot"></span>
+                    <span class="terminal-dot"></span>
+                    <span class="terminal-dot"></span>
+                  </div>
+                  <div class="terminal-title">baxtoos@dev:~ (interactive-sh)</div>
+                  <span class="terminal-status-pill">online</span>
+                </div>
+
+                <div class="terminal-body">
+                  <div class="terminal-output" id="terminalOutput" aria-live="polite">
+                    <div class="terminal-line dim"># Sessão interativa iniciada. Clique em um comando abaixo ou digite no prompt.</div>
+                    <div class="terminal-line">&gt; Perfil: <strong>Sérgio Bastos</strong> (@Baxtoos) — B.Sc. Ciência da Computação (IFSP)</div>
+                    <div class="terminal-line accent">&gt; Papel: Full-Stack Developer (Foco em Frontend) &amp; Cofundador DIEX Tech</div>
+                    <div class="terminal-line">&gt; Experimente <span class="cmd-inline">projects</span>, <span class="cmd-inline">skills</span>, <span class="cmd-inline">open diex</span> ou <span class="cmd-inline">help</span>.</div>
+                  </div>
+
+                  <label for="terminalInput" class="sr-only">Comando do terminal</label>
+                  <div class="terminal-input-row">
+                    <span class="terminal-prompt" aria-hidden="true">baxtoos@dev:~$</span>
+                    <input type="text" class="terminal-input" id="terminalInput" placeholder="digite projects, skills, open diex, contact..." autocomplete="off" spellcheck="false" />
+                    <button type="button" class="terminal-run-btn" id="terminalRunBtn" aria-label="Executar comando do terminal">Executar ↵</button>
+                  </div>
+                </div>
+
+                <div class="terminal-command-bar">
+                  <span class="terminal-bar-label">Comandos rápidos:</span>
+                  <div class="terminal-quick-actions" id="terminalQuickActions" role="group" aria-label="Comandos rápidos do terminal">
+                    <button type="button" class="terminal-chip" data-cmd="projects">projects</button>
+                    <button type="button" class="terminal-chip" data-cmd="skills">skills</button>
+                    <button type="button" class="terminal-chip" data-cmd="whoami">whoami</button>
+                    <button type="button" class="terminal-chip" data-cmd="diex">diex</button>
+                    <button type="button" class="terminal-chip" data-cmd="open diex">open diex</button>
+                    <button type="button" class="terminal-chip" data-cmd="contact">contact</button>
+                    <button type="button" class="terminal-chip" data-cmd="help">help</button>
+                    <button type="button" class="terminal-chip" data-cmd="clear">clear</button>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
         </div>
 
-        <!-- Factual Credential Ledger (Replaces generic hero-metric template) -->
+        <!-- Factual Credential Ledger -->
         <dl class="hero-ledger" aria-label="Credenciais e fatos verificados">
           <div class="ledger-cell">
             <dt class="ledger-term">Formação Acadêmica</dt>
@@ -201,21 +241,21 @@
           </div>
           <div class="ledger-cell">
             <dt class="ledger-term">Domínio Técnico</dt>
-            <dd class="ledger-detail">React, TypeScript, Three.js, Node.js &amp; Java</dd>
+            <dd class="ledger-detail">React, TypeScript, Node.js, Java &amp; Arquitetura UI</dd>
           </div>
         </dl>
       </div>
     </section>
 
     <!-- ==========================================================================
-         PROJECTS & CASE STUDIES SECTION ( IMMEDIATELY AFTER HERO )
+         PROJECTS & CASE STUDIES SECTION (IMMEDIATELY AFTER HERO)
          ========================================================================== -->
     <section class="projects-section" id="projetos">
       <div class="container">
         <div class="section-header-split">
           <h2 class="section-title">Estudos de Caso &amp; Sistemas em Produção</h2>
           <p class="section-lead">
-            Três projetos principais detalhados em profundidade arquitetural, seguidos pelo arquivo completo de aplicações Full-Stack, interfaces 3D e portais B2B.
+            Três projetos principais detalhados em profundidade arquitetural, seguidos pelo arquivo completo de aplicações Full-Stack, interfaces interativas e portais B2B.
           </p>
         </div>
 
@@ -238,7 +278,7 @@
                 <span class="filter-count" id="count-fullstack">2</span>
               </button>
               <button type="button" class="filter-btn" data-filter="frontend">
-                <span>Frontend &amp; 3D</span>
+                <span>Frontend &amp; UI</span>
                 <span class="filter-count" id="count-frontend">4</span>
               </button>
               <button type="button" class="filter-btn" data-filter="architecture">
@@ -297,7 +337,7 @@
             </p>
 
             <p class="about-paragraph">
-              Minha formação no <strong>Bacharelado em Ciência da Computação pelo IFSP</strong> consolidou a base em estruturas de dados, algoritmos em C e Java, sistemas operacionais, computação gráfica e <strong>Interação Humano-Computador (IHC)</strong>. No frontend, traduzo esse repertório em design systems modulares, aplicações reativas em <strong>React e TypeScript</strong>, cenas <strong>Three.js / WebGL</strong> e otimização rigorosa de Core Web Vitals.
+              Minha formação no <strong>Bacharelado em Ciência da Computação pelo IFSP</strong> consolidou a base em estruturas de dados, algoritmos em C e Java, sistemas operacionais, computação gráfica e <strong>Interação Humano-Computador (IHC)</strong>. No frontend, traduzo esse repertório em design systems modulares, aplicações reativas em <strong>React e TypeScript</strong>, animações de alta precisão e otimização rigorosa de Core Web Vitals.
             </p>
 
             <p class="about-paragraph">
@@ -323,55 +363,20 @@
         <div class="skills-ledger" id="skillsGrid">
           <!-- Populated dynamically by main.js from technicalSkills -->
         </div>
-      </div>
-    </section>
 
-    <!-- ==========================================================================
-         COMPACT INTERACTIVE CLI TERMINAL (AUTHORIAL SIGNATURE)
-         ========================================================================== -->
-    <section class="terminal-section" id="terminal">
-      <div class="container">
-        <div class="terminal-layout">
-          <div class="terminal-intro">
-            <h2 class="section-title">Inspeção via Linha de Comando</h2>
-            <p class="terminal-lead">
-              Prefere navegar pelo teclado? Utilize o terminal interativo para consultar rapidamente a stack, projetos em produção, trajetória acadêmica ou canais de contato.
+        <!-- Compact CLI Quick-Trigger Strip (Reinforces Hero CLI Terminal) -->
+        <div class="cli-callout-strip" role="region" aria-label="Atalho para Inspeção via Linha de Comando">
+          <div class="cli-callout-copy">
+            <span class="cli-callout-prompt">baxtoos@dev:~$</span>
+            <p class="cli-callout-text">
+              Prefere inspecionar via linha de comando? Execute um comando direto no terminal interativo do topo ou pressione <kbd>/</kbd> a qualquer momento.
             </p>
-            <div class="terminal-quick-actions" id="terminalQuickActions" role="group" aria-label="Comandos rápidos do terminal">
-              <button type="button" class="terminal-chip" data-cmd="whoami">whoami</button>
-              <button type="button" class="terminal-chip" data-cmd="skills">skills</button>
-              <button type="button" class="terminal-chip" data-cmd="projects">projects</button>
-              <button type="button" class="terminal-chip" data-cmd="diex">diex</button>
-              <button type="button" class="terminal-chip" data-cmd="contact">contact</button>
-              <button type="button" class="terminal-chip" data-cmd="help">help</button>
-              <button type="button" class="terminal-chip" data-cmd="clear">clear</button>
-            </div>
           </div>
-
-          <div class="terminal-window" role="region" aria-label="Terminal interativo baxtoos@dev">
-            <div class="terminal-header">
-              <div class="terminal-dots" aria-hidden="true">
-                <span class="terminal-dot"></span>
-                <span class="terminal-dot"></span>
-                <span class="terminal-dot"></span>
-              </div>
-              <div class="terminal-title">baxtoos@dev:~ (bash)</div>
-              <span class="terminal-Hint-key">↑↓ histórico</span>
-            </div>
-
-            <div class="terminal-body">
-              <div class="terminal-output" id="terminalOutput" aria-live="polite">
-                <div class="terminal-line dim"># Sessão interativa iniciada. Clique em um comando ao lado ou digite abaixo.</div>
-                <div class="terminal-line">&gt; Perfil: <strong>Sérgio Bastos</strong> (@Baxtoos) — B.Sc. Ciência da Computação (IFSP)</div>
-                <div class="terminal-line accent">&gt; Papel: Full-Stack Developer (Foco Especializado em Frontend)</div>
-                <div class="terminal-line">&gt; Digite <span class="cmd-inline">help</span> para listar os comandos disponíveis.</div>
-              </div>
-              <label for="terminalInput" class="sr-only">Comando do terminal</label>
-              <div class="terminal-input-row">
-                <span class="terminal-prompt" aria-hidden="true">baxtoos@dev:~$</span>
-                <input type="text" class="terminal-input" id="terminalInput" placeholder="digite help, skills, projects, diex, contact..." autocomplete="off" spellcheck="false" />
-              </div>
-            </div>
+          <div class="cli-callout-actions">
+            <button type="button" class="terminal-chip" data-cmd="skills" data-scroll-terminal="true">skills</button>
+            <button type="button" class="terminal-chip" data-cmd="projects" data-scroll-terminal="true">projects</button>
+            <button type="button" class="terminal-chip" data-cmd="open appfisio" data-scroll-terminal="true">open appfisio</button>
+            <button type="button" class="terminal-chip" data-cmd="contact" data-scroll-terminal="true">contact</button>
           </div>
         </div>
       </div>
@@ -497,8 +502,6 @@
   </footer>
 
   <!-- Script Files -->
-  <script src="assets/js/vendor/three.min.js" defer></script>
-  <script src="assets/js/hero-3d.js" defer></script>
   <script src="assets/js/projects-data.js" defer></script>
   <script src="assets/js/main.js" defer></script>
 </body>

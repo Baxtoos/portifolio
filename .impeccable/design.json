@@ -1,20 +1,20 @@
 {
   "schemaVersion": 2,
-  "generatedAt": "2026-11-04T15:33:00.000Z",
+  "generatedAt": "2026-11-04T18:54:40.000Z",
   "title": "Design System: Sérgio Bastos Portfolio",
   "extensions": {
     "colorMeta": {
-      "vermilion-copper": {
+      "emerald-signal": {
         "role": "primary",
-        "displayName": "Signal Vermilion Copper",
-        "canonical": "oklch(65% 0.19 38)",
-        "tonalRamp": ["#2A1208", "#4C1D0B", "#7A2B0E", "#A8350B", "#C84312", "#E85D2A", "#F27244", "#FAD1C0"]
+        "displayName": "Architectural Emerald",
+        "canonical": "oklch(73% 0.15 162)",
+        "tonalRamp": ["#072419", "#0E422E", "#14724F", "#1D9468", "#2FBF8A", "#45CC9A", "#7ADDB6", "#C6F3E0"]
       },
-      "carbon-ink": {
+      "moss-ink": {
         "role": "neutral",
-        "displayName": "Warm Carbon Ink",
-        "canonical": "oklch(14.5% 0.008 65)",
-        "tonalRamp": ["#0C0B0A", "#13110F", "#1A1714", "#26221E", "#3A332C", "#5E554B", "#9A9080", "#F4F0EA"]
+        "displayName": "Deep Moss Ink",
+        "canonical": "oklch(15% 0.012 160)",
+        "tonalRamp": ["#0B100E", "#111815", "#17201C", "#1F2924", "#2E3D36", "#52615A", "#8A9890", "#EEF2EE"]
       }
     },
     "typographyMeta": {
@@ -22,12 +22,12 @@
       "headline": { "displayName": "Headline", "purpose": "Section headings (h2)." },
       "title": { "displayName": "Title", "purpose": "Case study titles (h3)." },
       "body": { "displayName": "Body", "purpose": "Narrative prose and case study analysis (65-68ch)." },
-      "label": { "displayName": "Label / Mono", "purpose": "CLI terminal, tabular metrics, and stack tokens." }
+      "label": { "displayName": "Label / Mono", "purpose": "Hero CLI terminal, tabular metrics, and stack tokens." }
     },
     "shadows": [
       {
         "name": "shadow-overlay",
-        "value": "0 24px 48px -12px rgba(0, 0, 0, 0.65)",
+        "value": "0 24px 48px -12px rgba(0, 0, 0, 0.68)",
         "purpose": "Floating modal dialog and toast notifications only."
       }
     ],
@@ -49,17 +49,17 @@
       "name": "Primary Button",
       "kind": "button",
       "refersTo": "button-primary",
-      "description": "High-contrast Signal Vermilion CTA button.",
+      "description": "High-contrast Architectural Emerald CTA button.",
       "html": "<button class=\"ds-btn-primary\">Ver Estudos de Caso</button>",
-      "css": ".ds-btn-primary { background: #E85D2A; color: #0C0B0A; padding: 11px 20px; border-radius: 8px; border: 1px solid #E85D2A; font-weight: 600; font-size: 0.925rem; cursor: pointer; transition: background 170ms cubic-bezier(0.22, 1, 0.36, 1); } .ds-btn-primary:hover { background: #F27244; border-color: #F27244; } .ds-btn-primary:focus-visible { outline: 2px solid #E85D2A; outline-offset: 3px; }"
+      "css": ".ds-btn-primary { background: #2FBF8A; color: #0B100E; padding: 11px 20px; border-radius: 8px; border: 1px solid #2FBF8A; font-weight: 600; font-size: 0.875rem; cursor: pointer; transition: background 170ms cubic-bezier(0.22, 1, 0.36, 1); } .ds-btn-primary:hover { background: #45CC9A; border-color: #45CC9A; } .ds-btn-primary:focus-visible { outline: 2px solid #2FBF8A; outline-offset: 3px; }"
     },
     {
       "name": "Secondary Button",
       "kind": "button",
       "refersTo": "button-secondary",
-      "description": "Graphite surface action button with structural hairline border.",
-      "html": "<button class=\"ds-btn-secondary\">GitHub (@Baxtoos)</button>",
-      "css": ".ds-btn-secondary { background: #1A1714; color: #F4F0EA; padding: 11px 20px; border-radius: 8px; border: 1px solid #3A332C; font-weight: 600; font-size: 0.925rem; cursor: pointer; transition: background 170ms cubic-bezier(0.22, 1, 0.36, 1), border-color 170ms ease; } .ds-btn-secondary:hover { background: #24201C; border-color: #C4BBA9; }"
+      "description": "Botanical graphite surface action button with structural hairline border.",
+      "html": "<button class=\"ds-btn-secondary\">Inspecionar via CLI</button>",
+      "css": ".ds-btn-secondary { background: #17201C; color: #EEF2EE; padding: 11px 20px; border-radius: 8px; border: 1px solid #2E3D36; font-weight: 600; font-size: 0.875rem; cursor: pointer; transition: background 170ms cubic-bezier(0.22, 1, 0.36, 1), border-color 170ms ease; } .ds-btn-secondary:hover { background: #1F2B26; border-color: #2FBF8A; }"
     },
     {
       "name": "Project Archive Card",
@@ -67,31 +67,31 @@
       "refersTo": "project-card",
       "description": "Bordered project showcase card with zero nested containers.",
       "html": "<article class=\"ds-project-card\"><h4>AppFisio — Gestão Clínica</h4><p>Plataforma SaaS Full-Stack para prontuários eletrônicos.</p></article>",
-      "css": ".ds-project-card { background: #13110F; color: #F4F0EA; border: 1px solid #26221E; border-radius: 12px; padding: 22px; transition: transform 170ms cubic-bezier(0.22, 1, 0.36, 1), border-color 170ms ease; } .ds-project-card:hover { background: #1A1714; border-color: #3A332C; transform: translateY(-3px); }"
+      "css": ".ds-project-card { background: #111815; color: #EEF2EE; border: 1px solid #1F2924; border-radius: 12px; padding: 22px; transition: transform 170ms cubic-bezier(0.22, 1, 0.36, 1), border-color 170ms ease; } .ds-project-card:hover { background: #17201C; border-color: #2E3D36; transform: translateY(-3px); }"
     }
   ],
   "narrative": {
-    "northStar": "The Architectural Engineering Monograph",
-    "overview": "This design system rejects generic cyber-neon clichés in favor of an editorial engineering monograph inspired by precision industrial manuals and technical publishing.",
+    "northStar": "The Architectural Engineering Monograph — Moss Ink & CLI Centerpiece Edition",
+    "overview": "This design system rejects generic cyber-neon clichés in favor of an editorial engineering monograph anchored by an interactive CLI Terminal right in the Hero and a refined, non-neon deep green palette.",
     "keyCharacteristics": [
-      "Warm carbon ink (#0C0B0A) in dark mode and archival drafting paper (#F6F3EC) in light mode.",
-      "Single high-contrast signal vermilion-copper accent (#E85D2A dark / #C84312 light).",
-      "Exposed 1px structural hairline rules and ledger rows instead of nested cards.",
-      "Expressive optical grotesque display typography (Bricolage Grotesque) paired with Manrope and JetBrains Mono."
+      "Deep moss ink (#0B100E) in dark mode and archival sage paper (#F3F5F0) in light mode.",
+      "Single high-contrast architectural emerald/forest green accent (#2FBF8A dark / #14724F light).",
+      "Interactive CLI Terminal (baxtoos@dev:~) as the Hero centerpiece with '/' shortcut, Tab autocomplete, and clickable command chips.",
+      "Exposed 1px structural hairline rules and ledger rows instead of nested cards."
     ],
     "rules": [
-      { "name": "The Single Signal Rule", "body": "Signal Vermilion Copper is the only chromatic accent on the page; never combine it with secondary neon hues or multi-stop gradients.", "section": "colors" },
+      { "name": "The Single Signal Rule", "body": "Architectural Emerald (#2FBF8A / #14724F) is the only chromatic accent on the page; never combine it with secondary neon hues or multi-stop gradients.", "section": "colors" },
       { "name": "The Unassisted Heading Rule", "body": "Headings (h1, h2, h3) never carry an eyebrow or kicker label above them; the heading's scale and wording carry the hierarchy directly.", "section": "typography" },
       { "name": "The Single Elevation Declaration Rule", "body": "Page containers and project cards declare their boundary with a 1px border and never combine it with a diffuse drop shadow.", "section": "elevation" }
     ],
     "dos": [
-      "Do lead the portfolio with verifiable production case studies (DIEX, AppFisio, MT Sublimação) immediately after the Hero.",
+      "Do keep the Interactive CLI Terminal (baxtoos@dev:~) immediately accessible in the Hero with '/' shortcut and one-click command chips.",
       "Do maintain WCAG AA contrast (>= 4.5:1 for prose and metadata) in both dark and light themes.",
-      "Do pause WebGL rendering when off-screen and disable decorative motion when prefers-reduced-motion: reduce is active."
+      "Do disable decorative GSAP/boot motion when prefers-reduced-motion: reduce is active."
     ],
     "donts": [
       "Don't place eyebrows or kickers above h1, h2, or h3 headings.",
-      "Don't use gradient text (background-clip: text), neon cyan/violet glows, or HUD brackets.",
+      "Don't use gradient text (background-clip: text), neon Matrix glows, or heavy 3D canvases that compete with content.",
       "Don't nest cards inside cards or use generic icon-plus-heading boxes for the About or Skills sections."
     ]
   }

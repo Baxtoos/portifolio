@@ -1,0 +1,45 @@
+# ==============================================================================
+# .gitignore — Portfólio Sérgio Bastos (@Baxtoos)
+# ==============================================================================
+
+# IDEs & Editores
+.vscode/
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+*~
+
+# Sistema Operacional (Windows / macOS / Linux)
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Dependências & Ferramentas Locais
+node_modules/
+jspm_packages/
+.npm/
+.pnpm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+npm-debug.log*
+
+# Variáveis de Ambiente & Segredos
+.env
+.env.local
+.env.*.local
+
+# Temporários, Caches & Cobertura de Testes
+dist/
+build/
+coverage/
+.cache/
+tmp/
+temp/
+scratch/
+*.log

@@ -1,7 +1,7 @@
 /**
  * ==============================================================================
  * main.js — Interactive Core for Sérgio Bastos (@Baxtoos) Portfolio
- * Architectural Engineering Monograph Edition
+ * Architectural Engineering Monograph — Moss Ink & CLI Centerpiece Edition
  * ==============================================================================
  */
 
@@ -37,7 +37,7 @@ function initNavbar() {
       navbar.classList.toggle('scrolled', scrollY > 24);
     }
 
-    const scrollPosition = scrollY + 160;
+    const scrollPosition = scrollY + 180;
     let currentId = '';
 
     sections.forEach((section) => {
@@ -49,8 +49,9 @@ function initNavbar() {
     });
 
     if (currentId) {
+      const targetHref = currentId === 'hero' ? '#terminal' : `#${currentId}`;
       navLinks.forEach((link) => {
-        const isMatch = link.getAttribute('href') === `#${currentId}`;
+        const isMatch = link.getAttribute('href') === targetHref;
         link.classList.toggle('active', isMatch);
       });
     }
@@ -150,7 +151,7 @@ function initTheme() {
   function applyTheme(theme) {
     document.documentElement.setAttribute('data-theme', theme);
     if (themeMeta) {
-      themeMeta.setAttribute('content', theme === 'light' ? '#F6F3EC' : '#0C0B0A');
+      themeMeta.setAttribute('content', theme === 'light' ? '#F3F5F0' : '#0B100E');
     }
     if (themeBtn) {
       themeBtn.setAttribute(
@@ -372,8 +373,8 @@ function initSkills() {
   const domains = [
     {
       key: 'frontend',
-      title: 'Interface, Arquitetura UI & Gráficos 3D',
-      desc: 'Construção de aplicações web reativas, sistemas de design escaláveis e experiências WebGL.'
+      title: 'Interface, Arquitetura UI & Interatividade',
+      desc: 'Construção de aplicações web reativas, sistemas de design escaláveis e animações de alta precisão.'
     },
     {
       key: 'backend',
@@ -449,10 +450,10 @@ function initModal() {
 }
 
 function openProjectModal(projectId) {
-  if (typeof portfolioProjects === 'undefined') return;
+  if (typeof portfolioProjects === 'undefined') return false;
   const project = portfolioProjects.find((p) => p.id === projectId);
   const backdrop = document.getElementById('projectModal');
-  if (!project || !backdrop) return;
+  if (!project || !backdrop) return false;
 
   document.getElementById('modalTitle').textContent = project.title;
   document.getElementById('modalBadge').textContent = `${project.categoryLabel} • ${project.badge}`;
@@ -507,44 +508,90 @@ function openProjectModal(projectId) {
 
   const closeBtn = document.getElementById('modalCloseBtn');
   if (closeBtn) closeBtn.focus();
+  return true;
 }
 
 /* ==============================================================================
-   7. INTERACTIVE CLI TERMINAL (WITH COMMAND HISTORY)
+   7. HERO INTERACTIVE CLI TERMINAL (BOOT, SHORTCUTS, AUTOCOMPLETE & NAVIGATION)
    ============================================================================== */
 function initTerminal() {
   const input = document.getElementById('terminalInput');
   const output = document.getElementById('terminalOutput');
+  const runBtn = document.getElementById('terminalRunBtn');
+  const heroFocusBtn = document.getElementById('heroFocusTerminalBtn');
+  const terminalSection = document.getElementById('terminal');
   if (!input || !output) return;
 
   const history = [];
   let historyIndex = -1;
 
+  const availableCommands = [
+    'help',
+    'projects',
+    'skills',
+    'whoami',
+    'frontend',
+    'backend',
+    'diex',
+    'open diex',
+    'open appfisio',
+    'open mtsublimacao',
+    'contact',
+    'github',
+    'clear'
+  ];
+
+  // Subtle boot reveal for the initial 4 lines (<= 0.9s total, instant on reduced motion)
+  const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const bootTimers = [];
+
+  if (!reduceMotion) {
+    const initialLines = Array.from(output.querySelectorAll('.terminal-line'));
+    initialLines.forEach((line, idx) => {
+      line.style.opacity = '0';
+      const timer = setTimeout(() => {
+        line.style.transition = 'opacity 180ms ease';
+        line.style.opacity = '1';
+      }, 120 + idx * 170);
+      bootTimers.push(timer);
+    });
+  }
+
+  function finishBootImmediately() {
+    while (bootTimers.length) {
+      clearTimeout(bootTimers.pop());
+    }
+    output.querySelectorAll('.terminal-line').forEach((line) => {
+      line.style.opacity = '1';
+    });
+  }
+
   const commands = {
     help: () => `
 <div class="terminal-line accent">Comandos disponíveis no baxtoos@dev:</div>
-<div class="terminal-line">  <span class="cmd-inline">whoami</span>    — Resumo profissional e formação acadêmica</div>
-<div class="terminal-line">  <span class="cmd-inline">frontend</span>  — Especialização em React, TypeScript e WebGL 3D</div>
-<div class="terminal-line">  <span class="cmd-inline">backend</span>   — Competências em Node.js, Java/Spring, SQL e Docker</div>
-<div class="terminal-line">  <span class="cmd-inline">skills</span>    — Matriz completa da stack tecnológica</div>
-<div class="terminal-line">  <span class="cmd-inline">projects</span>  — Estudos de caso em destaque</div>
-<div class="terminal-line">  <span class="cmd-inline">diex</span>      — Sobre o estúdio DIEX Tech Studio</div>
-<div class="terminal-line">  <span class="cmd-inline">contact</span>   — E-mail direto e GitHub</div>
-<div class="terminal-line">  <span class="cmd-inline">github</span>    — Abre github.com/Baxtoos em nova aba</div>
-<div class="terminal-line">  <span class="cmd-inline">clear</span>     — Limpa a saída do terminal</div>
+<div class="terminal-line">  <span class="cmd-inline">projects</span>       — Lista os estudos de caso principais em produção</div>
+<div class="terminal-line">  <span class="cmd-inline">open &lt;nome&gt;</span>    — Abre a ficha técnica de um projeto (ex: <span class="cmd-inline">open diex</span>, <span class="cmd-inline">open appfisio</span>)</div>
+<div class="terminal-line">  <span class="cmd-inline">skills</span>         — Matriz completa da stack tecnológica por camada</div>
+<div class="terminal-line">  <span class="cmd-inline">whoami</span>         — Resumo profissional e formação no IFSP</div>
+<div class="terminal-line">  <span class="cmd-inline">frontend</span>       — Especialização em React, TypeScript e Arquitetura UI</div>
+<div class="terminal-line">  <span class="cmd-inline">backend</span>        — Competências em Node.js, Java/Spring, SQL e Docker</div>
+<div class="terminal-line">  <span class="cmd-inline">diex</span>           — Sobre o estúdio DIEX Tech Studio</div>
+<div class="terminal-line">  <span class="cmd-inline">contact</span>        — Copia o e-mail direto e exibe links de contato</div>
+<div class="terminal-line">  <span class="cmd-inline">github</span>         — Abre github.com/Baxtoos em nova aba</div>
+<div class="terminal-line">  <span class="cmd-inline">clear</span>          — Limpa a saída do terminal</div>
     `,
     whoami: () => `
 <div class="terminal-line accent">Sérgio Bastos (@Baxtoos)</div>
 <div class="terminal-line">Desenvolvedor Full-Stack com foco especializado em Frontend.</div>
 <div class="terminal-line">Graduação: Bacharel em Ciência da Computação — IFSP.</div>
-<div class="terminal-line">Localização: Salto / Indaiatuba — SP, Brasil.</div>
-<div class="terminal-line">Status: Disponível para oportunidades e novos sistemas.</div>
+<div class="terminal-line">Liderança: Cofundador no estúdio DIEX Tech Studio (+13 entregas na Vercel).</div>
+<div class="terminal-line">Localização: Salto / Indaiatuba — SP, Brasil • Status: Disponível.</div>
     `,
     frontend: () => `
-<div class="terminal-line accent">Engenharia de Interface &amp; WebGL:</div>
+<div class="terminal-line accent">Engenharia de Interface &amp; Arquitetura UI:</div>
 <div class="terminal-line">  • Ecossistema: React, Next.js, TypeScript, JavaScript ES6+, Vite</div>
-<div class="terminal-line">  • Gráficos &amp; Motion: Three.js (WebGL 2.0), GSAP + ScrollTrigger</div>
-<div class="terminal-line">  • Estilo &amp; Rigor: CSS Moderno, Tailwind, WCAG AA, Core Web Vitals</div>
+<div class="terminal-line">  • Interatividade: GSAP + ScrollTrigger, Design Systems Modulares</div>
+<div class="terminal-line">  • Qualidade: CSS Moderno, Tailwind, WCAG AA, Core Web Vitals</div>
     `,
     backend: () => `
 <div class="terminal-line accent">Backend, Dados &amp; Infraestrutura:</div>
@@ -556,27 +603,32 @@ function initTerminal() {
 <div class="terminal-line accent">DIEX Tech Studio:</div>
 <div class="terminal-line">Estúdio de engenharia digital cofundado por Sérgio Bastos.</div>
 <div class="terminal-line">Mais de 12 sistemas, SaaS e portais corporativos entregues em produção.</div>
-<div class="terminal-line">Produção: <a href="https://diex-site.vercel.app" target="_blank" rel="noopener noreferrer">https://diex-site.vercel.app</a></div>
+<div class="terminal-line">Produção: <a href="https://diex-site.vercel.app" target="_blank" rel="noopener noreferrer">https://diex-site.vercel.app</a> • Dica: digite <span class="cmd-inline">open diex</span></div>
     `,
     skills: () => `
 <div class="terminal-line accent">Stack Tecnológica por Camada:</div>
-<div class="terminal-line">  [Interface] React, TypeScript, Three.js, GSAP, CSS Moderno, Tailwind</div>
+<div class="terminal-line">  [Interface] React, TypeScript, Next.js, GSAP, CSS Moderno, Tailwind</div>
 <div class="terminal-line">  [Backend]   Node.js, Express, Java, Spring Boot, Prisma ORM</div>
 <div class="terminal-line">  [Database]  PostgreSQL, MySQL, SQLite, Supabase</div>
 <div class="terminal-line">  [Infra]     Docker, Nginx, Git/GitHub, Linux, Vercel</div>
     `,
     projects: () => `
-<div class="terminal-line accent">Estudos de Caso Principais (Vercel):</div>
-<div class="terminal-line">  1. <strong>DIEX Tech Studio</strong> — Ecossistema digital (&lt; 0.8s FCP, +12 entregas)</div>
-<div class="terminal-line">  2. <strong>AppFisio</strong> — SaaS clínico para fisioterapia (Node, Express, Prisma)</div>
-<div class="terminal-line">  3. <strong>MT Sublimação</strong> — Catálogo dinâmico (-60% tempo de cotação)</div>
-<div class="terminal-line">  4. <strong>EventHub &amp; CarTon</strong> — Arquitetura corporativa em Java &amp; Spring Boot</div>
+<div class="terminal-line accent">Estudos de Caso Principais (13 sistemas ativos):</div>
+<div class="terminal-line">  1. <strong>DIEX Tech Studio</strong> — Ecossistema digital (&lt; 0.8s FCP) → <span class="cmd-inline">open diex</span></div>
+<div class="terminal-line">  2. <strong>AppFisio</strong> — SaaS clínico Full-Stack (Node, Prisma) → <span class="cmd-inline">open appfisio</span></div>
+<div class="terminal-line">  3. <strong>MT Sublimação</strong> — Catálogo B2B (-60% cotação) → <span class="cmd-inline">open mtsublimacao</span></div>
+<div class="terminal-line">  4. <strong>EventHub &amp; CarTon</strong> — Engenharia Java/Spring → <span class="cmd-inline">open eventhub</span></div>
     `,
-    contact: () => `
-<div class="terminal-line accent">Canais Diretos:</div>
+    contact: () => {
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText('giftc444@gmail.com').catch(() => {});
+      }
+      return `
+<div class="terminal-line accent">Canais Diretos (E-mail copiado para a área de transferência):</div>
 <div class="terminal-line">  E-mail: <a href="mailto:giftc444@gmail.com">giftc444@gmail.com</a></div>
 <div class="terminal-line">  GitHub: <a href="https://github.com/Baxtoos" target="_blank" rel="noopener noreferrer">https://github.com/Baxtoos</a></div>
-    `,
+      `;
+    },
     github: () => {
       window.open('https://github.com/Baxtoos', '_blank', 'noopener,noreferrer');
       return `<div class="terminal-line accent">Abrindo https://github.com/Baxtoos em nova aba...</div>`;
@@ -587,7 +639,88 @@ function initTerminal() {
     }
   };
 
+  function handleOpenCommand(arg) {
+    if (!arg || typeof portfolioProjects === 'undefined') {
+      return `<div class="terminal-line">Informe o projeto. Exemplo: <span class="cmd-inline">open diex</span>, <span class="cmd-inline">open appfisio</span> ou <span class="cmd-inline">open mtsublimacao</span>.</div>`;
+    }
+    const query = arg.toLowerCase().trim();
+    const match = portfolioProjects.find(
+      (p) =>
+        p.id.toLowerCase() === query ||
+        p.id.toLowerCase().includes(query) ||
+        p.title.toLowerCase().includes(query)
+    );
+
+    if (!match) {
+      return `<div class="terminal-line">Projeto "${escapeHtml(arg)}" não localizado. Digite <span class="cmd-inline">projects</span> para ver os códigos disponíveis.</div>`;
+    }
+
+    lastFocusedElement = input;
+    openProjectModal(match.id);
+    return `<div class="terminal-line accent">Abrindo ficha técnica de <strong>${escapeHtml(match.title)}</strong>...</div>`;
+  }
+
+  function findClosestCommand(unknownCmd) {
+    const base = unknownCmd.split(' ')[0];
+    return availableCommands.find((c) => c.startsWith(base.slice(0, 2)) || c.includes(base));
+  }
+
+  function executeCommand(cmdRaw) {
+    finishBootImmediately();
+    const trimmed = cmdRaw.trim();
+    const cmd = trimmed.toLowerCase();
+    if (!cmd) return;
+
+    history.push(trimmed);
+
+    const userLine = document.createElement('div');
+    userLine.className = 'terminal-line';
+    userLine.innerHTML = `<span class="terminal-prompt">baxtoos@dev:~$</span> ${escapeHtml(trimmed)}`;
+    output.appendChild(userLine);
+
+    if (cmd === 'clear') {
+      commands.clear();
+      return;
+    }
+
+    let responseHtml = '';
+    if (cmd.startsWith('open ')) {
+      responseHtml = handleOpenCommand(cmd.slice(5));
+    } else if (cmd === 'open') {
+      responseHtml = handleOpenCommand('');
+    } else if (commands[cmd]) {
+      responseHtml = commands[cmd]();
+    } else {
+      const suggestion = findClosestCommand(cmd);
+      const hint = suggestion
+        ? ` Voc\u00ea quis dizer <span class="cmd-inline">${suggestion}</span>?`
+        : '';
+      responseHtml = `<div class="terminal-line">Comando não reconhecido: "${escapeHtml(cmd)}".${hint} Digite <span class="cmd-inline">help</span> para ver a lista.</div>`;
+    }
+
+    if (responseHtml) {
+      const respContainer = document.createElement('div');
+      respContainer.innerHTML = responseHtml;
+      output.appendChild(respContainer);
+    }
+
+    output.scrollTop = output.scrollHeight;
+  }
+
   input.addEventListener('keydown', (e) => {
+    finishBootImmediately();
+
+    if (e.key === 'Tab') {
+      e.preventDefault();
+      const currentVal = input.value.trim().toLowerCase();
+      if (!currentVal) return;
+      const match = availableCommands.find((c) => c.startsWith(currentVal));
+      if (match) {
+        input.value = match;
+      }
+      return;
+    }
+
     if (e.key === 'ArrowUp') {
       e.preventDefault();
       if (history.length > 0) {
@@ -623,42 +756,64 @@ function initTerminal() {
     }
   });
 
-  function executeCommand(cmdRaw) {
-    const trimmed = cmdRaw.trim();
-    const cmd = trimmed.toLowerCase();
-    if (!cmd) return;
-
-    history.push(trimmed);
-
-    const userLine = document.createElement('div');
-    userLine.className = 'terminal-line';
-    userLine.innerHTML = `<span class="terminal-prompt">baxtoos@dev:~$</span> ${escapeHtml(trimmed)}`;
-    output.appendChild(userLine);
-
-    if (cmd === 'clear') {
-      commands.clear();
-      return;
-    }
-
-    const responseHtml = commands[cmd]
-      ? commands[cmd]()
-      : `<div class="terminal-line">Comando não reconhecido: "${escapeHtml(cmd)}". Digite <span class="cmd-inline">help</span> para ver a lista.</div>`;
-
-    if (responseHtml) {
-      const respContainer = document.createElement('div');
-      respContainer.innerHTML = responseHtml;
-      output.appendChild(respContainer);
-    }
-
-    output.scrollTop = output.scrollHeight;
+  if (runBtn) {
+    runBtn.addEventListener('click', () => {
+      const cmdRaw = input.value.trim() || 'help';
+      input.value = '';
+      historyIndex = -1;
+      executeCommand(cmdRaw);
+      input.focus();
+    });
   }
+
+  if (heroFocusBtn) {
+    heroFocusBtn.addEventListener('click', () => {
+      if (terminalSection) {
+        terminalSection.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      }
+      input.focus();
+      executeCommand('help');
+    });
+  }
+
+  document.querySelectorAll('[data-focus-terminal="true"]').forEach((link) => {
+    link.addEventListener('click', () => {
+      setTimeout(() => {
+        input.focus();
+      }, 250);
+    });
+  });
+
+  // Global keyboard shortcut: '/' or '`' focuses the Hero CLI Terminal
+  window.addEventListener('keydown', (e) => {
+    const activeTag = document.activeElement ? document.activeElement.tagName : '';
+    const isTyping = activeTag === 'INPUT' || activeTag === 'TEXTAREA' || document.activeElement?.isContentEditable;
+    const modalOpen = document.getElementById('projectModal')?.classList.contains('active');
+
+    if (!isTyping && !modalOpen && (e.key === '/' || e.key === '`')) {
+      e.preventDefault();
+      if (terminalSection) {
+        terminalSection.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      }
+      input.focus();
+    }
+  });
 
   document.querySelectorAll('.terminal-chip').forEach((chip) => {
     chip.addEventListener('click', () => {
       const targetCmd = chip.getAttribute('data-cmd');
+      const shouldScroll = chip.getAttribute('data-scroll-terminal') === 'true';
+
+      if (shouldScroll && terminalSection) {
+        terminalSection.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      }
+
       if (targetCmd) {
         input.value = '';
         executeCommand(targetCmd);
+        if (window.innerWidth >= 768) {
+          input.focus({ preventScroll: shouldScroll });
+        }
       }
     });
   });
@@ -743,7 +898,7 @@ function initMotion() {
         .from('.hero-name', { y: 18, autoAlpha: 0 })
         .from('.hero-statement', { y: 14, autoAlpha: 0 }, '-=0.38')
         .from('.hero-description, .hero-cta-group', { y: 12, autoAlpha: 0, stagger: 0.08 }, '-=0.35')
-        .from('.sculpture-stage', { scale: 0.97, autoAlpha: 0, duration: 0.6 }, '-=0.45')
+        .from('.terminal-hero-stage', { scale: 0.98, autoAlpha: 0, duration: 0.55 }, '-=0.45')
         .from('.ledger-cell', { y: 10, autoAlpha: 0, stagger: 0.05, duration: 0.4 }, '-=0.35');
     }
   );

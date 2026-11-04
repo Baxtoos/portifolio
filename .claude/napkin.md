@@ -8,7 +8,7 @@
 
 ## Execution & Validation (Highest Priority)
 1. **[2026-11-04] Impeccable detector & doctor verification**
-   Do instead: Run `C:\Users\master\.agents\skills\impeccable\scripts\impeccable.cmd detect --json <changed targets>` and `doctor --json` after UI/design updates; write `.impeccable/design.json` after `DESIGN.md` so the sidecar mtime is newer.
+   Do instead: Run `C:\Users\master\.agents\skills\impeccable\scripts\impeccable.cmd detect --json index.html assets/css/style.css assets/js/main.js` and `doctor --json` after UI/design updates; write `.impeccable/design.json` after `DESIGN.md` so the sidecar mtime is newer.
 2. **[2026-11-04] Static CSS box detector and logical padding properties**
    Do instead: Use explicit physical `padding: <top> <right> <bottom> <left>` values on bordered/colored containers in `style.css` so `impeccable detect` does not flag `cramped-padding` on `padding-block`/`padding-inline`.
 3. **[2026-11-04] DESIGN.md YAML frontmatter scale synchronization**
@@ -19,8 +19,8 @@
    Do instead: Invoke `C:\Users\master\.agents\skills\impeccable\scripts\impeccable.cmd` rather than `sh` scripts.
 
 ## Domain Behavior Guardrails
-1. **[2026-11-04] Zero-build static portfolio architecture**
-   Do instead: Keep `index.html`, `assets/css/style.css`, and `assets/js/*.js` directly runnable without a bundler.
+1. **[2026-11-04] Zero-build, zero-WebGL static portfolio architecture (v2)**
+   Do instead: Keep `index.html`, `assets/css/style.css`, and `assets/js/main.js` + `assets/js/projects-data.js` directly runnable without a bundler or Three.js; the Hero centerpiece is the Interactive CLI Terminal (`#terminal`).
 2. **[2026-11-04] Impeccable Craft Floor bans**
    Do instead: Never use eyebrows/kickers above headings, gradient text, nested cards, or hero-metric templates.
 
