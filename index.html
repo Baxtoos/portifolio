@@ -3,38 +3,42 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Sérgio Bastos — Full-Stack Developer (Foco em Frontend) | Portfólio</title>
-  <meta name="description" content="Portfólio de Sérgio Bastos (Baxtoos) — Desenvolvedor Full-Stack com foco especializado em Frontend e Engenharia de Software, especializado em React, TypeScript, 3D WebGL, Node.js, Java, Spring Boot e Docker." />
+  <title>Sérgio Bastos — Full-Stack Developer &amp; Frontend Engineer | Portfólio</title>
+  <meta name="description" content="Portfólio de engenharia de software de Sérgio Bastos (@Baxtoos) — Desenvolvedor Full-Stack com foco em Frontend (React, TypeScript, WebGL 3D, Node.js, Java/Spring Boot) e cofundador da DIEX Tech Studio." />
   <meta name="author" content="Sérgio Bastos" />
-  <meta name="keywords" content="Sérgio Bastos, Baxtoos, Full-Stack Developer, Frontend, React, TypeScript, Software Engineer, Node.js, Java, Spring, DIEX, Portfólio" />
+  <meta name="keywords" content="Sérgio Bastos, Baxtoos, Full-Stack Developer, Frontend Engineer, React, TypeScript, Three.js, WebGL, Node.js, Java, Spring Boot, DIEX, Portfólio" />
+  <meta name="theme-color" content="#0C0B0A" id="themeColorMeta" />
 
-  <!-- Favicon / Ícone da Aba do Navegador -->
+  <!-- Favicon -->
   <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg" />
   <link rel="icon" type="image/png" sizes="64x64" href="assets/images/favicon.png" />
   <link rel="shortcut icon" href="favicon.ico" />
   <link rel="apple-touch-icon" href="assets/images/favicon.png" />
 
-  <!-- Open Graph / Meta Social -->
+  <!-- Open Graph / Social -->
   <meta property="og:type" content="website" />
-  <meta property="og:title" content="Sérgio Bastos — Full-Stack Developer (Foco em Frontend) & Software Engineer" />
-  <meta property="og:description" content="Projetos de alta performance, interfaces ricas e ecossistemas web ponta a ponta." />
-  <meta property="og:image" content="assets/images/projects/autom-hero.jpg" />
+  <meta property="og:url" content="https://baxtoos.github.io/portifolio/" />
+  <meta property="og:title" content="Sérgio Bastos — Full-Stack Developer &amp; Frontend Engineer" />
+  <meta property="og:description" content="Interfaces de alta precisão, aplicações React/TypeScript, WebGL 3D e sistemas Full-Stack em produção." />
+  <meta property="og:image" content="https://baxtoos.github.io/portifolio/assets/images/portfolio-preview.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Sérgio Bastos — Full-Stack Developer &amp; Frontend Engineer" />
+  <meta name="twitter:description" content="Interfaces de alta precisão, aplicações React/TypeScript, WebGL 3D e sistemas Full-Stack em produção." />
+  <meta name="twitter:image" content="https://baxtoos.github.io/portifolio/assets/images/portfolio-preview.png" />
 
-  <!-- Google Fonts: Outfit (DIEX Heading), Plus Jakarta Sans, JetBrains Mono, Syne -->
+  <!-- Google Fonts: Bricolage Grotesque (Display), Manrope (Body), JetBrains Mono (Code/Metrics) -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Outfit:wght@400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&family=Syne:wght@600;700;800;900&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700;12..96,800&family=JetBrains+Mono:wght@400;500;600&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet" />
 
-  <!-- Font Awesome Icons -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
-
-  <!-- Custom Stylesheet (DIEX Base + Emerald Palette) -->
+  <!-- Custom Stylesheet -->
   <link rel="stylesheet" href="assets/css/style.css" />
 
-  <!-- GSAP Animation Library -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <!-- GSAP & ScrollTrigger -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
 
-  <!-- Structured Data / JSON-LD for SEO -->
+  <!-- Structured Data / JSON-LD -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -46,6 +50,10 @@
       "https://github.com/Baxtoos"
     ],
     "jobTitle": "Full-Stack Developer (Foco em Frontend)",
+    "alumniOf": {
+      "@type": "CollegeOrUniversity",
+      "name": "Instituto Federal de São Paulo (IFSP)"
+    },
     "description": "Desenvolvedor Full-Stack com foco especializado em Frontend, React, TypeScript, 3D WebGL e arquitetura de software escalável.",
     "knowsAbout": [
       "Frontend Development",
@@ -63,363 +71,348 @@
   </script>
 </head>
 <body>
-  <!-- Route & Redirection Animations Layer -->
-  <div class="route-progress-bar" id="routeProgressBar"></div>
-  <div class="redirection-curtain" id="redirectionCurtain"></div>
-  <div class="click-ripple-container" id="clickRippleContainer"></div>
-
-  <!-- Ambient Floating Orbs & Background 56px Tech Grid (DIEX standard) -->
-  <div class="bg-ambient">
-    <div class="orb orb-1"></div>
-    <div class="orb orb-2"></div>
-    <div class="orb orb-3"></div>
-  </div>
-  <div class="bg-grid"></div>
+  <a href="#conteudo-principal" class="skip-link">Pular para o conteúdo principal</a>
 
   <!-- ==========================================================================
-       NAVIGATION BAR (DIEX STANDARD)
+       HEADER & NAVIGATION
        ========================================================================== -->
   <header class="navbar" id="topNav">
     <div class="container navbar-container">
-      <a href="#hero" class="navbar-mobile-brand">Sérgio Bastos<span class="brand-dot">.</span></a>
+      <a href="#hero" class="navbar-brand" aria-label="Sérgio Bastos — Início">
+        <span class="brand-name">Sérgio Bastos<span class="brand-dot">.</span></span>
+        <span class="brand-tag">Full-Stack // Frontend</span>
+      </a>
 
-      <nav>
+      <nav aria-label="Navegação principal">
         <ul class="nav-links" id="navLinks">
-          <li><a href="#hero" class="nav-link active">Início</a></li>
-          <li><a href="#sobre" class="nav-link">Sobre Mim</a></li>
-          <li><a href="#habilidades" class="nav-link">Skills</a></li>
-          <li><a href="#projetos" class="nav-link">Projetos</a></li>
+          <li><a href="#projetos" class="nav-link active">Projetos</a></li>
+          <li><a href="#sobre" class="nav-link">Trajetória</a></li>
+          <li><a href="#habilidades" class="nav-link">Stack</a></li>
+          <li><a href="#terminal" class="nav-link">CLI</a></li>
           <li><a href="#contato" class="nav-link">Contato</a></li>
           <li class="mobile-nav-cta">
-            <a href="#contato" class="btn-diex btn-diex-primary mobile-menu-cta-btn">
-              <span>Fale Comigo</span>
-              <span class="icon-circle"><i class="fa-solid fa-arrow-right"></i></span>
+            <a href="#contato" class="btn btn-primary mobile-menu-cta-btn">
+              <span>Iniciar Conversa</span>
+              <svg class="icon-svg" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
             </a>
-            <a href="https://github.com/Baxtoos" target="_blank" rel="noopener noreferrer" class="btn-diex btn-diex-secondary mobile-menu-github-btn">
+            <a href="https://github.com/Baxtoos" target="_blank" rel="noopener noreferrer" class="btn btn-secondary mobile-menu-github-btn">
               <span>GitHub (@Baxtoos)</span>
-              <span class="icon-circle"><i class="fa-brands fa-github"></i></span>
+              <svg class="icon-svg" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8"/></svg>
             </a>
           </li>
         </ul>
       </nav>
 
       <div class="nav-actions">
-        <button class="theme-toggle-btn" id="themeToggleBtn" aria-label="Alternar tema" title="Alternar tema claro/escuro">
-          <i class="fa-solid fa-sun"></i>
+        <button type="button" class="theme-toggle-btn" id="themeToggleBtn" aria-label="Alternar para tema claro" title="Alternar tema claro/escuro">
+          <svg class="icon-svg icon-sun" viewBox="0 0 24 24" aria-hidden="true">
+            <circle cx="12" cy="12" r="4"/>
+            <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/>
+          </svg>
+          <svg class="icon-svg icon-moon" viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+          </svg>
         </button>
 
-        <a href="https://github.com/Baxtoos" target="_blank" rel="noopener noreferrer" class="nav-btn-github" id="navGithubBtn">
-          <i class="fa-brands fa-github"></i>
-          <span>GitHub</span>
+        <a href="https://github.com/Baxtoos" target="_blank" rel="noopener noreferrer" class="nav-github-link" id="navGithubBtn" aria-label="Perfil no GitHub (@Baxtoos)">
+          <svg class="icon-svg" viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M9 19c-4.3 1.4-4.3-2.5-6-3m12 5v-3.5c0-1 .1-1.4-.5-2 2.8-.3 5.5-1.4 5.5-6a4.6 4.6 0 0 0-1.3-3.2 4.2 4.2 0 0 0-.1-3.2s-1.1-.3-3.5 1.3a12.3 12.3 0 0 0-6.2 0C6.5 2.8 5.4 3.1 5.4 3.1a4.2 4.2 0 0 0-.1 3.2A4.6 4.6 0 0 0 4 9.5c0 4.6 2.7 5.7 5.5 6-.6.6-.6 1.2-.5 2V21"/>
+          </svg>
+          <span>@Baxtoos</span>
         </a>
 
-        <a href="#contato" class="btn-diex btn-diex-primary nav-cta-desktop" style="padding: 9px 20px; font-size: 0.84rem;">
-          <span>Fale Comigo</span>
-          <span class="icon-circle"><i class="fa-solid fa-arrow-right"></i></span>
+        <a href="#contato" class="btn btn-primary nav-cta-desktop">
+          <span>Contato</span>
+          <svg class="icon-svg" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
         </a>
 
-        <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Menu móvel">
-          <i class="fa-solid fa-bars"></i>
+        <button type="button" class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Abrir menu de navegação" aria-expanded="false" aria-controls="navLinks">
+          <svg class="icon-svg icon-menu" viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M4 7h16M4 12h16M4 17h16"/>
+          </svg>
+          <svg class="icon-svg icon-close" viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M18 6L6 18M6 6l12 12"/>
+          </svg>
         </button>
       </div>
     </div>
   </header>
 
-  <main>
+  <main id="conteudo-principal">
     <!-- ==========================================================================
-         HERO SECTION (DIEX HERO FORMAT & 3D HOLOGRAPHIC CANVAS)
+         HERO SECTION (EDITORIAL SPREAD + AUTHORIAL 3D SCULPTURE)
          ========================================================================== -->
     <section class="hero-section" id="hero">
-      <div class="container hero-grid">
-        <div class="hero-content">
-          <h1 class="hero-title hero-name-title">
-            <span class="hero-name-wrapper">
-              <span class="hero-name-first">Sérgio</span>
-              <span class="hero-name-last-group"><span class="hero-name-last text-gradient-cyan">Bastos</span><span class="hero-name-dot">.</span></span>
-            </span>
-            <span class="hero-role">&lt;Full-Stack Developer • Foco Especializado em Frontend /&gt;</span>
-          </h1>
-
-          <p class="hero-description">
-            Desenvolvimento de ecossistemas web ponta a ponta, aplicações reativas em React e TypeScript, computação visual 3D com WebGL e arquitetura de backend corporativa sólida em Java e Node.js.
-          </p>
-
-          <div class="hero-cta-group">
-            <a href="#projetos" class="btn-diex btn-diex-primary" id="heroCtaProjects">
-              <span>Explorar Portfólio</span>
-              <span class="icon-circle"><i class="fa-solid fa-arrow-right"></i></span>
-            </a>
-
-            <a href="https://github.com/Baxtoos" target="_blank" rel="noopener noreferrer" class="btn-diex btn-diex-secondary" id="heroCtaGithub">
-              <span>GitHub Profile</span>
-              <span class="icon-circle"><i class="fa-brands fa-github"></i></span>
-            </a>
-          </div>
-
-          <div class="hero-metrics-bar">
-            <div class="metric-item">
-              <span class="metric-number">+12</span>
-              <span class="metric-label">Sistemas &amp; Portais Criados</span>
-            </div>
-            <div class="metric-item">
-              <span class="metric-number">Full-Stack</span>
-              <span class="metric-label">Foco Frontend: React, TS, 3D</span>
-            </div>
-            <div class="metric-item">
-              <span class="metric-number">100%</span>
-              <span class="metric-label">Foco em Performance &amp; Qualidade</span>
-            </div>
-          </div>
-        </div>
-
-        <div class="hero-visual">
-          <div class="holo-3d-stage" id="holo3DStage">
-            <!-- Corner Cyber Brackets -->
-            <div class="cyber-bracket bracket-tl"></div>
-            <div class="cyber-bracket bracket-tr"></div>
-            <div class="cyber-bracket bracket-bl"></div>
-            <div class="cyber-bracket bracket-br"></div>
-
-            <!-- Floating Tech Status Badges -->
-            <div class="floating-chip chip-1" id="chipThree">
-              <i class="fa-solid fa-cube"></i>
-              <span>Three.js WebGL</span>
-            </div>
-            <div class="floating-chip chip-2" id="chipReact">
-              <i class="fa-brands fa-react"></i>
-              <span>Frontend 3D &amp; UI</span>
-            </div>
-            <div class="floating-chip chip-3" id="chipFps">
-              <i class="fa-solid fa-gauge-high"></i>
-              <span id="liveFpsChip">60 FPS • WebGL 2.0</span>
-            </div>
-
-            <!-- Top HUD Bar: Live Telemetry & Status -->
-            <div class="holo-hud-top">
-              <div class="hud-status">
-                <span class="hud-status-dot"></span>
-                <span class="hud-status-text">HOLO-CORE // 3D</span>
-              </div>
-              <div class="hud-telemetry">
-                <span class="hud-item"><span class="hud-key">GEOM:</span> <span class="hud-val" id="hudGeomName">ICOSA</span></span>
-                <span class="hud-item"><span class="hud-key">VERTS:</span> <span class="hud-val" id="hudVertCount">2.562</span></span>
-              </div>
-            </div>
-
-            <!-- The Real Interactive 3D WebGL Canvas Container -->
-            <div class="holo-canvas-wrapper" id="holoCanvasWrapper">
-              <canvas id="hero3DCanvas"></canvas>
-              
-              <!-- Interactive Click / Drag Hint Overlay -->
-              <div class="holo-interaction-hint" id="holoInteractionHint">
-                <i class="fa-solid fa-arrows-rotate"></i>
-                <span>Arraste para rotacionar em 3D • Clique para pulsar</span>
-              </div>
-
-              <!-- Ambient Holographic Glow & Scanner Beam -->
-              <div class="holo-scanner-beam"></div>
-              <div class="holo-radial-glow"></div>
-            </div>
-
-            <!-- Bottom Interactive Controls & Switchers -->
-            <div class="holo-hud-bottom">
-              <!-- Geometry Switcher Buttons -->
-              <div class="hud-controls-group">
-                <span class="hud-group-label">Geometria:</span>
-                <div class="hud-btn-toggle" id="geomToggleGroup">
-                  <button type="button" class="hud-btn active" data-geom="icosahedron" title="Icosaedro Quântico">
-                    <i class="fa-solid fa-gem"></i> Icosa
-                  </button>
-                  <button type="button" class="hud-btn" data-geom="torusKnot" title="Torus Knot Reativo">
-                    <i class="fa-solid fa-ring"></i> Torus
-                  </button>
-                  <button type="button" class="hud-btn" data-geom="dodecahedron" title="Dodecaedro Matriz">
-                    <i class="fa-solid fa-shapes"></i> Dodeca
-                  </button>
-                </div>
-              </div>
-
-              <!-- Aura Color Switcher (Cyan active by default) -->
-              <div class="hud-controls-group">
-                <span class="hud-group-label">Esquema:</span>
-                <div class="hud-color-swatches" id="colorSwatchesGroup">
-                  <button type="button" class="swatch-btn active cyan" data-theme="cyan" title="Cyber Cyan"></button>
-                  <button type="button" class="swatch-btn violet" data-theme="violet" title="Holo Violet"></button>
-                  <button type="button" class="swatch-btn emerald" data-theme="emerald" title="Neon Matrix"></button>
-                </div>
-              </div>
-
-              <!-- Wireframe / Solid Mode Toggle -->
-              <div class="hud-controls-group">
-                <button type="button" class="hud-btn mode-btn" id="wireframeToggleBtn" title="Alternar Modo Wireframe / Sólido">
-                  <i class="fa-solid fa-network-wired"></i>
-                  <span id="wireframeModeText">Wireframe</span>
-                </button>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ==========================================================================
-         INTERACTIVE TERMINAL WIDGET (EVIDENT COMMAND CENTER)
-         ========================================================================== -->
-    <section class="terminal-section" id="terminal">
       <div class="container">
-        <div class="section-header" style="margin-bottom: 35px;">
-          <span class="section-eyebrow">Terminal Interativo // CLI</span>
-          <h2 class="section-title">Explore o Perfil via <span class="text-gradient-cyan">Linha de Comando</span></h2>
-          <p class="section-subtitle">
-            Ambiente interativo para consultar stack técnica, experiência, diretórios de projetos e canais de contato via comandos de terminal.
+        <div class="hero-grid">
+          <div class="hero-content">
+            <h1 class="hero-title">
+              <span class="hero-name">Sérgio Bastos<span class="accent-mark">.</span></span>
+              <span class="hero-statement">Construo interfaces de alta precisão e os sistemas que as sustentam.</span>
+            </h1>
+
+            <p class="hero-description">
+              Desenvolvedor Full-Stack com foco especializado em Frontend e Bacharel em Ciência da Computação pelo IFSP. Arquitetura de aplicações reativas em React, TypeScript e WebGL 3D integradas a serviços sólidos em Node.js, Java (Spring Boot) e bancos relacionais.
+            </p>
+
+            <div class="hero-cta-group">
+              <a href="#projetos" class="btn btn-primary" id="heroCtaProjects">
+                <span>Ver Estudos de Caso</span>
+                <svg class="icon-svg" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M6 13l6 6 6-6"/></svg>
+              </a>
+
+              <a href="https://github.com/Baxtoos" target="_blank" rel="noopener noreferrer" class="btn btn-secondary" id="heroCtaGithub">
+                <span>GitHub (@Baxtoos)</span>
+                <svg class="icon-svg" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8"/></svg>
+              </a>
+            </div>
+          </div>
+
+          <div class="hero-visual">
+            <div class="sculpture-stage" id="holo3DStage">
+              <div class="sculpture-canvas-wrap" id="holoCanvasWrapper">
+                <canvas id="hero3DCanvas" aria-label="Escultura geométrica 3D interativa em WebGL"></canvas>
+              </div>
+              <div class="sculpture-caption-bar">
+                <span class="sculpture-caption-text" id="holoInteractionHint">WebGL 2.0 // Arraste para orbitar • Clique para alternar malha</span>
+                <div class="sculpture-controls" id="geomToggleGroup" role="group" aria-label="Selecionar geometria 3D">
+                  <button type="button" class="sculpture-btn active" data-geom="icosahedron" title="Geometria Icosaedro">Icosaedro</button>
+                  <button type="button" class="sculpture-btn" data-geom="torusKnot" title="Geometria Torus Knot">Torus</button>
+                  <button type="button" class="sculpture-btn" data-geom="dodecahedron" title="Geometria Dodecaedro">Dodecaedro</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Factual Credential Ledger (Replaces generic hero-metric template) -->
+        <dl class="hero-ledger" aria-label="Credenciais e fatos verificados">
+          <div class="ledger-cell">
+            <dt class="ledger-term">Formação Acadêmica</dt>
+            <dd class="ledger-detail">Bacharel em Ciência da Computação — IFSP</dd>
+          </div>
+          <div class="ledger-cell">
+            <dt class="ledger-term">Liderança &amp; Produto</dt>
+            <dd class="ledger-detail">Cofundador no estúdio DIEX Tech Studio</dd>
+          </div>
+          <div class="ledger-cell">
+            <dt class="ledger-term">Sistemas em Produção</dt>
+            <dd class="ledger-detail">13 plataformas, SaaS e portais ativos na Vercel</dd>
+          </div>
+          <div class="ledger-cell">
+            <dt class="ledger-term">Domínio Técnico</dt>
+            <dd class="ledger-detail">React, TypeScript, Three.js, Node.js &amp; Java</dd>
+          </div>
+        </dl>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         PROJECTS & CASE STUDIES SECTION ( IMMEDIATELY AFTER HERO )
+         ========================================================================== -->
+    <section class="projects-section" id="projetos">
+      <div class="container">
+        <div class="section-header-split">
+          <h2 class="section-title">Estudos de Caso &amp; Sistemas em Produção</h2>
+          <p class="section-lead">
+            Três projetos principais detalhados em profundidade arquitetural, seguidos pelo arquivo completo de aplicações Full-Stack, interfaces 3D e portais B2B.
           </p>
         </div>
 
-        <div class="terminal-window">
-          <!-- Corner Cyber Brackets -->
-          <div class="cyber-bracket bracket-tl" style="border-color: var(--accent-cyan);"></div>
-          <div class="cyber-bracket bracket-tr" style="border-color: var(--accent-cyan);"></div>
-          <div class="cyber-bracket bracket-bl" style="border-color: var(--accent-cyan);"></div>
-          <div class="cyber-bracket bracket-br" style="border-color: var(--accent-cyan);"></div>
+        <!-- 3 Flagship Case Studies (DIEX, AppFisio, MT Sublimação) -->
+        <div class="featured-cases-list" id="featuredCases" aria-label="Estudos de caso em destaque">
+          <!-- Populated by main.js from featured portfolioProjects -->
+        </div>
 
-          <div class="terminal-header">
-            <div class="terminal-controls-row">
-              <div class="terminal-controls">
-                <span class="terminal-dot dot-red"></span>
-                <span class="terminal-dot dot-yellow"></span>
-                <span class="terminal-dot dot-green"></span>
-              </div>
-              <div class="terminal-title">baxtoos@profile:~</div>
-            </div>
-            <div class="terminal-quick-actions" id="terminalQuickActions">
-              <span class="terminal-quick-label">Atalhos:</span>
-              <button type="button" class="terminal-chip" data-cmd="help">help</button>
-              <button type="button" class="terminal-chip" data-cmd="skills">skills</button>
-              <button type="button" class="terminal-chip" data-cmd="projects">projects</button>
-              <button type="button" class="terminal-chip" data-cmd="whoami">whoami</button>
-              <button type="button" class="terminal-chip" data-cmd="clear">clear</button>
-            </div>
+        <!-- Complete Filterable Archive -->
+        <div class="archive-block" id="arquivo-projetos">
+          <div class="archive-header">
+            <h3 class="archive-title">Arquivo Completo de Projetos</h3>
+            <nav class="filter-nav" aria-label="Filtrar projetos por categoria">
+              <button type="button" class="filter-btn active" data-filter="all">
+                <span>Todos</span>
+                <span class="filter-count" id="count-all">13</span>
+              </button>
+              <button type="button" class="filter-btn" data-filter="fullstack">
+                <span>Full-Stack &amp; SaaS</span>
+                <span class="filter-count" id="count-fullstack">2</span>
+              </button>
+              <button type="button" class="filter-btn" data-filter="frontend">
+                <span>Frontend &amp; 3D</span>
+                <span class="filter-count" id="count-frontend">4</span>
+              </button>
+              <button type="button" class="filter-btn" data-filter="architecture">
+                <span>Engenharia &amp; Java</span>
+                <span class="filter-count" id="count-architecture">2</span>
+              </button>
+              <button type="button" class="filter-btn" data-filter="landing">
+                <span>Portais B2B &amp; Comercial</span>
+                <span class="filter-count" id="count-landing">5</span>
+              </button>
+            </nav>
           </div>
-          <div class="terminal-body">
-            <div class="terminal-output" id="terminalOutput">
-              <div class="terminal-line dim">// Terminal interativo do desenvolvedor. Digite comandos ou clique nos atalhos acima.</div>
-              <div class="terminal-line cyan">> Inicializando baxtoos.sys...</div>
-              <div class="terminal-line">> Perfil: Sérgio Bastos da Silva Filho (@Baxtoos)</div>
-              <div class="terminal-line green">> Status: Full-Stack Developer com foco especializado em Frontend.</div>
-              <div class="terminal-line">> Digite <span class="cyan">help</span> para ver a lista de comandos interativos.</div>
-            </div>
-            <div class="terminal-input-row">
-              <span class="terminal-prompt">baxtoos@dev:~$</span>
-              <input type="text" class="terminal-input" id="terminalInput" placeholder="digite um comando (ex: 'help', 'skills', 'projects')..." autocomplete="off" spellcheck="false" />
-            </div>
-            <div class="terminal-hint">Pressione [Enter] para executar ou clique nos atalhos no topo do terminal</div>
+
+          <div class="projects-grid" id="projectsGrid">
+            <!-- Populated dynamically by main.js from portfolioProjects -->
           </div>
         </div>
       </div>
     </section>
 
     <!-- ==========================================================================
-         ABOUT ME SECTION (EDITORIAL STANDARD)
+         ABOUT / TRAJECTORY SECTION (EDITORIAL ESSAY + SPECIFICATION LEDGER)
          ========================================================================== -->
     <section class="about-section" id="sobre">
       <div class="container">
-        <div class="section-header" style="margin-bottom: 35px;">
-          <h2 class="section-title">Sobre <span class="text-gradient-cyan">Mim</span></h2>
-        </div>
+        <div class="about-grid">
+          <div class="about-sidebar">
+            <h2 class="section-title">Rigor de Ciência da Computação aplicado à interface.</h2>
+            <dl class="about-spec-list">
+              <div class="spec-row">
+                <dt>Graduação</dt>
+                <dd>B.Sc. Ciência da Computação (IFSP)</dd>
+              </div>
+              <div class="spec-row">
+                <dt>Iniciativa</dt>
+                <dd>Cofundador — DIEX Tech Studio</dd>
+              </div>
+              <div class="spec-row">
+                <dt>Base</dt>
+                <dd>Salto / Indaiatuba — SP, Brasil</dd>
+              </div>
+              <div class="spec-row">
+                <dt>Especialidade</dt>
+                <dd>Frontend Architecture &amp; Full-Stack Web</dd>
+              </div>
+              <div class="spec-row">
+                <dt>Status</dt>
+                <dd class="status-available">Disponível para projetos e oportunidades</dd>
+              </div>
+            </dl>
+          </div>
 
-        <div class="about-content">
-          <p class="about-lead">
-            Olá! Sou <strong>Sérgio Bastos</strong>, desenvolvedor <strong>Full-Stack com foco especializado em Frontend</strong>. Uno o rigor técnico da ciência da computação à paixão por arquitetar interfaces modernas, fluidas e com máxima fidelidade de design.
-          </p>
+          <div class="about-prose">
+            <p class="about-lead">
+              Sou <strong>Sérgio Bastos</strong>, desenvolvedor <strong>Full-Stack com foco especializado em Frontend</strong>. Uno os fundamentos formais da computação à engenharia de interfaces rápidas, acessíveis e visualmente precisas.
+            </p>
 
-          <p class="about-text">
-            Minha trajetória é alicerçada no <strong>Bacharelado em Ciência da Computação pelo IFSP</strong> (Instituto Federal de São Paulo), onde consolidei fundamentos em estruturas de dados, algoritmos (C e Java), sistemas operacionais, computação gráfica e princípios de <strong>Interação Humano-Computador (IHC)</strong>. Essa base teórica sólida guia minha capacidade de solucionar problemas complexos com código limpo, modular e de alta manutenibilidade.
-          </p>
+            <p class="about-paragraph">
+              Minha formação no <strong>Bacharelado em Ciência da Computação pelo IFSP</strong> consolidou a base em estruturas de dados, algoritmos em C e Java, sistemas operacionais, computação gráfica e <strong>Interação Humano-Computador (IHC)</strong>. No frontend, traduzo esse repertório em design systems modulares, aplicações reativas em <strong>React e TypeScript</strong>, cenas <strong>Three.js / WebGL</strong> e otimização rigorosa de Core Web Vitals.
+            </p>
 
-          <p class="about-text">
-            No <strong>Frontend</strong> — minha área de maior dedicação —, sou especialista na concepção de ecossistemas web dinâmicos e de alta performance utilizando <strong>React, TypeScript, Three.js / WebGL e CSS avançado</strong>. Minha atuação prioriza a criação de design systems com componentes reutilizáveis, animações fluidas, layouts 100% responsivos e otimização contínua de performance e SEO técnico.
-          </p>
-
-          <p class="about-text">
-            Como desenvolvedor <strong>Full-Stack</strong>, domino a integração de ponta a ponta: desenho e consumo de <strong>APIs RESTful</strong> resilientes, modelagem relacional de dados com <strong>Prisma ORM, PostgreSQL, MySQL e SQLite</strong>, construção de microsserviços em <strong>Node.js e Java (Spring Boot)</strong> e automação de deploys conteinerizados com <strong>Docker</strong>.
-          </p>
-
-          <p class="about-text">
-            Além do desenvolvimento técnico, sou cofundador no estúdio <strong>DIEX</strong>, onde estruturei soluções corporativas e plataformas SaaS para indústrias, comércio e startups — garantindo que cada produto digital combine arquitetura de dados consistente, escalabilidade em produção e uma experiência de usuário intuitiva e refinada.
-          </p>
+            <p class="about-paragraph">
+              Na camada Full-Stack e como cofundador no estúdio <strong>DIEX</strong>, projeto e integro o ciclo completo: APIs RESTful em <strong>Node.js (Express) e Java (Spring Boot)</strong>, modelagem relacional com <strong>Prisma ORM, PostgreSQL, MySQL e SQLite</strong>, e ambientes conteinerizados com <strong>Docker e Nginx</strong> — entregando sistemas que resolvem gargalos reais em clínicas, indústrias e operações comerciais.
+            </p>
+          </div>
         </div>
       </div>
     </section>
 
     <!-- ==========================================================================
-         SKILLS SECTION
+         CAPABILITIES & TECHNICAL STACK LEDGER
          ========================================================================== -->
     <section class="skills-section" id="habilidades">
       <div class="container">
-        <div class="section-header" style="margin-bottom: 35px;">
-          <h2 class="section-title">Skills</h2>
+        <div class="section-header-split">
+          <h2 class="section-title">Matriz de Capacidades &amp; Stack</h2>
+          <p class="section-lead">
+            Tecnologias e disciplinas organizadas por camada de responsabilidade, da renderização no navegador à persistência relacional e deploy.
+          </p>
         </div>
 
-        <div class="skills-grid" id="skillsGrid">
+        <div class="skills-ledger" id="skillsGrid">
           <!-- Populated dynamically by main.js from technicalSkills -->
         </div>
       </div>
     </section>
 
     <!-- ==========================================================================
-         PROJECTS SECTION (UNIFIED GRID WITHOUT SPOTLIGHT)
+         COMPACT INTERACTIVE CLI TERMINAL (AUTHORIAL SIGNATURE)
          ========================================================================== -->
-    <section class="projects-section" id="projetos">
+    <section class="terminal-section" id="terminal">
       <div class="container">
-        <div class="section-header" style="margin-bottom: 35px;">
-          <h2 class="section-title">Projetos</h2>
-        </div>
+        <div class="terminal-layout">
+          <div class="terminal-intro">
+            <h2 class="section-title">Inspeção via Linha de Comando</h2>
+            <p class="terminal-lead">
+              Prefere navegar pelo teclado? Utilize o terminal interativo para consultar rapidamente a stack, projetos em produção, trajetória acadêmica ou canais de contato.
+            </p>
+            <div class="terminal-quick-actions" id="terminalQuickActions" role="group" aria-label="Comandos rápidos do terminal">
+              <button type="button" class="terminal-chip" data-cmd="whoami">whoami</button>
+              <button type="button" class="terminal-chip" data-cmd="skills">skills</button>
+              <button type="button" class="terminal-chip" data-cmd="projects">projects</button>
+              <button type="button" class="terminal-chip" data-cmd="diex">diex</button>
+              <button type="button" class="terminal-chip" data-cmd="contact">contact</button>
+              <button type="button" class="terminal-chip" data-cmd="help">help</button>
+              <button type="button" class="terminal-chip" data-cmd="clear">clear</button>
+            </div>
+          </div>
 
-        <!-- Filter Categories with Mono Counters (DIEX Standard) -->
-        <nav class="filter-nav" aria-label="Filtro de Projetos">
-          <button class="filter-btn active" data-filter="all">Todos os Projetos <span class="filter-count" id="count-all">8</span></button>
-          <button class="filter-btn" data-filter="fullstack">Full-Stack &amp; Sistemas <span class="filter-count" id="count-fullstack">3</span></button>
-          <button class="filter-btn" data-filter="frontend">Frontend &amp; E-commerce <span class="filter-count" id="count-frontend">3</span></button>
-          <button class="filter-btn" data-filter="architecture">Engenharia &amp; Java <span class="filter-count" id="count-architecture">1</span></button>
-          <button class="filter-btn" data-filter="landing">Landing Pages &amp; B2B <span class="filter-count" id="count-landing">1</span></button>
-        </nav>
+          <div class="terminal-window" role="region" aria-label="Terminal interativo baxtoos@dev">
+            <div class="terminal-header">
+              <div class="terminal-dots" aria-hidden="true">
+                <span class="terminal-dot"></span>
+                <span class="terminal-dot"></span>
+                <span class="terminal-dot"></span>
+              </div>
+              <div class="terminal-title">baxtoos@dev:~ (bash)</div>
+              <span class="terminal-Hint-key">↑↓ histórico</span>
+            </div>
 
-        <!-- Projects Cards Grid -->
-        <div class="projects-grid" id="projectsGrid">
-          <!-- Populated dynamically by main.js from portfolioProjects -->
+            <div class="terminal-body">
+              <div class="terminal-output" id="terminalOutput" aria-live="polite">
+                <div class="terminal-line dim"># Sessão interativa iniciada. Clique em um comando ao lado ou digite abaixo.</div>
+                <div class="terminal-line">&gt; Perfil: <strong>Sérgio Bastos</strong> (@Baxtoos) — B.Sc. Ciência da Computação (IFSP)</div>
+                <div class="terminal-line accent">&gt; Papel: Full-Stack Developer (Foco Especializado em Frontend)</div>
+                <div class="terminal-line">&gt; Digite <span class="cmd-inline">help</span> para listar os comandos disponíveis.</div>
+              </div>
+              <label for="terminalInput" class="sr-only">Comando do terminal</label>
+              <div class="terminal-input-row">
+                <span class="terminal-prompt" aria-hidden="true">baxtoos@dev:~$</span>
+                <input type="text" class="terminal-input" id="terminalInput" placeholder="digite help, skills, projects, diex, contact..." autocomplete="off" spellcheck="false" />
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </section>
 
     <!-- ==========================================================================
-         CONTACT SECTION (DIEX CTA STANDARD)
+         CONTACT SECTION
          ========================================================================== -->
     <section class="contact-section" id="contato">
       <div class="container">
-        <div class="contact-card">
-          <h2 class="contact-card-title">Contato</h2>
-          <p class="contact-card-subtitle">
-            Seja para uma nova oportunidade profissional, desenvolvimento de um sistema corporativo ou parceria tecnológica, estou sempre disponível para uma conversa técnica.
-          </p>
-
-          <div class="email-copy-box">
-            <span class="email-text">giftc444@gmail.com</span>
-            <button class="copy-btn" id="copyEmailBtn" title="Copiar e-mail" aria-label="Copiar endereço de e-mail">
-              <i class="fa-regular fa-copy"></i>
-              <span>Copiar</span>
-            </button>
+        <div class="contact-panel">
+          <div class="contact-copy">
+            <h2 class="contact-title">Vamos construir seu próximo sistema ou conversar sobre engenharia de produto.</h2>
+            <p class="contact-subtitle">
+              Disponível para oportunidades como Desenvolvedor Full-Stack / Frontend e para novos projetos corporativos através do estúdio DIEX Tech.
+            </p>
           </div>
 
-          <div class="social-links-row">
-            <a href="https://github.com/Baxtoos" target="_blank" rel="noopener noreferrer" class="social-pill-link" id="contactGithubLink" aria-label="Perfil do GitHub">
-              <i class="fa-brands fa-github"></i>
-              <span>github.com/Baxtoos</span>
-            </a>
+          <div class="contact-actions-area">
+            <div class="email-copy-bar">
+              <span class="email-address" id="emailTextValue">giftc444@gmail.com</span>
+              <button type="button" class="btn btn-secondary copy-btn" id="copyEmailBtn" aria-label="Copiar endereço de e-mail giftc444@gmail.com">
+                <svg class="icon-svg" viewBox="0 0 24 24" aria-hidden="true">
+                  <rect x="9" y="9" width="13" height="13" rx="2" ry="2"/>
+                  <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/>
+                </svg>
+                <span>Copiar E-mail</span>
+              </button>
+            </div>
 
-            <a href="mailto:giftc444@gmail.com?subject=Contato%20via%20Portf%C3%B3lio%20-%20S%C3%A9rgio%20Bastos" class="social-pill-link" id="contactDirectEmail" aria-label="Enviar e-mail para Sérgio Bastos">
-              <i class="fa-solid fa-envelope"></i>
-              <span>Enviar E-mail Direto</span>
-            </a>
+            <div class="contact-links-row">
+              <a href="mailto:giftc444@gmail.com?subject=Contato%20via%20Portf%C3%B3lio%20-%20S%C3%A9rgio%20Bastos" class="btn btn-primary" id="contactDirectEmail">
+                <span>Enviar E-mail Direto</span>
+                <svg class="icon-svg" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+              </a>
+
+              <a href="https://github.com/Baxtoos" target="_blank" rel="noopener noreferrer" class="btn btn-secondary" id="contactGithubLink">
+                <span>GitHub (@Baxtoos)</span>
+                <svg class="icon-svg" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8"/></svg>
+              </a>
+            </div>
           </div>
         </div>
       </div>
@@ -433,65 +426,59 @@
     <div class="modal-container">
       <div class="modal-header">
         <div class="modal-header-info">
-          <span class="modal-badge" id="modalBadge">Full-Stack</span>
           <h3 class="modal-title" id="modalTitle">Título do Projeto</h3>
+          <span class="modal-badge" id="modalBadge">Full-Stack</span>
         </div>
-        <button class="modal-close-btn" id="modalCloseBtn" aria-label="Fechar modal">
-          <i class="fa-solid fa-xmark"></i>
+        <button type="button" class="modal-close-btn" id="modalCloseBtn" aria-label="Fechar janela de detalhes">
+          <svg class="icon-svg" viewBox="0 0 24 24" aria-hidden="true"><path d="M18 6L6 18M6 6l12 12"/></svg>
         </button>
       </div>
 
       <div class="modal-body">
         <div class="modal-gallery">
-          <img src="" alt="Projeto Detalhe" id="modalGalleryImg" class="modal-gallery-img" />
+          <img src="assets/images/projects/diex-ecosystem.png" alt="Visualização do projeto" id="modalGalleryImg" class="modal-gallery-img" />
         </div>
 
-        <div class="modal-metrics-grid">
-          <div class="modal-metric-card">
-            <div class="modal-metric-val" id="modalMetric1">-</div>
+        <div class="modal-metrics-grid" aria-label="Indicadores técnicos do projeto">
+          <div class="modal-metric-item">
+            <span class="modal-metric-val" id="modalMetric1">-</span>
           </div>
-          <div class="modal-metric-card">
-            <div class="modal-metric-val" id="modalMetric2">-</div>
+          <div class="modal-metric-item">
+            <span class="modal-metric-val" id="modalMetric2">-</span>
           </div>
-          <div class="modal-metric-card">
-            <div class="modal-metric-val" id="modalMetric3">-</div>
+          <div class="modal-metric-item">
+            <span class="modal-metric-val" id="modalMetric3">-</span>
           </div>
         </div>
 
-        <div>
-          <h4 class="modal-section-title">
-            <i class="fa-solid fa-bullseye" style="color:var(--accent-mint);"></i>
-            Visão Geral do Projeto
-          </h4>
+        <div class="modal-section">
+          <h4 class="modal-section-title">Contexto &amp; Arquitetura</h4>
           <p class="modal-text" id="modalOverview"></p>
         </div>
 
-        <div>
-          <h4 class="modal-section-title">
-            <i class="fa-solid fa-code" style="color:var(--accent-mint);"></i>
-            Stack Tecnológica Utilizada
-          </h4>
+        <div class="modal-section">
+          <h4 class="modal-section-title">Stack Tecnológica</h4>
           <div class="project-tech-tags" id="modalTechTags"></div>
         </div>
       </div>
 
       <div class="modal-footer">
-        <a href="#" target="_blank" rel="noopener noreferrer" class="btn-diex btn-diex-secondary" id="modalGithubLink">
+        <a href="https://github.com/Baxtoos" target="_blank" rel="noopener noreferrer" class="btn btn-secondary" id="modalGithubLink">
           <span>Repositório GitHub</span>
-          <span class="icon-circle"><i class="fa-brands fa-github"></i></span>
+          <svg class="icon-svg" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8"/></svg>
         </a>
-        <a href="#" target="_blank" rel="noopener noreferrer" class="btn-diex btn-diex-primary" id="modalLiveLink">
-          <span>Ver Demonstração</span>
-          <span class="icon-circle"><i class="fa-solid fa-arrow-up-right-from-square"></i></span>
+        <a href="https://diex-site.vercel.app" target="_blank" rel="noopener noreferrer" class="btn btn-primary" id="modalLiveLink">
+          <span>Abrir Aplicação em Produção</span>
+          <svg class="icon-svg" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8"/></svg>
         </a>
       </div>
     </div>
   </div>
 
   <!-- Toast Notice -->
-  <div class="toast-notice" id="toastNotice">
-    <i class="fa-solid fa-circle-check" style="color:var(--accent-mint); font-size:1.2rem;"></i>
-    <span class="toast-msg">Notificação</span>
+  <div class="toast-notice" id="toastNotice" role="status" aria-live="polite">
+    <span class="toast-dot" aria-hidden="true"></span>
+    <span class="toast-msg">E-mail copiado para a área de transferência.</span>
   </div>
 
   <!-- ==========================================================================
@@ -500,11 +487,11 @@
   <footer class="footer">
     <div class="container footer-content">
       <div class="footer-text">
-        © 2026 <strong>Sérgio Bastos</strong> (@Baxtoos). Todos os direitos reservados.
+        © 2026 <strong>Sérgio Bastos</strong> (@Baxtoos) — Bacharel em Ciência da Computação (IFSP) &amp; Cofundador DIEX Tech.
       </div>
       <a href="#hero" class="back-to-top-btn" id="footerBackToTop">
         <span>Voltar ao topo</span>
-        <i class="fa-solid fa-arrow-up"></i>
+        <svg class="icon-svg" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 19V5M6 11l6-6 6 6"/></svg>
       </a>
     </div>
   </footer>

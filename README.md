@@ -1,50 +1,48 @@
-# Sérgio Bastos - Portfólio Profissional Full-Stack (Foco em Frontend)
+# Sérgio Bastos — Portfólio de Engenharia Full-Stack & Frontend
 
 <div align="center">
 
-![Badge Status](https://img.shields.io/badge/Status-Produção_Pronto-00F0FF?style=for-the-badge&logo=vercel&logoColor=black)
-![Badge Licença](https://img.shields.io/badge/Licença-MIT-8B5CF6?style=for-the-badge)
-![Badge Stack](https://img.shields.io/badge/Stack-HTML5%20%7C%20CSS3%20%7C%20JS%20%7C%20GSAP-10B981?style=for-the-badge)
+![Badge Status](https://img.shields.io/badge/Status-Produção-E85D2A?style=for-the-badge&logo=vercel&logoColor=black)
+![Badge Licença](https://img.shields.io/badge/Licença-MIT-1A1714?style=for-the-badge)
+![Badge Stack](https://img.shields.io/badge/Stack-HTML5%20%7C%20CSS3%20%7C%20JS%20%7C%20Three.js%20%7C%20GSAP-F4F0EA?style=for-the-badge&labelColor=0C0B0A)
 
 <br />
 
 <a href="https://baxtoos.github.io/portifolio/" target="_blank">
-  <img src="assets/images/portfolio-preview.png" alt="Sérgio Bastos - Portfólio WebGL 3D" width="100%" />
+  <img src="assets/images/portfolio-preview.png" alt="Sérgio Bastos — Portfólio de Engenharia" width="100%" />
 </a>
 
-**Desenvolvedor Full-Stack (Foco em Frontend) & Engenheiro de Software**  
-*Especialista em interfaces modernas de alta performance e experiências web ricas com sustentação de ponta a ponta.*
+**Desenvolvedor Full-Stack (Foco em Frontend) & Bacharel em Ciência da Computação (IFSP)**  
+*Construo interfaces de alta precisão e os sistemas que as sustentam.*
 
-[Acesso](https://baxtoos.github.io/portifolio/) | [Perfil GitHub](https://github.com/Baxtoos) | [Contato](#contato)
+[Acesso em Produção](https://baxtoos.github.io/portifolio/) | [Perfil GitHub](https://github.com/Baxtoos) | [Contato](#contato)
 
 </div>
 
 ---
 
-## Funcionalidades em Destaque
+## Direção de Design: Monografia Editorial de Engenharia
 
-- **Banner Holográfico 3D Interativo (Three.js WebGL 2.0)**: Renderização tridimensional em tempo real no hero com controle de órbita 360 por clique/arraste, alternador de geometrias (Icosaedro, Torus Knot, Dodecaedro), seletor de paletas neon, modo wireframe/sólido e telemetria de GPU ao vivo (FPS real, contagem dinâmica de vértices).
-- **Performance Extrema & Zero Build**: Roda nativamente em qualquer navegador ou servidor estático (GitHub Pages, Vercel, Netlify).
-- **Design System Obsidian**: Efeito Glassmorphism com `backdrop-filter`, orbes dinâmicos de luz no plano de fundo, badges cibernéticos e tipografia de ponta (*Syne*, *Plus Jakarta Sans*, *JetBrains Mono*).
-- **Terminal Interativo Integrado**: Widget de terminal estilo Unix (`baxtoos@dev:~$`) com histórico de comandos (setas Cima/Baixo) e comandos interativos (`help`, `whoami`, `frontend`, `backend`, `skills`, `projects`, `diex`, `contact`, `clear`).
-- **Showcase Filtrável de Projetos**: Filtros dinâmicos em tempo real por categoria (*Full-Stack*, *Engenharia & Java*, *Frontend*, *Landing Pages B2B*).
-- **Modal Imersivo de Especificação Técnica**: Cada projeto conta com ficha completa acessível (Visão Geral, Métricas, Tags da Stack, links de demonstração e código).
-- **Copy E-mail com Toast Feedback**: Copia o endereço `giftc444@gmail.com` com um clique e feedback animado gerenciado.
-- **Suporte a Temas (Dark / Light)**: Alternância suave com persistência no `localStorage`.
-- **Animações de Clique e Redirecionamento**: Feedback tátil com efeito de ondulação radial neon e barra de progresso suave no topo.
-- **100% Responsivo & Acessível**: Layout semântico otimizado para celulares, tablets e monitores ultrawide com suporte a navegação por teclado e SEO estruturado (JSON-LD).
+O portfólio foi desenhado sob a disciplina **Impeccable First** (`PRODUCT.md` e `DESIGN.md`), priorizando clareza estrutural, tipografia autoral e prova imediata de sistemas reais em produção:
+
+- **Paleta Editorial Dual-Theme**: Tinta carbono quente (`#0C0B0A`) no tema escuro padrão e papel técnico arquival (`#F6F3EC`) no tema claro, acompanhados de um único acento vermilion-cobre (`#E85D2A` / `#C84312`) com contraste validado WCAG AA/AAA.
+- **Tipografia com Ponto de Vista**: *Bricolage Grotesque* para títulos e display, *Manrope* para leitura contínua (medida de 65–68ch) e *JetBrains Mono* reservada estritamente para código, métricas tabulares e identificadores de stack.
+- **Hierarquia Guiada por Provas**: Três estudos de caso principais (*DIEX Tech Studio*, *AppFisio* e *MT Sublimação*) abrem a página logo após o Hero com análise estruturada (*Problema → Engenharia → Impacto*), seguidos pelo arquivo filtrável completo de 13 projetos.
+- **Escultura 3D Autoral (Three.js WebGL 2.0)**: Geometria poliédrica interativa integrada automaticamente ao tema ativo (escuro/claro), com pausa inteligente fora da viewport e respeito integral a `prefers-reduced-motion`.
+- **Matriz de Capacidades & Terminal CLI**: Ledger arquitetural de competências por camada e terminal interativo compacto (`baxtoos@dev:~$`) posicionado antes da seção de contato.
+- **Performance Zero-Build & SVGs Nativos**: Execução direta em qualquer servidor estático sem dependências de bibliotecas externas de ícones.
 
 ---
 
-## Tecnologias & Fundamentos
+## Tecnologias & Arquitetura
 
 | Camada | Tecnologias Utilizadas |
 | :--- | :--- |
-| **Frontend Core** | HTML5, CSS3 e JavaScript |
-| **3D & WebGL** | [Three.js r128](https://threejs.org/) |
-| **Estilização** | Design System Proprietário Obsidian/Cyan, Glassmorphism, Micro-interações |
-| **Motion** | [GSAP 3](https://greensock.com/gsap/) |
-| **Tipografia & Ícones** | Google Fonts e FontAwesome 6 |
+| **Core** | HTML5 Semântico, CSS3 Custom Properties, JavaScript (ES6+) |
+| **3D & WebGL** | [Three.js r128](https://threejs.org/) (Geometria procedural adaptativa ao tema) |
+| **Motion** | [GSAP 3.12 + ScrollTrigger](https://gsap.com/) com `gsap.matchMedia()` |
+| **Tipografia & Ícones** | *Bricolage Grotesque*, *Manrope*, *JetBrains Mono* + SVGs vetoriais inline (`1.75px` stroke) |
+| **Governança de Design** | `PRODUCT.md`, `DESIGN.md` e `.impeccable/surfaces/index-html.md` |
 
 ---
 
@@ -52,38 +50,30 @@
 
 ```bash
 portifolio/
-|-- index.html                  # Estrutura principal
+|-- index.html                  # Documento principal (semântico, acessível, SEO/JSON-LD)
+|-- PRODUCT.md                  # Verdade de produto, público e restrições técnicas
+|-- DESIGN.md                   # Sistema de design, tokens de cor, escala tipográfica e regras
 |-- assets/
 |   |-- css/
-|   |   `-- style.css           # Design system completo
+|   |   `-- style.css           # Design system completo (Dark Ink & Archival Paper)
 |   |-- js/
-|   |   |-- hero-3d.js          # Motor 3D WebGL Three.js, física orbital e HUD interativo
-|   |   |-- main.js             # Lógica interativa
-|   |   |-- projects-data.js    # Dados dos projetos
+|   |   |-- hero-3d.js          # Escultura geométrica Three.js reativa ao tema
+|   |   |-- main.js             # Estudos de caso, filtros, modal, terminal CLI e GSAP
+|   |   |-- projects-data.js    # Base de dados dos 13 projetos e matriz de capacidades
 |   |   `-- vendor/
-|   |       `-- three.min.js    # Three.js r128 local para carregamento offline
+|   |       `-- three.min.js    # Three.js r128 local
 |   `-- images/
-|       `-- projects/           # Imagens dos projetos
-|-- README.md                   # Documentação do repositório
-`-- PROFILE_README.md           # Template para o perfil do GitHub
+|       `-- projects/           # Previews verificados dos sistemas em produção
+`-- README.md                   # Documentação do repositório
 ```
 
 ---
 
-## Projetos em Destaque
+## Estudos de Caso Principais
 
-1. **AppFisio (SaaS Full-Stack)**: [appfisio.vercel.app](https://appfisio.vercel.app) - Gestão clínica para fisioterapeutas com prescrição de exercícios e prontuário digital (*Node.js, Express, Prisma ORM, SQLite/PostgreSQL*).
-2. **MT Sublimação & Brindes**: [mtsublimacao.vercel.app](https://mtsublimacao.vercel.app) - Catálogo virtual interativo com cotação automatizada e despacho para WhatsApp (*React, TypeScript, Tailwind*).
-3. **Crucciolli Print3D**: [crucolli-lp.vercel.app](https://crucolli-lp.vercel.app) - Portal de manufatura de impressão 3D e prototipagem (*React, Three.js Specs, Vite*).
-4. **Smoke Salto Adega & Delivery**: [smoke-salto.vercel.app](https://smoke-salto.vercel.app) - E-commerce e vitrine digital com busca em tempo real (*React, Vite, Dark UI*).
-5. **Detailing Delivery**: [automotive-detailing-two.vercel.app](https://automotive-detailing-two.vercel.app) - Estética automotiva.
-6. **MR Galvanoplastia**: [lp-mrgalvanoplastia.vercel.app](https://lp-mrgalvanoplastia.vercel.app) - Landing page para indústria de revestimentos galvânicos e normas automotivas.
-7. **GELOU Fábrica de Gelo**: [lp-gelou.vercel.app](https://lp-gelou.vercel.app) - Plataforma digital para fábrica e distribuição comercial de gelo.
-8. **Talismã Consultoria Imobiliária**: [generical-site-imobiliaria-sergio-bastos-projects-01da1aa3.vercel.app](https://generical-site-imobiliaria-sergio-bastos-projects-01da1aa3.vercel.app) - Portal imobiliário de alto padrão em Indaiatuba.
-9. **STL Lima 3D**: [stl-lima-lp.vercel.app](https://stl-lima-lp.vercel.app) - Manufatura aditiva e modelagem de peças mecânicas sob medida.
-10. **Industrial Automation**: [industrial-autom.vercel.app](https://industrial-autom.vercel.app) - Soluções industriais, automação fabril e painéis elétricos.
-11. **EventHub (Arquitetura Java)**: [github.com/Baxtoos/event-hub](https://github.com/Baxtoos/event-hub) - Gestão de eventos, lotes de ingressos e controle de acesso (*Java, Spring Boot, JPA/Hibernate, MVC*).
-12. **CarTon**: [github.com/Baxtoos/CarTon](https://github.com/Baxtoos/CarTon) - Gestão operacional de oficinas mecânicas com ciclo de vida completo de engenharia de software e modelagem UML.
+1. **DIEX Tech Studio & Ecossistema Digital**: [diex-site.vercel.app](https://diex-site.vercel.app) — Estúdio de tecnologia e ecossistema com +12 sistemas e portais entregues (*React, TypeScript, Node.js, Supabase, < 0.8s FCP*).
+2. **AppFisio (SaaS Clínico)**: [appfisio.vercel.app](https://appfisio.vercel.app) — Plataforma Full-Stack para gestão de prontuários eletrônicos e reabilitação motora (*Node.js, Express, Prisma ORM, SQLite/PostgreSQL*).
+3. **MT Sublimação & Brindes Corporativos**: [mtsublimacao.vercel.app](https://mtsublimacao.vercel.app) — Catálogo dinâmico com redução de 60% no tempo de fechamento de orçamentos via WhatsApp (*React, TypeScript, Tailwind CSS*).
 
 ---
 
@@ -92,10 +82,4 @@ portifolio/
 - **Desenvolvedor**: Sérgio Bastos da Silva Filho
 - **GitHub**: [@Baxtoos](https://github.com/Baxtoos)
 - **E-mail**: [giftc444@gmail.com](mailto:giftc444@gmail.com)
-- **Localização**: Salto / Indaiatuba - SP, Brasil
-
----
-
-<div align="center">
-  <sub>Desenvolvido por Sérgio Bastos - 2026</sub>
-</div>
+- **Localização**: Salto / Indaiatuba — SP, Brasil
